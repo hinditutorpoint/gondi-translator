@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Gondi Calendar with analog clock and traditional Gondi numerals. Track dates in Masaram Gondi script.">
+    <meta name="keywords"
+        content="Gondi calendar, tribal calendar, Masaram Gondi numerals, analog clock, indigenous time">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+
+    <title>Gondi Calendar | 𑴎𑴽𑴟𑵅𑴘𑴲 पंचांग | Traditional Time Keeping</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --tribal-earth: #8B4513;
+            --tribal-clay: #CD853F;
+            --tribal-ochre: #CC7722;
+            --tribal-terracotta: #E2725B;
+            --tribal-forest: #228B22;
+            --tribal-bark: #3E2723;
+            --tribal-sand: #F4A460;
+            --tribal-cream: #FFF8DC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, #FFF5E6 100%);
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139, 69, 19, 0.02) 35px, rgba(139, 69, 19, 0.02) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(205, 133, 63, 0.02) 35px, rgba(205, 133, 63, 0.02) 70px);
+            z-index: -1;
+        }
+
+        .gondi-text {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--tribal-bark) 0%, var(--tribal-earth) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid var(--tribal-ochre);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--tribal-ochre);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            border: 2px solid var(--tribal-sand);
+        }
+
+        .navbar-brand .gondi-title {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.4rem;
+            color: var(--tribal-sand);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--tribal-sand);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            color: var(--tribal-sand) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 50%, var(--tribal-terracotta) 100%);
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero-section::before {
+            content: '🕐📅🌙';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.08;
+            right: -5%;
+            top: -20%;
+            transform: rotate(-15deg);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Main Container */
+        .calendar-container {
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--tribal-clay);
+        }
+
+        /* Clock Container - LEFT SIDE */
+        .clock-container {
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, #FFF 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--tribal-ochre);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+        }
+
+        .clock {
+            width: 350px;
+            height: 350px;
+            border: 8px solid var(--tribal-earth);
+            border-radius: 50%;
+            position: relative;
+            background: white;
+            box-shadow:
+                inset 0 0 40px rgba(139, 69, 19, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .clock::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--tribal-ochre);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .clock-number {
+            position: absolute;
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--tribal-bark);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ANTICLOCKWISE positioning (numbers go counter-clockwise) */
+        .clock-number:nth-child(1) {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* 12 */
+        .clock-number:nth-child(2) {
+            top: 30px;
+            right: 70px;
+        }
+
+        /* 11 */
+        .clock-number:nth-child(3) {
+            top: 80px;
+            right: 20px;
+        }
+
+        /* 10 */
+        .clock-number:nth-child(4) {
+            top: 155px;
+            right: 5px;
+        }
+
+        /* 9 */
+        .clock-number:nth-child(5) {
+            bottom: 80px;
+            right: 20px;
+        }
+
+        /* 8 */
+        .clock-number:nth-child(6) {
+            bottom: 30px;
+            right: 70px;
+        }
+
+        /* 7 */
+        .clock-number:nth-child(7) {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* 6 */
+        .clock-number:nth-child(8) {
+            bottom: 30px;
+            left: 70px;
+        }
+
+        /* 5 */
+        .clock-number:nth-child(9) {
+            bottom: 80px;
+            left: 20px;
+        }
+
+        /* 4 */
+        .clock-number:nth-child(10) {
+            top: 155px;
+            left: 5px;
+        }
+
+        /* 3 */
+        .clock-number:nth-child(11) {
+            top: 80px;
+            left: 20px;
+        }
+
+        /* 2 */
+        .clock-number:nth-child(12) {
+            top: 30px;
+            left: 70px;
+        }
+
+        /* 1 */
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            background: var(--tribal-bark);
+            border-radius: 10px;
+        }
+
+        .hour-hand {
+            width: 6px;
+            height: 90px;
+            margin-left: -3px;
+            background: var(--tribal-earth);
+            z-index: 3;
+        }
+
+        .minute-hand {
+            width: 4px;
+            height: 130px;
+            margin-left: -2px;
+            background: var(--tribal-ochre);
+            z-index: 2;
+        }
+
+        .second-hand {
+            width: 2px;
+            height: 140px;
+            margin-left: -1px;
+            background: var(--tribal-terracotta);
+            z-index: 1;
+        }
+
+        .digital-time {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .digital-display {
+            font-family: 'Noto Sans Masaram Gondi', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--tribal-earth);
+            margin-bottom: 0.5rem;
+        }
+
+        .date-display {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Calendar Container - RIGHT SIDE */
+        .calendar-section {
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, #FFF 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 3px solid var(--tribal-ochre);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-title {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--tribal-earth);
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-nav {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--tribal-earth);
+            background: white;
+            color: var(--tribal-earth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--tribal-earth);
+            color: white;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .weekday {
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 700;
+            color: var(--tribal-ochre);
+            font-size: 0.9rem;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+
+        .day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .day:hover {
+            background: var(--tribal-cream);
+            border-color: var(--tribal-ochre);
+        }
+
+        .day.today {
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .day.other-month {
+            opacity: 0.3;
+        }
+
+        .day.selected {
+            background: var(--tribal-ochre);
+            color: white;
+            border-color: var(--tribal-earth);
+        }
+
+        /* Month/Year Selector */
+        .selector-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .selector {
+            background: white;
+            border: 2px solid var(--tribal-clay);
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--tribal-earth);
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--tribal-bark) 0%, #2C1810 100%);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+            border-top: 4px solid var(--tribal-ochre);
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--tribal-sand);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--tribal-sand);
+            padding-left: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--tribal-ochre);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 3px solid var(--tribal-sand);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .clock {
+                width: 280px;
+                height: 280px;
+            }
+
+            .clock-number {
+                font-size: 1.4rem;
+            }
+
+            .digital-display {
+                font-size: 2rem;
+            }
+
+            .calendar-title {
+                font-size: 1.5rem;
+            }
+
+            .day {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="brand-icon">𑴎</div>
+                <span class="gondi-title d-none d-md-inline">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                <span class="d-none d-sm-inline">Gondi Darshan</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-fill me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#transliterator">
+                            <i class="bi bi-keyboard me-1"></i> Transliterator
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">
+                            <i class="bi bi-download me-1"></i> Download
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-grid-3x3-gap me-1"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calendar.html">
+                            <i class="bi bi-calendar3 me-1"></i> Calendar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/yourusername/gondi-transliterator" target="_blank">
+                            <i class="bi bi-github me-1"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">
+                <i class="bi bi-calendar-event-fill me-3"></i>
+                <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲 𑴠𑴕𑵅𑴑𑴱𑵀𑴎𑵄</span>
+            </h1>
+            <p class="hero-subtitle">
+                Gondi Calendar & Traditional Time Keeping<br>
+                <strong>गोंडी पंचांग और पारंपरिक समय</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container mb-5">
+        <div class="calendar-container">
+            <div class="row g-4">
+                <!-- LEFT SIDE: Analog Clock (Anticlockwise) -->
+                <div class="col-lg-6">
+                    <div class="clock-container">
+                        <h3 class="mb-4" style="color: var(--tribal-earth); font-weight: 700;">
+                            <i class="bi bi-clock-fill me-2"></i>
+                            Anticlockwise Clock
+                        </h3>
+
+                        <div class="clock" id="clock">
+                            <!-- Gondi Numbers (Anticlockwise) -->
+                            <div class="clock-number">𑵑𑵒</div> <!-- 12 -->
+                            <div class="clock-number">𑵑𑵑</div> <!-- 11 -->
+                            <div class="clock-number">𑵑𑵐</div> <!-- 10 -->
+                            <div class="clock-number">𑵙</div> <!-- 9 -->
+                            <div class="clock-number">𑵘</div> <!-- 8 -->
+                            <div class="clock-number">𑵗</div> <!-- 7 -->
+                            <div class="clock-number">𑵖</div> <!-- 6 -->
+                            <div class="clock-number">𑵕</div> <!-- 5 -->
+                            <div class="clock-number">𑵔</div> <!-- 4 -->
+                            <div class="clock-number">𑵓</div> <!-- 3 -->
+                            <div class="clock-number">𑵒</div> <!-- 2 -->
+                            <div class="clock-number">𑵑</div> <!-- 1 -->
+
+                            <!-- Clock Hands -->
+                            <div class="hand hour-hand" id="hourHand"></div>
+                            <div class="hand minute-hand" id="minuteHand"></div>
+                            <div class="hand second-hand" id="secondHand"></div>
+                        </div>
+
+                        <div class="digital-time">
+                            <div class="digital-display" id="digitalTime">
+                                𑵑𑵒:𑵐𑵐:𑵐𑵐
+                            </div>
+                            <div class="date-display" id="dateDisplay">
+                                Loading...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: Calendar -->
+                <div class="col-lg-6">
+                    <div class="calendar-section">
+                        <div class="calendar-header">
+                            <div class="calendar-title" id="calendarTitle">
+                                𑴓𑴟𑴨𑴦𑴳 𑵒𑵐𑵒𑵔
+                            </div>
+                            <div class="calendar-nav">
+                                <button class="btn-nav" onclick="previousMonth()">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <button class="btn-nav" onclick="nextMonth()">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="selector-row">
+                            <select class="selector" id="monthSelector" onchange="updateCalendar()">
+                                <!-- Populated by JS -->
+                            </select>
+                            <select class="selector" id="yearSelector" onchange="updateCalendar()">
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+
+                        <div class="calendar-weekdays">
+                            <div class="weekday">Sun</div>
+                            <div class="weekday">Mon</div>
+                            <div class="weekday">Tue</div>
+                            <div class="weekday">Wed</div>
+                            <div class="weekday">Thu</div>
+                            <div class="weekday">Fri</div>
+                            <div class="weekday">Sat</div>
+                        </div>
+
+                        <div class="calendar-days" id="calendarDays">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="footer-title">
+                        <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Gondi Darshan
+                    </h5>
+                    <p class="opacity-75 mb-3">
+                        Preserving and promoting tribal languages through modern technology. Free, open-source, and
+                        dedicated to indigenous heritage.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://twitter.com/gondidarshan" target="_blank" title="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/gondidarshan" target="_blank" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="mailto:contact@gondidarshan.org" title="Email">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
+                        <li><a href="index.html#transliterator"><i class="bi bi-chevron-right me-1"></i>
+                                Transliterator</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right me-1"></i> Download Apps</a></li>
+                        <li><a href="projects.html"><i class="bi bi-chevron-right me-1"></i> Other Projects</a></li>
+                        <li><a href="calendar.html"><i class="bi bi-chevron-right me-1"></i> Gondi Calendar</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Support Us</h5>
+                    <p class="opacity-75 mb-3">
+                        Help us preserve tribal languages for future generations.
+                    </p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank"
+                        style="background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%); border: none; color: white; padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">
+                        <i class="bi bi-cup-hot-fill me-1"></i> Donate
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">
+                    © 2024 <strong>Rajesh Kumar Dhuriya</strong>. All rights reserved. Made with <i
+                        class="bi bi-heart-fill text-danger"></i> for tribal communities.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════
+        // GONDI NUMBER CONVERSION
+        // ═══════════════════════════════════════════════════════════════════════
+
+        const gondiDigits = {
+            '0': '𑵐', '1': '𑵑', '2': '𑵒', '3': '𑵓', '4': '𑵔',
+            '5': '𑵕', '6': '𑵖', '7': '𑵗', '8': '𑵘', '9': '𑵙'
+        };
+
+        function toGondi(num) {
+            return String(num).split('').map(d => gondiDigits[d] || d).join('');
+        }
+
+        function padGondi(num) {
+            return toGondi(String(num).padStart(2, '0'));
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // ANTICLOCKWISE ANALOG CLOCK
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours() % 12;
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // ANTICLOCKWISE: Negate the rotation angles
+            const hourDeg = -((hours * 30) + (minutes * 0.5));
+            const minuteDeg = -(minutes * 6);
+            const secondDeg = -(seconds * 6);
+
+            document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
+            document.getElementById('minuteHand').style.transform = `rotate(${minuteDeg}deg)`;
+            document.getElementById('secondHand').style.transform = `rotate(${secondDeg}deg)`;
+
+            // Digital time in Gondi
+            const digitalTime = `${padGondi(now.getHours())}:${padGondi(minutes)}:${padGondi(seconds)}`;
+            document.getElementById('digitalTime').textContent = digitalTime;
+
+            // Date display
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+
+            const dateStr = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            document.getElementById('dateDisplay').textContent = dateStr;
+        }
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // CALENDAR
+        // ═══════════════════════════════════════════════════════════════════════
+
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
+
+        const monthNames = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        const monthNamesGondi = [
+            'जनवरी', 'फरवरी', 'मार्च', 'अप्रैल', 'मई', 'जून',
+            'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'
+        ];
+
+        function initializeSelectors() {
+            const monthSelector = document.getElementById('monthSelector');
+            const yearSelector = document.getElementById('yearSelector');
+
+            // Populate months
+            monthNames.forEach((month, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${monthNamesGondi[index]} (${month})`;
+                monthSelector.appendChild(option);
+            });
+
+            // Populate years (current year ± 10 years)
+            for (let year = currentYear - 10; year <= currentYear + 10; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = toGondi(year);
+                yearSelector.appendChild(option);
+            }
+
+            monthSelector.value = currentMonth;
+            yearSelector.value = currentYear;
+        }
+
+        function updateCalendar() {
+            const monthSelector = document.getElementById('monthSelector');
+            const yearSelector = document.getElementById('yearSelector');
+
+            currentMonth = parseInt(monthSelector.value);
+            currentYear = parseInt(yearSelector.value);
+
+            // Update title in Gondi
+            document.getElementById('calendarTitle').textContent =
+                `${monthNamesGondi[currentMonth]} ${toGondi(currentYear)}`;
+
+            // Generate calendar
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const daysInPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+            const calendarDays = document.getElementById('calendarDays');
+            calendarDays.innerHTML = '';
+
+            // Previous month days
+            for (let i = firstDay - 1; i >= 0; i--) {
+                const day = document.createElement('div');
+                day.className = 'day other-month';
+                day.textContent = toGondi(daysInPrevMonth - i);
+                calendarDays.appendChild(day);
+            }
+
+            // Current month days
+            const today = new Date();
+            for (let i = 1; i <= daysInMonth; i++) {
+                const day = document.createElement('div');
+                day.className = 'day';
+                day.textContent = toGondi(i);
+
+                if (i === today.getDate() &&
+                    currentMonth === today.getMonth() &&
+                    currentYear === today.getFullYear()) {
+                    day.classList.add('today');
+                }
+
+                day.onclick = function () {
+                    document.querySelectorAll('.day').forEach(d => d.classList.remove('selected'));
+                    this.classList.add('selected');
+                };
+
+                calendarDays.appendChild(day);
+            }
+
+            // Next month days
+            const remainingCells = 42 - (firstDay + daysInMonth);
+            for (let i = 1; i <= remainingCells; i++) {
+                const day = document.createElement('div');
+                day.className = 'day other-month';
+                day.textContent = toGondi(i);
+                calendarDays.appendChild(day);
+            }
+        }
+
+        function previousMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            document.getElementById('monthSelector').value = currentMonth;
+            document.getElementById('yearSelector').value = currentYear;
+            updateCalendar();
+        }
+
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            document.getElementById('monthSelector').value = currentMonth;
+            document.getElementById('yearSelector').value = currentYear;
+            updateCalendar();
+        }
+
+        // Initialize
+        initializeSelectors();
+        updateCalendar();
+
+        // Scroll to top
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Multi-directional Gondi translation tool. Convert between English, Hindi, and Gondi script. Upload files or paste text for instant conversion.">
+    <meta name="keywords"
+        content="Gondi translation, Hindi to Gondi, English to Gondi, Gondi converter, text translation, file upload">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+
+    <title>Translation Tool | English↔Hindi↔Gondi | Gondi Darshan</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --tribal-earth: #8B4513;
+            --tribal-clay: #CD853F;
+            --tribal-ochre: #CC7722;
+            --tribal-terracotta: #E2725B;
+            --tribal-forest: #228B22;
+            --tribal-bark: #3E2723;
+            --tribal-sand: #F4A460;
+            --tribal-cream: #FFF8DC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, #FFF5E6 100%);
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139, 69, 19, 0.02) 35px, rgba(139, 69, 19, 0.02) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(205, 133, 63, 0.02) 35px, rgba(205, 133, 63, 0.02) 70px);
+            z-index: -1;
+        }
+
+        .gondi-text {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+        }
+
+        .hindi-text {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--tribal-bark) 0%, var(--tribal-earth) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid var(--tribal-ochre);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--tribal-ochre);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            border: 2px solid var(--tribal-sand);
+        }
+
+        .navbar-brand .gondi-title {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.4rem;
+            color: var(--tribal-sand);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--tribal-sand);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            color: var(--tribal-sand) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 50%, var(--tribal-terracotta) 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .hero-section::before {
+            content: '🔄📝🌐';
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.08;
+            right: -5%;
+            top: -30%;
+            transform: rotate(-15deg);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Translation Mode Selector */
+        .mode-selector {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--tribal-clay);
+            margin-bottom: 2rem;
+        }
+
+        .mode-btn {
+            background: white;
+            border: 2px solid var(--tribal-clay);
+            color: var(--tribal-earth);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .mode-btn i {
+            font-size: 2rem;
+            color: var(--tribal-ochre);
+        }
+
+        .mode-btn:hover {
+            background: var(--tribal-cream);
+            border-color: var(--tribal-ochre);
+            transform: translateY(-3px);
+        }
+
+        .mode-btn.active {
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
+            color: white;
+            border-color: var(--tribal-earth);
+        }
+
+        .mode-btn.active i {
+            color: white;
+        }
+
+        /* Translation Container */
+        .translation-container {
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--tribal-clay);
+        }
+
+        .translation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .language-label {
+            font-weight: 700;
+            color: var(--tribal-earth);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-label i {
+            color: var(--tribal-ochre);
+        }
+
+        .translation-area {
+            border: 2px solid var(--tribal-clay);
+            border-radius: 15px;
+            padding: 1.5rem;
+            min-height: 300px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+
+        .translation-area:focus {
+            border-color: var(--tribal-earth);
+            box-shadow: 0 0 0 4px rgba(139, 69, 19, 0.15);
+            outline: none;
+        }
+
+        .output-area {
+            background: var(--tribal-cream);
+            font-size: 1.5rem;
+            line-height: 2;
+        }
+
+        /* File Upload */
+        .file-upload-zone {
+            border: 3px dashed var(--tribal-clay);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--tribal-cream);
+            margin-bottom: 1.5rem;
+        }
+
+        .file-upload-zone:hover {
+            border-color: var(--tribal-ochre);
+            background: white;
+        }
+
+        .file-upload-zone.dragover {
+            border-color: var(--tribal-earth);
+            background: var(--tribal-light);
+        }
+
+        .file-upload-icon {
+            font-size: 3rem;
+            color: var(--tribal-ochre);
+            margin-bottom: 1rem;
+        }
+
+        /* Action Buttons */
+        .btn-translate {
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
+            border: none;
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-translate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+            color: white;
+        }
+
+        .btn-action {
+            background: transparent;
+            border: 2px solid var(--tribal-earth);
+            color: var(--tribal-earth);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action:hover {
+            background: var(--tribal-earth);
+            color: white;
+        }
+
+        .btn-action i {
+            margin-right: 0.5rem;
+        }
+
+        /* Stats */
+        .stats-bar {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px dashed var(--tribal-clay);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        .stat-item i {
+            color: var(--tribal-ochre);
+        }
+
+        .stat-item strong {
+            color: var(--tribal-bark);
+        }
+
+        /* Toast */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+
+        .toast {
+            border-radius: 12px;
+            border: 2px solid var(--tribal-ochre);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--tribal-bark) 0%, #2C1810 100%);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+            border-top: 4px solid var(--tribal-ochre);
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--tribal-sand);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--tribal-sand);
+            padding-left: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--tribal-ochre);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 3px solid var(--tribal-sand);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Direction Arrow */
+        .direction-arrow {
+            font-size: 2rem;
+            color: var(--tribal-ochre);
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .direction-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Loading Spinner */
+        .spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .spinner-overlay.show {
+            display: flex;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--tribal-ochre);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="brand-icon">𑴎</div>
+                <span class="gondi-title d-none d-md-inline">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                <span class="d-none d-sm-inline">Gondi Darshan</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-fill me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#transliterator">
+                            <i class="bi bi-keyboard me-1"></i> Transliterator
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tool.html">
+                            <i class="bi bi-translate me-1"></i> Translation Tool
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">
+                            <i class="bi bi-download me-1"></i> Download
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-grid-3x3-gap me-1"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">
+                <i class="bi bi-translate me-3"></i>
+                Multi-Language Translation Tool
+            </h1>
+            <p class="hero-subtitle">
+                Convert between English, Hindi, and Gondi scripts instantly<br>
+                <strong>अंग्रेजी ↔ हिंदी ↔ गोंडी | English ↔ Hindi ↔ 𑴎𑴽𑴟𑵅𑴘𑴲</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container">
+        <!-- Translation Mode Selector -->
+        <div class="mode-selector">
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <div class="mode-btn active" onclick="selectMode('english-gondi')" id="mode-english-gondi">
+                        <i class="bi bi-arrow-right-circle"></i>
+                        <div>
+                            <strong>English</strong><br>
+                            <small>to Gondi</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="mode-btn" onclick="selectMode('hindi-gondi')" id="mode-hindi-gondi">
+                        <i class="bi bi-arrow-right-circle"></i>
+                        <div>
+                            <strong>हिंदी</strong><br>
+                            <small>to Gondi</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="mode-btn" onclick="selectMode('gondi-hindi')" id="mode-gondi-hindi">
+                        <i class="bi bi-arrow-left-circle"></i>
+                        <div>
+                            <strong>Gondi</strong><br>
+                            <small>to हिंदी</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="mode-btn" onclick="selectMode('gondi-english')" id="mode-gondi-english">
+                        <i class="bi bi-arrow-left-circle"></i>
+                        <div>
+                            <strong>Gondi</strong><br>
+                            <small>to English</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Upload Zone -->
+        <div class="file-upload-zone" id="fileUploadZone" onclick="document.getElementById('fileInput').click()">
+            <div class="file-upload-icon">
+                <i class="bi bi-cloud-upload"></i>
+            </div>
+            <h5>Upload Text File</h5>
+            <p class="mb-0">Click or drag & drop .txt file here</p>
+            <input type="file" id="fileInput" accept=".txt" style="display: none;" onchange="handleFileUpload(event)">
+        </div>
+
+        <!-- Translation Interface -->
+        <div class="row g-4">
+            <!-- Input Section -->
+            <div class="col-lg-6">
+                <div class="translation-container">
+                    <div class="translation-header">
+                        <div class="language-label" id="inputLabel">
+                            <i class="bi bi-pencil-square"></i>
+                            <span>Input (English/ITRANS)</span>
+                        </div>
+                        <button class="btn btn-action btn-sm" onclick="clearInput()">
+                            <i class="bi bi-x-circle"></i> Clear
+                        </button>
+                    </div>
+                    <textarea class="form-control translation-area" id="inputText"
+                        placeholder="Type or paste your text here...&#10;Example: namaste, rama, krishna"
+                        rows="10"></textarea>
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <i class="bi bi-file-text"></i>
+                            Characters: <strong id="inputChars">0</strong>
+                        </div>
+                        <div class="stat-item">
+                            <i class="bi bi-paragraph"></i>
+                            Words: <strong id="inputWords">0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="col-lg-12 d-lg-none">
+                <div class="direction-arrow">
+                    <i class="bi bi-arrow-down-circle"></i>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="col-lg-6">
+                <div class="translation-container">
+                    <div class="translation-header">
+                        <div class="language-label gondi-text" id="outputLabel">
+                            <i class="bi bi-translate"></i>
+                            <span>Output (𑴎𑴽𑴟𑵅𑴘𑴲)</span>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-action btn-sm" onclick="copyOutput()">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                            <button class="btn btn-action btn-sm" onclick="downloadOutput()">
+                                <i class="bi bi-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    <textarea class="form-control translation-area output-area gondi-text" id="outputText" readonly
+                        placeholder="Translation will appear here..." rows="10"></textarea>
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <i class="bi bi-file-text"></i>
+                            Characters: <strong id="outputChars">0</strong>
+                        </div>
+                        <div class="stat-item">
+                            <i class="bi bi-check-circle"></i>
+                            Status: <strong id="status">Ready</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Translate Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-translate" onclick="translateText()">
+                <i class="bi bi-arrow-repeat me-2"></i>
+                Translate Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div class="spinner-overlay" id="spinnerOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container">
+        <div class="toast" id="toast" role="alert">
+            <div class="toast-header bg-success text-white">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                <strong class="me-auto" id="toastTitle">Success</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastBody">
+                Action completed successfully!
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="footer-title">
+                        <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Gondi Darshan
+                    </h5>
+                    <p class="opacity-75 mb-3">
+                        Preserving and promoting tribal languages through modern technology. Free, open-source, and
+                        dedicated to indigenous heritage.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://twitter.com/gondidarshan" target="_blank" title="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/gondidarshan" target="_blank" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="mailto:contact@gondidarshan.org" title="Email">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
+                        <li><a href="index.html#transliterator"><i class="bi bi-chevron-right me-1"></i>
+                                Transliterator</a></li>
+                        <li><a href="tool.html"><i class="bi bi-chevron-right me-1"></i> Translation Tool</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right me-1"></i> Download Apps</a></li>
+                        <li><a href="projects.html"><i class="bi bi-chevron-right me-1"></i> Other Projects</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Support Us</h5>
+                    <p class="opacity-75 mb-3">
+                        Help us preserve tribal languages for future generations.
+                    </p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank"
+                        style="background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%); border: none; color: white; padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">
+                        <i class="bi bi-cup-hot-fill me-1"></i> Donate
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">
+                    © 2024 <strong>Rajesh Kumar Dhuriya</strong>. All rights reserved. Made with <i
+                        class="bi bi-heart-fill text-danger"></i> for tribal communities.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Transliterator Engine (from transliterator.js) -->
+    <script src="transliterator.js"></script>
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════
+        // GLOBAL STATE
+        // ═══════════════════════════════════════════════════════════════════════
+
+        let currentMode = 'english-gondi';
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // MODE SELECTION
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function selectMode(mode) {
+            currentMode = mode;
+
+            // Update active state
+            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`mode-${mode}`).classList.add('active');
+
+            // Update labels and placeholders
+            const inputLabel = document.getElementById('inputLabel').querySelector('span');
+            const outputLabel = document.getElementById('outputLabel').querySelector('span');
+            const inputArea = document.getElementById('inputText');
+            const outputArea = document.getElementById('outputText');
+
+            switch (mode) {
+                case 'english-gondi':
+                    inputLabel.textContent = 'Input (English/ITRANS)';
+                    outputLabel.textContent = 'Output (𑴎𑴽𑴟𑵅𑴘𑴲)';
+                    inputArea.placeholder = 'Type English/ITRANS text...\nExample: namaste, rama, krishna';
+                    outputArea.className = 'form-control translation-area output-area gondi-text';
+                    break;
+                case 'hindi-gondi':
+                    inputLabel.textContent = 'Input (हिंदी)';
+                    outputLabel.textContent = 'Output (𑴎𑴽𑴟𑵅𑴘𑴲)';
+                    inputArea.placeholder = 'हिंदी पाठ यहाँ लिखें...\nउदाहरण: नमस्ते, राम, कृष्ण';
+                    outputArea.className = 'form-control translation-area output-area gondi-text';
+                    break;
+                case 'gondi-hindi':
+                    inputLabel.textContent = 'Input (𑴎𑴽𑴟𑵅𑴘𑴲)';
+                    outputLabel.textContent = 'Output (हिंदी)';
+                    inputArea.placeholder = '𑴎𑴽𑴟𑵅𑴘𑴲 𑴧𑴲𑴠𑴲 𑴥𑴱𑵀...\nउदाहरण: 𑴟𑴤𑴫𑵅𑴛𑴺';
+                    outputArea.className = 'form-control translation-area output-area hindi-text';
+                    break;
+                case 'gondi-english':
+                    inputLabel.textContent = 'Input (𑴎𑴽𑴟𑵅𑴘𑴲)';
+                    outputLabel.textContent = 'Output (English/ITRANS)';
+                    inputArea.placeholder = '𑴎𑴽𑴟𑵅𑴘𑴲 𑴧𑴲𑴠𑴲 𑴥𑴱𑵀...\nExample: 𑴟𑴤𑴫𑵅𑴛𑴺';
+                    outputArea.className = 'form-control translation-area output-area';
+                    break;
+            }
+
+            // Clear both areas
+            inputArea.value = '';
+            outputArea.value = '';
+            updateStats();
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // ENHANCED HINDI TO GONDI CONVERSION
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function convertHindiToGondi(text) {
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                const codePoint = text.codePointAt(i);
+
+                // Handle surrogate pairs
+                if (codePoint > 0xFFFF) {
+                    i++;
+                }
+
+                switch (codePoint) {
+                    // Combining marks
+                    case 0x901: result += "𑵃"; break;  // Chandrabindu
+                    case 0x902: result += "𑵀"; break;  // Anusvara
+                    case 0x903: result += "𑵁"; break;  // Visarga
+
+                    // Independent Vowels
+                    case 0x905: result += "𑴀"; break;  // A
+                    case 0x906: result += "𑴁"; break;  // AA
+                    case 0x907: result += "𑴂"; break;  // I
+                    case 0x908: result += "𑴃"; break;  // II
+                    case 0x909: result += "𑴄"; break;  // U
+                    case 0x90A: result += "𑴅"; break;  // UU
+                    case 0x90B: result += "𑴦𑴶"; break;  // Vocalic R
+                    case 0x960: result += "𑴦𑴶"; break;  // Vocalic RR
+                    case 0x90C: result += "𑴧𑴶"; break;  // Vocalic L
+                    case 0x961: result += "𑴧𑵅𑴧𑴵"; break;  // Vocalic LL
+                    case 0x90F: result += "𑴆"; break;  // E
+                    case 0x910: result += "𑴈"; break;  // AI
+                    case 0x913: result += "𑴉"; break;  // O
+                    case 0x914: result += "𑴋"; break;  // AU
+
+                    // Consonants
+                    case 0x915: result += "𑴌"; break;  // KA
+                    case 0x916: result += "𑴍"; break;  // KHA
+                    case 0x917: result += "𑴎"; break;  // GA
+                    case 0x918: result += "𑴏"; break;  // GHA
+                    case 0x919: result += "𑴐"; break;  // NGA
+                    case 0x91A: result += "𑴑"; break;  // CA
+                    case 0x91B: result += "𑴒"; break;  // CHA
+                    case 0x91C: result += "𑴓"; break;  // JA
+                    case 0x91D: result += "𑴔"; break;  // JHA
+                    case 0x91E: result += "𑴕"; break;  // NYA
+                    case 0x91F: result += "𑴖"; break;  // TTA
+                    case 0x920: result += "𑴗"; break;  // TTHA
+                    case 0x921: result += "𑴘"; break;  // DDA
+                    case 0x922: result += "𑴙"; break;  // DDHA
+                    case 0x923: result += "𑴚"; break;  // NNA
+                    case 0x924: result += "𑴛"; break;  // TA
+                    case 0x925: result += "𑴜"; break;  // THA
+                    case 0x926: result += "𑴝"; break;  // DA
+                    case 0x927: result += "𑴞"; break;  // DHA
+                    case 0x928: result += "𑴟"; break;  // NA
+                    case 0x929: result += "𑴟𑵂"; break;  // NNNA (nukta na)
+                    case 0x92A: result += "𑴠"; break;  // PA
+                    case 0x92B: result += "𑴡"; break;  // PHA
+                    case 0x92C: result += "𑴢"; break;  // BA
+                    case 0x92D: result += "𑴣"; break;  // BHA
+                    case 0x92E: result += "𑴤"; break;  // MA
+                    case 0x92F: result += "𑴥"; break;  // YA
+                    case 0x930: result += "𑴦"; break;  // RA
+                    case 0x931: result += "𑴦𑵂"; break;  // RRA (nukta ra)
+                    case 0x932: result += "𑴧"; break;  // LA
+                    case 0x933: result += "𑴭"; break;  // LLA
+                    case 0x934: result += "𑴭𑵂"; break;  // LLLA (nukta lla)
+                    case 0x935: result += "𑴨"; break;  // VA
+                    case 0x936: result += "𑴩"; break;  // SHA
+                    case 0x937: result += "𑴪"; break;  // SSA
+                    case 0x938: result += "𑴫"; break;  // SA
+                    case 0x939: result += "𑴬"; break;  // HA
+
+                    // Nukta consonants
+                    case 0x958: result += "𑴌𑵂"; break;  // QA (ka + nukta)
+                    case 0x959: result += "𑴍𑵂"; break;  // KHHA (kha + nukta)
+                    case 0x95A: result += "𑴎𑵂"; break;  // GHHA (ga + nukta)
+                    case 0x95B: result += "𑴓𑵂"; break;  // ZA (ja + nukta)
+                    case 0x95C: result += "𑴘𑵂"; break;  // DDDHA (dda + nukta)
+                    case 0x95D: result += "𑴙𑵂"; break;  // RHA (ddha + nukta)
+                    case 0x95E: result += "𑴡𑵂"; break;  // FA (pha + nukta)
+                    case 0x95F: result += "𑴥𑵂"; break;  // YYA (ya + nukta)
+
+                    // Dependent vowel signs (matras)
+                    case 0x93E: result += "𑴱"; break;  // AA
+                    case 0x93F: result += "𑴲"; break;  // I
+                    case 0x940: result += "𑴳"; break;  // II
+                    case 0x941: result += "𑴴"; break;  // U
+                    case 0x942: result += "𑴵"; break;  // UU
+                    case 0x943: result += "𑴶"; break;  // R
+                    case 0x944: result += "𑵇𑴵"; break;  // RR
+                    case 0x962: result += "𑵅𑴧𑴴"; break;  // L
+                    case 0x963: result += "𑵅𑴧𑴵"; break;  // LL
+                    case 0x947: result += "𑴺"; break;  // E
+                    case 0x948: result += "𑴼"; break;  // AI
+                    case 0x94B: result += "𑴽"; break;  // O
+                    case 0x94C: result += "𑴿"; break;  // AU
+
+                    // Virama/Halant
+                    case 0x94D: result += "𑵅"; break;  // Virama
+
+                    // Punctuation
+                    case 0x964: result += "।"; break;  // Danda
+                    case 0x965: result += "॥"; break;  // Double danda
+
+                    // Numbers (Devanagari to Gondi)
+                    case 0x966: result += "𑵐"; break;  // 0
+                    case 0x967: result += "𑵑"; break;  // 1
+                    case 0x968: result += "𑵒"; break;  // 2
+                    case 0x969: result += "𑵓"; break;  // 3
+                    case 0x96A: result += "𑵔"; break;  // 4
+                    case 0x96B: result += "𑵕"; break;  // 5
+                    case 0x96C: result += "𑵖"; break;  // 6
+                    case 0x96D: result += "𑵗"; break;  // 7
+                    case 0x96E: result += "𑵘"; break;  // 8
+                    case 0x96F: result += "𑵙"; break;  // 9
+
+                    // Om symbol
+                    case 0x950: result += "𑴉𑵀"; break;  // OM
+
+                    // Pass through spaces, punctuation, and ASCII
+                    default:
+                        result += String.fromCodePoint(codePoint);
+                }
+            }
+            return result;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // FIXED: GONDI TO HINDI CONVERSION
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function convertGondiToHindi(text) {
+            let result = "";
+            let i = 0;
+
+            while (i < text.length) {
+                const char = text[i];
+                const charCode = char.charCodeAt(0);
+
+                // Check for multi-char sequences first
+                if (i + 1 < text.length) {
+                    const twoChar = text.substring(i, i + 2);
+
+                    // Special two-character sequences
+                    if (twoChar === '𑴦𑴶') { result += '\u0930\u0943'; i += 2; continue; } // ra + R matra = र + ृ
+                    if (twoChar === '𑴧𑴶') { result += '\u0932\u0943'; i += 2; continue; } // la + R matra = ल + ृ
+                    if (twoChar === '𑴉𑵀') { result += '\u0950'; i += 2; continue; } // OM
+                    if (twoChar === '𑵇𑴵') { result += '\u0944'; i += 2; continue; } // RR matra
+                    if (twoChar === '𑴟𑵂') { result += '\u0929'; i += 2; continue; } // nukta na
+                    if (twoChar === '𑴦𑵂') { result += '\u0931'; i += 2; continue; } // nukta ra
+                    if (twoChar === '𑴭𑵂') { result += '\u0934'; i += 2; continue; } // nukta lla
+                    if (twoChar === '𑴌𑵂') { result += '\u0958'; i += 2; continue; } // qa
+                    if (twoChar === '𑴍𑵂') { result += '\u0959'; i += 2; continue; } // khha
+                    if (twoChar === '𑴎𑵂') { result += '\u095A'; i += 2; continue; } // ghha
+                    if (twoChar === '𑴓𑵂') { result += '\u095B'; i += 2; continue; } // za
+                    if (twoChar === '𑴘𑵂') { result += '\u095C'; i += 2; continue; } // dddha
+                    if (twoChar === '𑴙𑵂') { result += '\u095D'; i += 2; continue; } // rha
+                    if (twoChar === '𑴡𑵂') { result += '\u095E'; i += 2; continue; } // fa
+                    if (twoChar === '𑴥𑵂') { result += '\u095F'; i += 2; continue; } // yya
+                }
+
+                // Check for three-character sequences
+                if (i + 2 < text.length) {
+                    const threeChar = text.substring(i, i + 3);
+                    if (threeChar === '𑵅𑴧𑴴') { result += '\u0962'; i += 3; continue; } // L matra
+                    if (threeChar === '𑵅𑴧𑴵') { result += '\u0963'; i += 3; continue; } // LL matra
+                }
+
+                // Four-character sequences
+                if (i + 3 < text.length) {
+                    const fourChar = text.substring(i, i + 4);
+                    if (fourChar === '𑴧𑵅𑴧𑴵') { result += '\u0961'; i += 4; continue; } // Vocalic LL
+                }
+
+                // Single character mapping
+                // Gondi range: U+11D00 - U+11D59
+                if (charCode >= 0xD803 || (charCode >= 0x11D00 && charCode <= 0x11D59)) {
+                    const gondiToHindiMap = {
+                        // Combining marks
+                        '𑵃': '\u0901',  // Chandrabindu
+                        '𑵀': '\u0902',  // Anusvara
+                        '𑵁': '\u0903',  // Visarga
+                        '𑵂': '\u093C',  // Nukta
+
+                        // Independent Vowels
+                        '𑴀': '\u0905',  // A
+                        '𑴁': '\u0906',  // AA
+                        '𑴂': '\u0907',  // I
+                        '𑴃': '\u0908',  // II
+                        '𑴄': '\u0909',  // U
+                        '𑴅': '\u090A',  // UU
+                        '𑴆': '\u090F',  // E
+                        '𑴈': '\u0910',  // AI
+                        '𑴉': '\u0913',  // O
+                        '𑴋': '\u0914',  // AU
+
+                        // Consonants
+                        '𑴌': '\u0915',  // KA
+                        '𑴍': '\u0916',  // KHA
+                        '𑴎': '\u0917',  // GA
+                        '𑴏': '\u0918',  // GHA
+                        '𑴐': '\u0919',  // NGA
+                        '𑴑': '\u091A',  // CA
+                        '𑴒': '\u091B',  // CHA
+                        '𑴓': '\u091C',  // JA
+                        '𑴔': '\u091D',  // JHA
+                        '𑴕': '\u091E',  // NYA
+                        '𑴖': '\u091F',  // TTA
+                        '𑴗': '\u0920',  // TTHA
+                        '𑴘': '\u0921',  // DDA
+                        '𑴙': '\u0922',  // DDHA
+                        '𑴚': '\u0923',  // NNA
+                        '𑴛': '\u0924',  // TA
+                        '𑴜': '\u0925',  // THA
+                        '𑴝': '\u0926',  // DA
+                        '𑴞': '\u0927',  // DHA
+                        '𑴟': '\u0928',  // NA
+                        '𑴠': '\u092A',  // PA
+                        '𑴡': '\u092B',  // PHA
+                        '𑴢': '\u092C',  // BA
+                        '𑴣': '\u092D',  // BHA
+                        '𑴤': '\u092E',  // MA
+                        '𑴥': '\u092F',  // YA
+                        '𑴦': '\u0930',  // RA
+                        '𑴧': '\u0932',  // LA
+                        '𑴭': '\u0933',  // LLA
+                        '𑴨': '\u0935',  // VA
+                        '𑴩': '\u0936',  // SHA
+                        '𑴪': '\u0937',  // SSA
+                        '𑴫': '\u0938',  // SA
+                        '𑴬': '\u0939',  // HA
+                        '𑴮': '\u0915\u094D\u0937',  // KSHA (ligature)
+
+                        // Dependent vowel signs (matras)
+                        '𑴱': '\u093E',  // AA
+                        '𑴲': '\u093F',  // I
+                        '𑴳': '\u0940',  // II
+                        '𑴴': '\u0941',  // U
+                        '𑴵': '\u0942',  // UU
+                        '𑴶': '\u0943',  // R
+                        '𑴺': '\u0947',  // E
+                        '𑴼': '\u0948',  // AI
+                        '𑴽': '\u094B',  // O
+                        '𑴿': '\u094C',  // AU
+
+                        // Virama/Halant
+                        '𑵅': '\u094D',  // Virama
+                        '𑵄': '\u094D',  // Halanta (also virama)
+
+                        // Special signs
+                        '𑵆': '\u0930\u094D',  // Repha (र् before consonant)
+                        '𑵇': '\u094D\u0930',  // Rakar (र after consonant)
+
+                        // Numbers
+                        '𑵐': '\u0966',  // 0
+                        '𑵑': '\u0967',  // 1
+                        '𑵒': '\u0968',  // 2
+                        '𑵓': '\u0969',  // 3
+                        '𑵔': '\u096A',  // 4
+                        '𑵕': '\u096B',  // 5
+                        '𑵖': '\u096C',  // 6
+                        '𑵗': '\u096D',  // 7
+                        '𑵘': '\u096E',  // 8
+                        '𑵙': '\u096F',  // 9
+                    };
+
+                    if (gondiToHindiMap[char]) {
+                        result += gondiToHindiMap[char];
+                        i++;
+                        continue;
+                    }
+                }
+
+                // Pass through unchanged
+                result += char;
+                i++;
+            }
+
+            return result;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // FIXED: GONDI TO ENGLISH (ITRANS) CONVERSION
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function convertGondiToEnglish(text) {
+            let result = "";
+            let i = 0;
+
+            while (i < text.length) {
+                const char = text[i];
+
+                // Check for multi-char sequences first
+                if (i + 1 < text.length) {
+                    const twoChar = text.substring(i, i + 2);
+
+                    // Two-character sequences
+                    if (twoChar === '𑴦𑴶') { result += 'R'; i += 2; continue; }
+                    if (twoChar === '𑴧𑴶') { result += 'lR'; i += 2; continue; }
+                    if (twoChar === '𑴉𑵀') { result += 'oM'; i += 2; continue; }
+                    if (twoChar === '𑵇𑴵') { result += 'ruu'; i += 2; continue; }
+                    if (twoChar === '𑴟𑵂') { result += 'nna'; i += 2; continue; }
+                    if (twoChar === '𑴦𑵂') { result += 'rra'; i += 2; continue; }
+                    if (twoChar === '𑴭𑵂') { result += 'Lla'; i += 2; continue; }
+                    if (twoChar === '𑴌𑵂') { result += 'qa'; i += 2; continue; }
+                    if (twoChar === '𑴍𑵂') { result += 'xa'; i += 2; continue; }
+                    if (twoChar === '𑴎𑵂') { result += 'gha'; i += 2; continue; }
+                    if (twoChar === '𑴓𑵂') { result += 'za'; i += 2; continue; }
+                    if (twoChar === '𑴘𑵂') { result += 'Dda'; i += 2; continue; }
+                    if (twoChar === '𑴙𑵂') { result += 'Rha'; i += 2; continue; }
+                    if (twoChar === '𑴡𑵂') { result += 'fa'; i += 2; continue; }
+                    if (twoChar === '𑴥𑵂') { result += 'yya'; i += 2; continue; }
+                }
+
+                // Check for three-character sequences
+                if (i + 2 < text.length) {
+                    const threeChar = text.substring(i, i + 3);
+                    if (threeChar === '𑵅𑴧𑴴') { result += 'l'; i += 3; continue; }
+                    if (threeChar === '𑵅𑴧𑴵') { result += 'll'; i += 3; continue; }
+                }
+
+                // Single character mapping
+                const gondiToItransMap = {
+                    // Independent Vowels
+                    '𑴀': 'a',
+                    '𑴁': 'aa',
+                    '𑴂': 'i',
+                    '𑴃': 'ii',
+                    '𑴄': 'u',
+                    '𑴅': 'uu',
+                    '𑴆': 'e',
+                    '𑴈': 'ai',
+                    '𑴉': 'o',
+                    '𑴋': 'au',
+
+                    // Consonants (with inherent 'a')
+                    '𑴌': 'ka',
+                    '𑴍': 'kha',
+                    '𑴎': 'ga',
+                    '𑴏': 'gha',
+                    '𑴐': 'nga',
+                    '𑴑': 'cha',
+                    '𑴒': 'chha',
+                    '𑴓': 'ja',
+                    '𑴔': 'jha',
+                    '𑴕': 'nya',
+                    '𑴖': 'Ta',
+                    '𑴗': 'Tha',
+                    '𑴘': 'Da',
+                    '𑴙': 'Dha',
+                    '𑴚': 'Na',
+                    '𑴛': 'ta',
+                    '𑴜': 'tha',
+                    '𑴝': 'da',
+                    '𑴞': 'dha',
+                    '𑴟': 'na',
+                    '𑴠': 'pa',
+                    '𑴡': 'pha',
+                    '𑴢': 'ba',
+                    '𑴣': 'bha',
+                    '𑴤': 'ma',
+                    '𑴥': 'ya',
+                    '𑴦': 'ra',
+                    '𑴧': 'la',
+                    '𑴭': 'La',
+                    '𑴨': 'va',
+                    '𑴩': 'sha',
+                    '𑴪': 'ssa',
+                    '𑴫': 'sa',
+                    '𑴬': 'ha',
+                    '𑴮': 'ksha',
+
+                    // Dependent vowel signs (these modify the previous consonant)
+                    '𑴱': 'A',     // aa matra
+                    '𑴲': 'I',     // i matra
+                    '𑴳': 'II',    // ii matra
+                    '𑴴': 'U',     // u matra
+                    '𑴵': 'UU',    // uu matra
+                    '𑴶': 'R',     // R matra
+                    '𑴺': 'E',     // e matra
+                    '𑴼': 'AI',    // ai matra
+                    '𑴽': 'O',     // o matra
+                    '𑴿': 'AU',    // au matra
+
+                    // Special marks
+                    '𑵀': 'M',
+                    '𑵁': 'H',
+                    '𑵃': 'MM',
+                    '𑵅': '',      // Virama (removes 'a')
+                    '𑵄': '',      // Halanta (also removes 'a')
+                    '𑵆': 'r',     // Repha (r before)
+                    '𑵇': 'r',     // Rakar (r after)
+
+                    // Numbers
+                    '𑵐': '0',
+                    '𑵑': '1',
+                    '𑵒': '2',
+                    '𑵓': '3',
+                    '𑵔': '4',
+                    '𑵕': '5',
+                    '𑵖': '6',
+                    '𑵗': '7',
+                    '𑵘': '8',
+                    '𑵙': '9',
+
+                    // Punctuation
+                    '।': '.',
+                    '॥': '..',
+                };
+
+                if (gondiToItransMap.hasOwnProperty(char)) {
+                    const mapped = gondiToItransMap[char];
+
+                    // Handle matras - they replace the 'a' in previous syllable
+                    if ('𑴱𑴲𑴳𑴴𑴵𑴶𑴺𑴼𑴽𑴿'.includes(char)) {
+                        // Remove trailing 'a' if present
+                        if (result.endsWith('a')) {
+                            result = result.slice(0, -1);
+                        }
+                        // For capital matras, add lowercase
+                        if (mapped === 'A') result += 'a';
+                        else if (mapped === 'I') result += 'i';
+                        else if (mapped === 'II') result += 'ii';
+                        else if (mapped === 'U') result += 'u';
+                        else if (mapped === 'UU') result += 'uu';
+                        else if (mapped === 'R') result += 'R';
+                        else if (mapped === 'E') result += 'e';
+                        else if (mapped === 'AI') result += 'ai';
+                        else if (mapped === 'O') result += 'o';
+                        else if (mapped === 'AU') result += 'au';
+                    } else if (char === '𑵅' || char === '𑵄') {
+                        // Virama/Halanta removes trailing 'a'
+                        if (result.endsWith('a')) {
+                            result = result.slice(0, -1);
+                        }
+                    } else {
+                        result += mapped;
+                    }
+                } else {
+                    // Pass through unchanged
+                    result += char;
+                }
+
+                i++;
+            }
+
+            return result;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // MAIN TRANSLATION FUNCTION
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function translateText() {
+            const inputText = document.getElementById('inputText').value;
+
+            if (!inputText.trim()) {
+                showToast('Error', 'Please enter some text to translate!', 'danger');
+                return;
+            }
+
+            showSpinner();
+
+            // Simulate processing delay for better UX
+            setTimeout(() => {
+                let output = '';
+
+                try {
+                    switch (currentMode) {
+                        case 'english-gondi':
+                            // Use existing transliterator from transliterator.js
+                            if (window.GondiTransliterator && window.GondiTransliterator.transliterate) {
+                                output = window.GondiTransliterator.transliterate(inputText);
+                            } else {
+                                throw new Error('Transliterator not loaded');
+                            }
+                            break;
+
+                        case 'hindi-gondi':
+                            output = convertHindiToGondi(inputText);
+                            break;
+
+                        case 'gondi-hindi':
+                            output = convertGondiToHindi(inputText);
+                            break;
+
+                        case 'gondi-english':
+                            output = convertGondiToEnglish(inputText);
+                            break;
+                    }
+
+                    document.getElementById('outputText').value = output;
+                    updateStats();
+                    document.getElementById('status').textContent = 'Translated';
+                    showToast('Success', 'Translation completed successfully!', 'success');
+                } catch (error) {
+                    console.error('Translation error:', error);
+                    showToast('Error', 'Translation failed: ' + error.message, 'danger');
+                    document.getElementById('status').textContent = 'Error';
+                } finally {
+                    hideSpinner();
+                }
+            }, 300);
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // FILE UPLOAD
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (!file.name.endsWith('.txt')) {
+                showToast('Error', 'Please upload a .txt file', 'danger');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('inputText').value = e.target.result;
+                updateStats();
+                showToast('Success', `File "${file.name}" loaded successfully!`, 'success');
+            };
+            reader.onerror = function () {
+                showToast('Error', 'Failed to read file', 'danger');
+            };
+            reader.readAsText(file, 'UTF-8');
+        }
+
+        // Drag and drop support
+        const uploadZone = document.getElementById('fileUploadZone');
+
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                document.getElementById('fileInput').files = files;
+                handleFileUpload({ target: { files: files } });
+            }
+        });
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // UTILITY FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function clearInput() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('outputText').value = '';
+            updateStats();
+            document.getElementById('status').textContent = 'Ready';
+        }
+
+        function copyOutput() {
+            const output = document.getElementById('outputText');
+            if (!output.value) {
+                showToast('Error', 'Nothing to copy!', 'warning');
+                return;
+            }
+
+            output.select();
+            document.execCommand('copy');
+            showToast('Success', 'Text copied to clipboard!', 'success');
+        }
+
+        function downloadOutput() {
+            const output = document.getElementById('outputText').value;
+            if (!output) {
+                showToast('Error', 'Nothing to download!', 'warning');
+                return;
+            }
+
+            const blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `gondi-translation-${Date.now()}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('Success', 'File downloaded successfully!', 'success');
+        }
+
+        function updateStats() {
+            const input = document.getElementById('inputText').value;
+            const output = document.getElementById('outputText').value;
+
+            document.getElementById('inputChars').textContent = input.length;
+            document.getElementById('inputWords').textContent = input.trim() ? input.trim().split(/\s+/).length : 0;
+            document.getElementById('outputChars').textContent = output.length;
+        }
+
+        function showSpinner() {
+            document.getElementById('spinnerOverlay').classList.add('show');
+        }
+
+        function hideSpinner() {
+            document.getElementById('spinnerOverlay').classList.remove('show');
+        }
+
+        function showToast(title, message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastTitle = document.getElementById('toastTitle');
+            const toastBody = document.getElementById('toastBody');
+            const toastHeader = toast.querySelector('.toast-header');
+
+            toastTitle.textContent = title;
+            toastBody.textContent = message;
+
+            toastHeader.className = 'toast-header';
+            if (type === 'success') {
+                toastHeader.classList.add('bg-success', 'text-white');
+            } else if (type === 'danger') {
+                toastHeader.classList.add('bg-danger', 'text-white');
+            } else if (type === 'warning') {
+                toastHeader.classList.add('bg-warning');
+            }
+
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+        }
+
+        // Auto-update stats on input
+        document.getElementById('inputText').addEventListener('input', updateStats);
+
+        // Scroll to top
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize stats
+        updateStats();
+    </script>
+</body>
+
+</html>

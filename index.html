@@ -1,0 +1,2434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Masaram Gondi Transliterator | गोंडी लिपि | Type Gondi Script Online">
+    <meta name="description"
+        content="Free online Masaram Gondi script transliterator. Type in ITRANS and get instant Gondi script output. Download Gondi keyboard for Android, Windows. Preserve Gond tribal heritage.">
+    <meta name="keywords"
+        content="Gondi, Masaram Gondi, Gondi script, Gondi keyboard, ITRANS, transliteration, Gond tribe, tribal language, Indian script, Gondi typing, गोंडी, गोंडी लिपि, आदिवासी, Gondwana, Gondi Darshan, 𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gondidarshan.org/">
+    <meta property="og:title" content="Masaram Gondi Transliterator | Type Gondi Script Online">
+    <meta property="og:description"
+        content="Free online Masaram Gondi script transliterator. Preserve Gond tribal heritage. Download for Android & Windows.">
+    <meta property="og:image" content="https://gondidarshan.org/images/og-image.jpg">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gondidarshan.org/">
+    <meta property="twitter:title" content="Masaram Gondi Transliterator | Type Gondi Script Online">
+    <meta property="twitter:description"
+        content="Free online Masaram Gondi script transliterator. Preserve Gond tribal heritage.">
+    <meta property="twitter:image" content="https://gondidarshan.org/images/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gondidarshan.org/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <title>Masaram Gondi Transliterator | गोंडी लिपि | Gond Tribal Script</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Masaram Gondi Transliterator",
+        "description": "Free online tool to type in Masaram Gondi script using ITRANS transliteration",
+        "url": "https://gondidarshan.org",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web, Android, Windows",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Kumar Dhuriya"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --tribal-primary: #8B4513;
+            --tribal-secondary: #CD853F;
+            --tribal-accent: #FFD700;
+            --tribal-dark: #2C1810;
+            --tribal-earth: #5D4037;
+            --tribal-terracotta: #E07B39;
+            --tribal-forest: #228B22;
+            --tribal-cream: #FFF8DC;
+            --tribal-sand: #F4E4BC;
+            --tribal-red: #B22222;
+            --tribal-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B4513' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--tribal-cream);
+            background-image: var(--tribal-pattern);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Gondi Script Font */
+        .gondi-text {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.5rem;
+            line-height: 2;
+        }
+
+        .masaram-text {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+        }
+
+        /* Tribal Pattern Border */
+        .tribal-border {
+            position: relative;
+        }
+
+        .tribal-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-terracotta) 0px,
+                    var(--tribal-terracotta) 10px,
+                    var(--tribal-accent) 10px,
+                    var(--tribal-accent) 20px,
+                    var(--tribal-primary) 20px,
+                    var(--tribal-primary) 30px,
+                    var(--tribal-accent) 30px,
+                    var(--tribal-accent) 40px);
+        }
+
+        .tribal-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-primary) 0px,
+                    var(--tribal-primary) 10px,
+                    var(--tribal-accent) 10px,
+                    var(--tribal-accent) 20px,
+                    var(--tribal-terracotta) 20px,
+                    var(--tribal-terracotta) 30px,
+                    var(--tribal-accent) 30px,
+                    var(--tribal-accent) 40px);
+        }
+
+        /* Tribal Decorative Elements */
+        .tribal-decoration {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.1;
+            color: var(--tribal-primary);
+            pointer-events: none;
+        }
+
+        .tribal-decoration-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-15deg);
+        }
+
+        .tribal-decoration-2 {
+            top: 30%;
+            right: 5%;
+            transform: rotate(15deg);
+        }
+
+        .tribal-decoration-3 {
+            bottom: 20%;
+            left: 10%;
+            transform: rotate(10deg);
+        }
+
+        .tribal-decoration-4 {
+            bottom: 10%;
+            right: 10%;
+            transform: rotate(-10deg);
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-earth) 100%);
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+            border-bottom: 3px solid var(--tribal-accent);
+        }
+
+        .announcement-bar a {
+            color: var(--tribal-accent);
+            text-decoration: none;
+        }
+
+        .announcement-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 0.75rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .navbar-brand .gondi-title {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--tribal-accent) 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-brand .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .navbar-brand .brand-text small {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link.active {
+            background: var(--tribal-accent) !important;
+            color: var(--tribal-dark) !important;
+        }
+
+        .btn-donate {
+            background: linear-gradient(135deg, #FF813F 0%, #FF5F1F 100%);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-donate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 95, 31, 0.4);
+            color: white;
+        }
+
+        .btn-donate i {
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 50%, var(--tribal-terracotta) 100%);
+            color: white;
+            padding: 4rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L100 50L50 100L0 50Z' fill='%23FFD700' fill-opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-section::after {
+            content: '𑴀𑴁𑴂𑴃𑴌𑴍𑴎𑴏𑴠𑴡𑴢𑴣';
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.03;
+            right: -10%;
+            top: -10%;
+            transform: rotate(-10deg);
+            white-space: nowrap;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid var(--tribal-accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge i {
+            color: var(--tribal-accent);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .gondi-highlight {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            color: var(--tribal-accent);
+            display: block;
+            font-size: 3.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-tribal {
+            background: linear-gradient(135deg, var(--tribal-accent) 0%, #FFA500 100%);
+            border: none;
+            color: var(--tribal-dark);
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-tribal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            color: var(--tribal-dark);
+        }
+
+        .btn-tribal-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-tribal-outline:hover {
+            background: white;
+            color: var(--tribal-dark);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-title .gondi-highlight {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(139, 69, 19, 0.2);
+        }
+
+        .stats-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .stats-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .stats-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Main Transliteration Card */
+        .transliteration-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .transliteration-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(139, 69, 19, 0.12);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transliteration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-terracotta) 0px,
+                    var(--tribal-terracotta) 15px,
+                    var(--tribal-accent) 15px,
+                    var(--tribal-accent) 30px,
+                    var(--tribal-primary) 30px,
+                    var(--tribal-primary) 45px,
+                    var(--tribal-accent) 45px,
+                    var(--tribal-accent) 60px);
+        }
+
+        .input-group-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .input-label {
+            font-weight: 600;
+            color: var(--tribal-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .input-label i {
+            color: var(--tribal-primary);
+            font-size: 1.2rem;
+        }
+
+        .input-hint {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .form-control-tribal {
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 1.25rem;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+
+        .form-control-tribal:focus {
+            border-color: var(--tribal-primary);
+            box-shadow: 0 0 0 4px rgba(139, 69, 19, 0.1);
+            outline: none;
+        }
+
+        .form-control-output {
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, var(--tribal-sand) 100%);
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 2rem;
+            line-height: 2;
+            color: var(--tribal-dark);
+            border: 2px dashed var(--tribal-secondary);
+        }
+
+        .sample-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .sample-chip {
+            background: var(--tribal-sand);
+            border: 1px solid var(--tribal-secondary);
+            color: var(--tribal-dark);
+            padding: 0.375rem 0.875rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sample-chip:hover {
+            background: var(--tribal-primary);
+            color: white;
+            border-color: var(--tribal-primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-action {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action-primary {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border: none;
+            color: white;
+        }
+
+        .btn-action-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.3);
+            color: white;
+        }
+
+        .btn-action-outline {
+            background: transparent;
+            border: 2px solid var(--tribal-primary);
+            color: var(--tribal-primary);
+        }
+
+        .btn-action-outline:hover {
+            background: var(--tribal-primary);
+            color: white;
+        }
+
+        /* Divider with Tribal Pattern */
+        .tribal-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .tribal-divider::before,
+        .tribal-divider::after {
+            content: '';
+            flex: 1;
+            height: 3px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-terracotta) 0px,
+                    var(--tribal-terracotta) 8px,
+                    transparent 8px,
+                    transparent 16px);
+        }
+
+        .tribal-divider-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 1rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Quick Reference Section */
+        .quick-reference-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 100%);
+            position: relative;
+        }
+
+        .quick-reference-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFD700' fill-opacity='0.03'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .quick-ref-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .quick-ref-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .quick-ref-card h5 {
+            color: var(--tribal-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quick-ref-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quick-ref-item:last-child {
+            border-bottom: none;
+        }
+
+        .quick-ref-item .key-combo {
+            background: var(--tribal-accent);
+            color: var(--tribal-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .quick-ref-item .result {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            color: white;
+        }
+
+        .quick-ref-item .description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 4rem 0;
+        }
+
+        .download-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-accent) 100%);
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(139, 69, 19, 0.15);
+        }
+
+        .download-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .download-card h4 {
+            color: var(--tribal-dark);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .download-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-card .btn-download {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border: none;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .download-card .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.3);
+            color: white;
+        }
+
+        /* Character Reference Section */
+        .reference-section {
+            padding: 4rem 0;
+            background: var(--tribal-sand);
+        }
+
+        .reference-card {
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+        }
+
+        .nav-pills-tribal .nav-link {
+            color: var(--tribal-dark);
+            border-radius: 50px;
+            padding: 0.625rem 1.25rem;
+            margin: 0.25rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills-tribal .nav-link:hover {
+            background: var(--tribal-sand);
+        }
+
+        .nav-pills-tribal .nav-link.active {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .char-item {
+            background: var(--tribal-cream);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .char-item:hover {
+            border-color: var(--tribal-primary);
+            background: white;
+            transform: scale(1.05);
+        }
+
+        .char-item .gondi-char {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 2rem;
+            color: var(--tribal-dark);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .char-item .itrans-key {
+            font-size: 0.75rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        /* Virtual Keyboard */
+        .keyboard-section {
+            padding: 4rem 0;
+        }
+
+        .keyboard-container {
+            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-dark) 100%);
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .keyboard-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .key {
+            background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
+            border: none;
+            border-radius: 10px;
+            min-width: 55px;
+            height: 65px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-shadow: 0 4px 0 #ccc, 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .key:hover {
+            background: linear-gradient(180deg, #fff 0%, #fff 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #ccc, 0 8px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .key:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #ccc, 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .key .gondi {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.4rem;
+            color: var(--tribal-dark);
+        }
+
+        .key .latin {
+            font-size: 0.65rem;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .key-special {
+            background: linear-gradient(180deg, var(--tribal-accent) 0%, #e6c200 100%);
+            box-shadow: 0 4px 0 #b8960a, 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .key-special:hover {
+            background: linear-gradient(180deg, #ffe44d 0%, var(--tribal-accent) 100%);
+        }
+
+        .key-wide {
+            min-width: 90px;
+        }
+
+        .key-extra-wide {
+            min-width: 180px;
+        }
+
+        @media (max-width: 576px) {
+            .key {
+                min-width: 42px;
+                height: 55px;
+            }
+
+            .key .gondi {
+                font-size: 1.1rem;
+            }
+
+            .key-wide {
+                min-width: 65px;
+            }
+
+            .key-extra-wide {
+                min-width: 120px;
+            }
+        }
+
+        /* Examples Section */
+        .examples-section {
+            padding: 4rem 0;
+            background: var(--tribal-cream);
+        }
+
+        .example-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 25px rgba(139, 69, 19, 0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 100%;
+            border-left: 4px solid var(--tribal-primary);
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px) translateX(5px);
+            box-shadow: 0 15px 40px rgba(139, 69, 19, 0.15);
+            border-left-color: var(--tribal-accent);
+        }
+
+        .example-input {
+            font-family: monospace;
+            background: var(--tribal-sand);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--tribal-dark);
+        }
+
+        .example-output {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 2rem;
+            color: var(--tribal-primary);
+            margin-top: 0.75rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 50%, var(--tribal-terracotta) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '𑴎𑴽𑴟𑵅𑴘𑴲 𑴝𑵆𑴩𑴟𑵄';
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.03;
+            left: -5%;
+            top: -20%;
+            transform: rotate(-5deg);
+            white-space: nowrap;
+            color: white;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--tribal-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-terracotta) 0px,
+                    var(--tribal-terracotta) 15px,
+                    var(--tribal-accent) 15px,
+                    var(--tribal-accent) 30px,
+                    var(--tribal-primary) 30px,
+                    var(--tribal-primary) 45px,
+                    var(--tribal-accent) 45px,
+                    var(--tribal-accent) 60px);
+        }
+
+        .footer-brand .gondi-title {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 2.5rem;
+            color: var(--tribal-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--tribal-accent);
+            color: var(--tribal-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            color: var(--tribal-accent);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--tribal-accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: var(--tribal-accent);
+            text-decoration: none;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Toast */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1050;
+        }
+
+        .toast-tribal {
+            background: linear-gradient(135deg, var(--tribal-forest) 0%, #1e6e1e 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: var(--tribal-dark);
+                padding: 1rem;
+                border-radius: 15px;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .cta-title {
+                font-size: 1.75rem;
+            }
+
+            .transliteration-card {
+                padding: 1.5rem;
+            }
+
+            .form-control-output {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone-fill text-warning"></i>
+                    <span>Help preserve Gond tribal heritage!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/AshGond" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-grid me-1"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">
+                            <i class="bi bi-download me-1"></i> Download
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.html">
+                            <i class="bi bi-calendar3 me-1"></i> Calendar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section tribal-border">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-badge">
+                        <i class="bi bi-stars"></i>
+                        <span>Free & Open Source Tool</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Type in
+                        <span class="gondi-highlight">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀</span>
+                        Masaram Gondi Script
+                    </h1>
+                    <p class="hero-subtitle">
+                        Preserve and promote the ancient Gond tribal heritage. Type in ITRANS (Roman) and instantly see
+                        beautiful Masaram Gondi script output.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#transliterator" class="btn-tribal">
+                            <i class="bi bi-keyboard"></i> Start Typing
+                        </a>
+                        <a href="download.html" class="btn-tribal-outline">
+                            <i class="bi bi-download"></i> Download App
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <div class="gondi-text" style="font-size: 6rem; opacity: 0.9; line-height: 1.3;">
+                        𑴀𑴁𑴂𑴃𑴄𑴅<br>
+                        𑴌𑴍𑴎𑴏𑴐<br>
+                        𑴠𑴡𑴢𑴣𑴤
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-alphabet"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>50+ Characters</h3>
+                            <p>Complete Gondi alphabet support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>3M+ Speakers</h3>
+                            <p>Gond tribal community</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-download"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>10K+ Downloads</h3>
+                            <p>Across all platforms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Transliteration Section -->
+    <section id="transliterator" class="transliteration-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="bi bi-translate"></i> Transliterator
+                </div>
+                <h2 class="section-title">Type in Roman, Get Gondi</h2>
+                <p class="section-subtitle">
+                    Simply type using your regular keyboard and watch the magic happen
+                </p>
+            </div>
+
+            <div class="transliteration-card">
+                <div class="row g-4">
+                    <!-- Input Section -->
+                    <div class="col-lg-6">
+                        <div class="input-group-label">
+                            <label class="input-label">
+                                <i class="bi bi-pencil-square"></i>
+                                Type in ITRANS (Roman)
+                            </label>
+                            <span class="input-hint">Use lowercase for soft, UPPERCASE for hard sounds</span>
+                        </div>
+                        <textarea id="inputText" class="form-control form-control-tribal" rows="6"
+                            placeholder="Type here... Example: namaste, meraa naama rajesha hai" autofocus></textarea>
+                        <div class="sample-chips">
+                            <span class="sample-chip" onclick="insertSample('namaste')">namaste</span>
+                            <span class="sample-chip" onclick="insertSample('goMDI bhAshA')">goMDI bhAshA</span>
+                            <span class="sample-chip" onclick="insertSample('siddhArthA')">siddhArthA</span>
+                            <span class="sample-chip" onclick="insertSample('kro khro gro')">kro khro gro</span>
+                            <span class="sample-chip" onclick="insertSample('mArkA pakkA')">mArkA pakkA</span>
+                            <span class="sample-chip" onclick="insertSample('bhAratam')">bhAratam</span>
+                        </div>
+                    </div>
+
+                    <!-- Output Section -->
+                    <div class="col-lg-6">
+                        <div class="input-group-label">
+                            <label class="input-label">
+                                <i class="bi bi-translate"></i>
+                                Masaram Gondi Output
+                            </label>
+                            <span class="input-hint">Click to copy</span>
+                        </div>
+                        <textarea id="outputText" class="form-control form-control-tribal form-control-output" rows="6"
+                            readonly placeholder="𑴎𑴽𑴟𑵅𑴘𑴲 𑴧𑴲𑴠𑴲..." onclick="copyOutput()"></textarea>
+                        <div class="action-buttons">
+                            <button class="btn btn-action btn-action-primary" onclick="copyOutput()">
+                                <i class="bi bi-clipboard"></i> Copy Text
+                            </button>
+                            <button class="btn btn-action btn-action-outline" onclick="clearAll()">
+                                <i class="bi bi-eraser"></i> Clear
+                            </button>
+                            <button class="btn btn-action btn-action-outline" onclick="downloadText()">
+                                <i class="bi bi-download"></i> Download
+                            </button>
+                            <button class="btn btn-action btn-action-outline" onclick="shareText()">
+                                <i class="bi bi-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribal Divider -->
+    <div class="tribal-divider">
+        <div class="tribal-divider-icon">
+            <i class="bi bi-diamond-fill"></i>
+        </div>
+    </div>
+
+    <!-- Quick Reference Section -->
+    <section class="quick-reference-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" style="background: var(--tribal-accent); color: var(--tribal-dark);">
+                    <i class="bi bi-lightbulb"></i> Quick Tips
+                </div>
+                <h2 class="section-title text-white">Master the Keyboard</h2>
+                <p class="section-subtitle text-white opacity-75">
+                    Learn the most common patterns and shortcuts
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="quick-ref-card">
+                        <h5><i class="bi bi-music-note-beamed"></i> Vowels (स्वर)</h5>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">a</span>
+                            <span class="result">𑴀</span>
+                            <span class="description">Short a</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">aa</span>
+                            <span class="result">𑴁</span>
+                            <span class="description">Long aa</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">i / ii</span>
+                            <span class="result">𑴂 / 𑴃</span>
+                            <span class="description">Short / Long i</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">u / uu</span>
+                            <span class="result">𑴄 / 𑴅</span>
+                            <span class="description">Short / Long u</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="quick-ref-card">
+                        <h5><i class="bi bi-layers"></i> Conjuncts (संयुक्त)</h5>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">kka</span>
+                            <span class="result">𑴌𑵅𑴌</span>
+                            <span class="description">Double ka</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">kra</span>
+                            <span class="result">𑴌𑵇</span>
+                            <span class="description">Ka + rakar</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">rka</span>
+                            <span class="result">𑵆𑴌</span>
+                            <span class="description">Repha + ka</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">x</span>
+                            <span class="result">𑴮</span>
+                            <span class="description">Ksha ligature</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="quick-ref-card">
+                        <h5><i class="bi bi-star-fill"></i> Special Marks</h5>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">M</span>
+                            <span class="result">𑵀</span>
+                            <span class="description">Anusvara</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">H</span>
+                            <span class="result">𑵁</span>
+                            <span class="description">Visarga</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">..</span>
+                            <span class="result">।</span>
+                            <span class="description">Danda</span>
+                        </div>
+                        <div class="quick-ref-item">
+                            <span class="key-combo">...</span>
+                            <span class="result">॥</span>
+                            <span class="description">Double Danda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="bi bi-cloud-download"></i> Download
+                </div>
+                <h2 class="section-title">Get It On Your Device</h2>
+                <p class="section-subtitle">
+                    Use Gondi Transliterator offline on any platform
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="bi bi-android2"></i>
+                        </div>
+                        <h4>Android App</h4>
+                        <p>Full keyboard with auto-suggestions and offline support</p>
+                        <a href="download.html#android" class="btn-download">
+                            <i class="bi bi-google-play"></i> Download APK
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="bi bi-windows"></i>
+                        </div>
+                        <h4>Windows App</h4>
+                        <p>Desktop application for Windows 10/11 with system keyboard</p>
+                        <a href="download.html#windows" class="btn-download">
+                            <i class="bi bi-download"></i> Download EXE
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="bi bi-keyboard"></i>
+                        </div>
+                        <h4>Keyman Keyboard</h4>
+                        <p>Cross-platform keyboard for all operating systems</p>
+                        <a href="https://keyman.com/keyboards/masaram_gondi" target="_blank" class="btn-download">
+                            <i class="bi bi-box-arrow-up-right"></i> Get Keyman
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Reference Section -->
+    <section id="reference" class="reference-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="bi bi-grid-3x3-gap"></i> Reference
+                </div>
+                <h2 class="section-title">Complete Character Map</h2>
+                <p class="section-subtitle">
+                    Click any character to insert it into the input field
+                </p>
+            </div>
+
+            <div class="reference-card">
+                <!-- Tab Navigation -->
+                <ul class="nav nav-pills nav-pills-tribal justify-content-center mb-4" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#vowels-tab">
+                            <i class="bi bi-music-note me-1"></i> Vowels
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#consonants-tab">
+                            <i class="bi bi-grid me-1"></i> Consonants
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#numbers-tab">
+                            <i class="bi bi-123 me-1"></i> Numbers
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#special-tab">
+                            <i class="bi bi-star me-1"></i> Special
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Vowels Tab -->
+                    <div class="tab-pane fade show active" id="vowels-tab">
+                        <div class="char-grid">
+                            <div class="char-item" onclick="insertChar('a')">
+                                <span class="gondi-char">𑴀</span>
+                                <span class="itrans-key">a</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('aa')">
+                                <span class="gondi-char">𑴁</span>
+                                <span class="itrans-key">aa / A</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('i')">
+                                <span class="gondi-char">𑴂</span>
+                                <span class="itrans-key">i</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ii')">
+                                <span class="gondi-char">𑴃</span>
+                                <span class="itrans-key">ii / I</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('u')">
+                                <span class="gondi-char">𑴄</span>
+                                <span class="itrans-key">u</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('uu')">
+                                <span class="gondi-char">𑴅</span>
+                                <span class="itrans-key">uu / U</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('e')">
+                                <span class="gondi-char">𑴆</span>
+                                <span class="itrans-key">e</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ai')">
+                                <span class="gondi-char">𑴈</span>
+                                <span class="itrans-key">ai</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('o')">
+                                <span class="gondi-char">𑴉</span>
+                                <span class="itrans-key">o</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('au')">
+                                <span class="gondi-char">𑴋</span>
+                                <span class="itrans-key">au</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consonants Tab -->
+                    <div class="tab-pane fade" id="consonants-tab">
+                        <h6 class="text-muted mb-3">Velar (कवर्ग)</h6>
+                        <div class="char-grid mb-4">
+                            <div class="char-item" onclick="insertChar('ka')">
+                                <span class="gondi-char">𑴌</span>
+                                <span class="itrans-key">ka</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('kha')">
+                                <span class="gondi-char">𑴍</span>
+                                <span class="itrans-key">kha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ga')">
+                                <span class="gondi-char">𑴎</span>
+                                <span class="itrans-key">ga</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('gha')">
+                                <span class="gondi-char">𑴏</span>
+                                <span class="itrans-key">gha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('nga')">
+                                <span class="gondi-char">𑴐</span>
+                                <span class="itrans-key">nga</span>
+                            </div>
+                        </div>
+
+                        <h6 class="text-muted mb-3">Palatal (चवर्ग)</h6>
+                        <div class="char-grid mb-4">
+                            <div class="char-item" onclick="insertChar('cha')">
+                                <span class="gondi-char">𑴑</span>
+                                <span class="itrans-key">cha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('chha')">
+                                <span class="gondi-char">𑴒</span>
+                                <span class="itrans-key">chha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ja')">
+                                <span class="gondi-char">𑴓</span>
+                                <span class="itrans-key">ja</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('jha')">
+                                <span class="gondi-char">𑴔</span>
+                                <span class="itrans-key">jha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('nya')">
+                                <span class="gondi-char">𑴕</span>
+                                <span class="itrans-key">nya</span>
+                            </div>
+                        </div>
+
+                        <h6 class="text-muted mb-3">Retroflex (टवर्ग)</h6>
+                        <div class="char-grid mb-4">
+                            <div class="char-item" onclick="insertChar('Ta')">
+                                <span class="gondi-char">𑴖</span>
+                                <span class="itrans-key">Ta</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('Tha')">
+                                <span class="gondi-char">𑴗</span>
+                                <span class="itrans-key">Tha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('Da')">
+                                <span class="gondi-char">𑴘</span>
+                                <span class="itrans-key">Da</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('Dha')">
+                                <span class="gondi-char">𑴙</span>
+                                <span class="itrans-key">Dha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('Na')">
+                                <span class="gondi-char">𑴚</span>
+                                <span class="itrans-key">Na</span>
+                            </div>
+                        </div>
+
+                        <h6 class="text-muted mb-3">Dental (तवर्ग)</h6>
+                        <div class="char-grid mb-4">
+                            <div class="char-item" onclick="insertChar('ta')">
+                                <span class="gondi-char">𑴛</span>
+                                <span class="itrans-key">ta</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('tha')">
+                                <span class="gondi-char">𑴜</span>
+                                <span class="itrans-key">tha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('da')">
+                                <span class="gondi-char">𑴝</span>
+                                <span class="itrans-key">da</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('dha')">
+                                <span class="gondi-char">𑴞</span>
+                                <span class="itrans-key">dha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('na')">
+                                <span class="gondi-char">𑴟</span>
+                                <span class="itrans-key">na</span>
+                            </div>
+                        </div>
+
+                        <h6 class="text-muted mb-3">Labial (पवर्ग)</h6>
+                        <div class="char-grid mb-4">
+                            <div class="char-item" onclick="insertChar('pa')">
+                                <span class="gondi-char">𑴠</span>
+                                <span class="itrans-key">pa</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('pha')">
+                                <span class="gondi-char">𑴡</span>
+                                <span class="itrans-key">pha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ba')">
+                                <span class="gondi-char">𑴢</span>
+                                <span class="itrans-key">ba</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('bha')">
+                                <span class="gondi-char">𑴣</span>
+                                <span class="itrans-key">bha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ma')">
+                                <span class="gondi-char">𑴤</span>
+                                <span class="itrans-key">ma</span>
+                            </div>
+                        </div>
+
+                        <h6 class="text-muted mb-3">Semivowels & Sibilants</h6>
+                        <div class="char-grid">
+                            <div class="char-item" onclick="insertChar('ya')">
+                                <span class="gondi-char">𑴥</span>
+                                <span class="itrans-key">ya</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ra')">
+                                <span class="gondi-char">𑴦</span>
+                                <span class="itrans-key">ra</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('la')">
+                                <span class="gondi-char">𑴧</span>
+                                <span class="itrans-key">la</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('va')">
+                                <span class="gondi-char">𑴨</span>
+                                <span class="itrans-key">va</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('sha')">
+                                <span class="gondi-char">𑴩</span>
+                                <span class="itrans-key">sha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ssa')">
+                                <span class="gondi-char">𑴪</span>
+                                <span class="itrans-key">Sha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('sa')">
+                                <span class="gondi-char">𑴫</span>
+                                <span class="itrans-key">sa</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('ha')">
+                                <span class="gondi-char">𑴬</span>
+                                <span class="itrans-key">ha</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('La')">
+                                <span class="gondi-char">𑴭</span>
+                                <span class="itrans-key">La</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('xa')">
+                                <span class="gondi-char">𑴮</span>
+                                <span class="itrans-key">ksha</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Numbers Tab -->
+                    <div class="tab-pane fade" id="numbers-tab">
+                        <div class="char-grid">
+                            <div class="char-item" onclick="insertChar('0')">
+                                <span class="gondi-char">𑵐</span>
+                                <span class="itrans-key">0</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('1')">
+                                <span class="gondi-char">𑵑</span>
+                                <span class="itrans-key">1</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('2')">
+                                <span class="gondi-char">𑵒</span>
+                                <span class="itrans-key">2</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('3')">
+                                <span class="gondi-char">𑵓</span>
+                                <span class="itrans-key">3</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('4')">
+                                <span class="gondi-char">𑵔</span>
+                                <span class="itrans-key">4</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('5')">
+                                <span class="gondi-char">𑵕</span>
+                                <span class="itrans-key">5</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('6')">
+                                <span class="gondi-char">𑵖</span>
+                                <span class="itrans-key">6</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('7')">
+                                <span class="gondi-char">𑵗</span>
+                                <span class="itrans-key">7</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('8')">
+                                <span class="gondi-char">𑵘</span>
+                                <span class="itrans-key">8</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('9')">
+                                <span class="gondi-char">𑵙</span>
+                                <span class="itrans-key">9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Tab -->
+                    <div class="tab-pane fade" id="special-tab">
+                        <div class="char-grid">
+                            <div class="char-item" onclick="insertChar('M')">
+                                <span class="gondi-char">𑵀</span>
+                                <span class="itrans-key">M (anusvara)</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('H')">
+                                <span class="gondi-char">𑵁</span>
+                                <span class="itrans-key">H (visarga)</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('MM')">
+                                <span class="gondi-char">𑵃</span>
+                                <span class="itrans-key">MM (chandrabindu)</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('^')">
+                                <span class="gondi-char">𑵄</span>
+                                <span class="itrans-key">^ (halanta)</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('..')">
+                                <span class="gondi-char">।</span>
+                                <span class="itrans-key">.. (danda)</span>
+                            </div>
+                            <div class="char-item" onclick="insertChar('...')">
+                                <span class="gondi-char">॥</span>
+                                <span class="itrans-key">... (double danda)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Keyboard Section -->
+    <section id="keyboard" class="keyboard-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="bi bi-keyboard"></i> Virtual Keyboard
+                </div>
+                <h2 class="section-title">On-Screen Keyboard</h2>
+                <p class="section-subtitle">
+                    Click keys to type or use your physical keyboard
+                </p>
+            </div>
+
+            <div class="keyboard-container">
+                <!-- Numbers Row -->
+                <div class="keyboard-row">
+                    <div class="key" onclick="insertChar('1')"><span class="gondi">𑵑</span><span class="latin">1</span>
+                    </div>
+                    <div class="key" onclick="insertChar('2')"><span class="gondi">𑵒</span><span class="latin">2</span>
+                    </div>
+                    <div class="key" onclick="insertChar('3')"><span class="gondi">𑵓</span><span class="latin">3</span>
+                    </div>
+                    <div class="key" onclick="insertChar('4')"><span class="gondi">𑵔</span><span class="latin">4</span>
+                    </div>
+                    <div class="key" onclick="insertChar('5')"><span class="gondi">𑵕</span><span class="latin">5</span>
+                    </div>
+                    <div class="key" onclick="insertChar('6')"><span class="gondi">𑵖</span><span class="latin">6</span>
+                    </div>
+                    <div class="key" onclick="insertChar('7')"><span class="gondi">𑵗</span><span class="latin">7</span>
+                    </div>
+                    <div class="key" onclick="insertChar('8')"><span class="gondi">𑵘</span><span class="latin">8</span>
+                    </div>
+                    <div class="key" onclick="insertChar('9')"><span class="gondi">𑵙</span><span class="latin">9</span>
+                    </div>
+                    <div class="key" onclick="insertChar('0')"><span class="gondi">𑵐</span><span class="latin">0</span>
+                    </div>
+                </div>
+
+                <!-- Vowels Row -->
+                <div class="keyboard-row">
+                    <div class="key" onclick="insertChar('a')"><span class="gondi">𑴀</span><span class="latin">a</span>
+                    </div>
+                    <div class="key" onclick="insertChar('aa')"><span class="gondi">𑴁</span><span
+                            class="latin">aa</span></div>
+                    <div class="key" onclick="insertChar('i')"><span class="gondi">𑴂</span><span class="latin">i</span>
+                    </div>
+                    <div class="key" onclick="insertChar('ii')"><span class="gondi">𑴃</span><span
+                            class="latin">ii</span></div>
+                    <div class="key" onclick="insertChar('u')"><span class="gondi">𑴄</span><span class="latin">u</span>
+                    </div>
+                    <div class="key" onclick="insertChar('uu')"><span class="gondi">𑴅</span><span
+                            class="latin">uu</span></div>
+                    <div class="key" onclick="insertChar('e')"><span class="gondi">𑴆</span><span class="latin">e</span>
+                    </div>
+                    <div class="key" onclick="insertChar('ai')"><span class="gondi">𑴈</span><span
+                            class="latin">ai</span></div>
+                    <div class="key" onclick="insertChar('o')"><span class="gondi">𑴉</span><span class="latin">o</span>
+                    </div>
+                    <div class="key" onclick="insertChar('au')"><span class="gondi">𑴋</span><span
+                            class="latin">au</span></div>
+                </div>
+
+                <!-- Consonants Row 1 -->
+                <div class="keyboard-row">
+                    <div class="key" onclick="insertChar('ka')"><span class="gondi">𑴌</span><span
+                            class="latin">ka</span></div>
+                    <div class="key" onclick="insertChar('kha')"><span class="gondi">𑴍</span><span
+                            class="latin">kha</span></div>
+                    <div class="key" onclick="insertChar('ga')"><span class="gondi">𑴎</span><span
+                            class="latin">ga</span></div>
+                    <div class="key" onclick="insertChar('gha')"><span class="gondi">𑴏</span><span
+                            class="latin">gha</span></div>
+                    <div class="key" onclick="insertChar('cha')"><span class="gondi">𑴑</span><span
+                            class="latin">cha</span></div>
+                    <div class="key" onclick="insertChar('chha')"><span class="gondi">𑴒</span><span
+                            class="latin">chha</span></div>
+                    <div class="key" onclick="insertChar('ja')"><span class="gondi">𑴓</span><span
+                            class="latin">ja</span></div>
+                    <div class="key" onclick="insertChar('jha')"><span class="gondi">𑴔</span><span
+                            class="latin">jha</span></div>
+                    <div class="key" onclick="insertChar('Ta')"><span class="gondi">𑴖</span><span
+                            class="latin">Ta</span></div>
+                    <div class="key" onclick="insertChar('Tha')"><span class="gondi">𑴗</span><span
+                            class="latin">Tha</span></div>
+                </div>
+
+                <!-- Consonants Row 2 -->
+                <div class="keyboard-row">
+                    <div class="key" onclick="insertChar('Da')"><span class="gondi">𑴘</span><span
+                            class="latin">Da</span></div>
+                    <div class="key" onclick="insertChar('Dha')"><span class="gondi">𑴙</span><span
+                            class="latin">Dha</span></div>
+                    <div class="key" onclick="insertChar('ta')"><span class="gondi">𑴛</span><span
+                            class="latin">ta</span></div>
+                    <div class="key" onclick="insertChar('tha')"><span class="gondi">𑴜</span><span
+                            class="latin">tha</span></div>
+                    <div class="key" onclick="insertChar('da')"><span class="gondi">𑴝</span><span
+                            class="latin">da</span></div>
+                    <div class="key" onclick="insertChar('dha')"><span class="gondi">𑴞</span><span
+                            class="latin">dha</span></div>
+                    <div class="key" onclick="insertChar('na')"><span class="gondi">𑴟</span><span
+                            class="latin">na</span></div>
+                    <div class="key" onclick="insertChar('pa')"><span class="gondi">𑴠</span><span
+                            class="latin">pa</span></div>
+                    <div class="key" onclick="insertChar('pha')"><span class="gondi">𑴡</span><span
+                            class="latin">pha</span></div>
+                    <div class="key" onclick="insertChar('ba')"><span class="gondi">𑴢</span><span
+                            class="latin">ba</span></div>
+                </div>
+
+                <!-- Consonants Row 3 -->
+                <div class="keyboard-row">
+                    <div class="key" onclick="insertChar('bha')"><span class="gondi">𑴣</span><span
+                            class="latin">bha</span></div>
+                    <div class="key" onclick="insertChar('ma')"><span class="gondi">𑴤</span><span
+                            class="latin">ma</span></div>
+                    <div class="key" onclick="insertChar('ya')"><span class="gondi">𑴥</span><span
+                            class="latin">ya</span></div>
+                    <div class="key" onclick="insertChar('ra')"><span class="gondi">𑴦</span><span
+                            class="latin">ra</span></div>
+                    <div class="key" onclick="insertChar('la')"><span class="gondi">𑴧</span><span
+                            class="latin">la</span></div>
+                    <div class="key" onclick="insertChar('va')"><span class="gondi">𑴨</span><span
+                            class="latin">va</span></div>
+                    <div class="key" onclick="insertChar('sha')"><span class="gondi">𑴩</span><span
+                            class="latin">sha</span></div>
+                    <div class="key" onclick="insertChar('sa')"><span class="gondi">𑴫</span><span
+                            class="latin">sa</span></div>
+                    <div class="key" onclick="insertChar('ha')"><span class="gondi">𑴬</span><span
+                            class="latin">ha</span></div>
+                    <div class="key" onclick="insertChar('xa')"><span class="gondi">𑴮</span><span
+                            class="latin">ksha</span></div>
+                </div>
+
+                <!-- Special Row -->
+                <div class="keyboard-row">
+                    <div class="key key-special" onclick="insertChar('M')"><span class="gondi">𑵀</span><span
+                            class="latin">M</span></div>
+                    <div class="key key-special" onclick="insertChar('H')"><span class="gondi">𑵁</span><span
+                            class="latin">H</span></div>
+                    <div class="key" onclick="insertChar('..')"><span class="gondi">।</span><span
+                            class="latin">..</span></div>
+                    <div class="key key-extra-wide" onclick="insertChar(' ')"><span class="latin">Space</span></div>
+                    <div class="key key-wide key-special" onclick="backspace()"><span class="latin">⌫ Delete</span>
+                    </div>
+                    <div class="key key-wide key-special" onclick="clearAll()"><span class="latin">Clear</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section class="examples-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="bi bi-lightbulb"></i> Examples
+                </div>
+                <h2 class="section-title">Try These Examples</h2>
+                <p class="section-subtitle">
+                    Click any example to load it into the transliterator
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="example-card" onclick="insertSample('namaste')">
+                        <div class="example-input">namaste</div>
+                        <div class="example-output">𑴟𑴤𑴫𑵅𑴛𑴺</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="example-card" onclick="insertSample('goMDI bhAshA')">
+                        <div class="example-input">goMDI bhAshA</div>
+                        <div class="example-output">𑴎𑴽𑵀𑴘𑴳 𑴣𑴱𑴩𑴱</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="example-card" onclick="insertSample('siddhArthA')">
+                        <div class="example-input">siddhArthA</div>
+                        <div class="example-output">𑴫𑴲𑴝𑵅𑴞𑵆𑴜𑴱</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="example-card" onclick="insertSample('kro khro gro')">
+                        <div class="example-input">kro khro gro</div>
+                        <div class="example-output">𑴌𑵇𑴽 𑴍𑵇𑴽 𑴎𑵇𑴽</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="example-card" onclick="insertSample('mArkA pakkA')">
+                        <div class="example-input">mArkA pakkA</div>
+                        <div class="example-output">𑴤𑴱𑵆𑴌𑴱 𑴠𑴌𑵅𑴌𑴱</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="example-card" onclick="insertSample('bhAratam')">
+                        <div class="example-input">bhAratam</div>
+                        <div class="example-output">𑴣𑴱𑴦𑴛𑴤𑵄</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Support Gondi Heritage
+                </h2>
+                <p class="cta-subtitle">
+                    Your support helps preserve and promote the ancient Gond tribal language and culture for future
+                    generations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn-tribal animate-pulse">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <a href="https://github.com/AshGond" target="_blank" class="btn-tribal-outline">
+                        <i class="bi bi-github"></i> Star on GitHub
+                    </a>
+                    <a href="contact.html" class="btn-tribal-outline">
+                        <i class="bi bi-envelope"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving and promoting Gond tribal heritage through technology. Free and open-source tools
+                            for the Masaram Gondi script.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" title="Twitter">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" title="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/" target="_blank" title="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com" title="Email">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="gondi-translator.html"><i class="bi bi-chevron-right"></i> Transliterator</a>
+                        </li>
+                        <li><a href="projects.html"><i class="bi bi-chevron-right"></i> Projects</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right"></i> Download</a></li>
+                        <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Calendar</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="#reference"><i class="bi bi-chevron-right"></i> Character Map</a></li>
+                        <li><a href="#keyboard"><i class="bi bi-chevron-right"></i> Virtual Keyboard</a></li>
+                        <li><a href="https://keyman.com/keyboards/masaram_gondi" target="_blank"><i
+                                    class="bi bi-chevron-right"></i> Keyman</a></li>
+                        <li><a href="https://github.com/hinditutorpoint/gondi-transliterator" target="_blank"><i
+                                    class="bi bi-chevron-right"></i>
+                                Source Code</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Support the Project</h6>
+                    <p class="text-white-50 mb-3">Your donation helps keep this project alive and growing.</p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate mb-3">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-heart-fill text-danger"></i> Made with love for the Gond community
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                    All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Toast Container -->
+    <div class="toast-container">
+        <div class="toast toast-tribal" id="copyToast" role="alert">
+            <div class="toast-body d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Text copied to clipboard!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Transliteration Engine -->
+    <script src="transliterator.js"></script>
+
+    <script>
+        // UI Functions
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+
+        inputText.addEventListener('input', function () {
+            outputText.value = transliterate(this.value);
+        });
+
+        function insertChar(char) {
+            const start = inputText.selectionStart;
+            const end = inputText.selectionEnd;
+            const text = inputText.value;
+
+            inputText.value = text.substring(0, start) + char + text.substring(end);
+            inputText.selectionStart = inputText.selectionEnd = start + char.length;
+            inputText.focus();
+
+            outputText.value = transliterate(inputText.value);
+        }
+
+        function insertSample(sample) {
+            inputText.value = sample;
+            outputText.value = transliterate(sample);
+            inputText.focus();
+
+            // Scroll to transliterator
+            document.getElementById('transliterator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function backspace() {
+            const start = inputText.selectionStart;
+            const text = inputText.value;
+
+            if (start > 0) {
+                inputText.value = text.substring(0, start - 1) + text.substring(start);
+                inputText.selectionStart = inputText.selectionEnd = start - 1;
+            }
+            inputText.focus();
+            outputText.value = transliterate(inputText.value);
+        }
+
+        function copyOutput() {
+            if (!outputText.value) return;
+
+            navigator.clipboard.writeText(outputText.value).then(() => {
+                const toast = new bootstrap.Toast(document.getElementById('copyToast'));
+                toast.show();
+            });
+        }
+
+        function clearAll() {
+            inputText.value = '';
+            outputText.value = '';
+            inputText.focus();
+        }
+
+        function downloadText() {
+            const text = outputText.value;
+            if (!text) return;
+
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'gondi-text.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function shareText() {
+            const text = outputText.value;
+            if (!text) return;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Masaram Gondi Text',
+                    text: text,
+                    url: window.location.href
+                });
+            } else {
+                copyOutput();
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll to top button visibility
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                copyOutput();
+            }
+        });
+    </script>
+</body>
+
+</html>
