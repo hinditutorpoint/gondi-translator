@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Book Details | Gondi Darshan Digital Library">
+    <meta name="description"
+        content="Explore detailed information about this book from our Gondi literature collection. Read online or download for free.">
+    <meta name="keywords"
+        content="Gondi book, book details, digital library, Archive.org, free books, Gondi literature">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gondidarshan.org/book-detail.html">
+    <meta property="og:title" content="Book Details | Gondi Darshan">
+    <meta property="og:description" content="Explore this book from our Gondi literature collection.">
+    <meta property="og:image" content="https://gondidarshan.org/images/book-detail-og.jpg">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gondidarshan.org/book-detail.html">
+    <meta property="twitter:title" content="Book Details | Gondi Darshan">
+    <meta property="twitter:description" content="Explore this book from our Gondi literature collection.">
+    <meta property="twitter:image" content="https://gondidarshan.org/images/book-detail-twitter.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gondidarshan.org/book-detail.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <title>Book Details | 𑴎𑴽𑴘𑴳𑵀 Gondi Darshan</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "Book Title",
+        "description": "Book description",
+        "publisher": "Gondi Darshan",
+        "inLanguage": "en"
+    }
+    </script>
+
+    <script>navigator.serviceWorker.register("pwabuilder-adv-sw.js")</script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Book Detail Page Styles */
+        .breadcrumb-section {
+            background: var(--tribal-cream);
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--tribal-sand);
+        }
+
+        .breadcrumb-link {
+            color: var(--tribal-earth);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb-link:hover {
+            color: var(--tribal-primary);
+        }
+
+        .breadcrumb-separator {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+
+        .breadcrumb-current {
+            color: var(--tribal-terracotta);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .book-detail-section {
+            padding: 2rem 0 3rem;
+            background: var(--tribal-cream);
+            background-image: var(--tribal-pattern);
+            min-height: 70vh;
+        }
+
+        .book-detail-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .book-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-terracotta) 0px,
+                    var(--tribal-terracotta) 12px,
+                    var(--tribal-accent) 12px,
+                    var(--tribal-accent) 24px,
+                    var(--tribal-primary) 24px,
+                    var(--tribal-primary) 36px,
+                    var(--tribal-accent) 36px,
+                    var(--tribal-accent) 48px);
+        }
+
+        .book-cover-container {
+            background: linear-gradient(135deg, var(--tribal-sand) 0%, var(--tribal-cream) 100%);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .book-cover-large {
+            max-width: 100%;
+            max-height: 350px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .book-cover-placeholder-large {
+            width: 200px;
+            height: 280px;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--tribal-secondary);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-info-container {
+            padding: 2rem;
+        }
+
+        .book-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .book-badge {
+            background: var(--tribal-sand);
+            color: var(--tribal-dark);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .book-badge i {
+            color: var(--tribal-terracotta);
+        }
+
+        .book-badge-primary {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+        }
+
+        .book-badge-primary i {
+            color: white;
+        }
+
+        .book-detail-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--tribal-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .book-detail-author {
+            font-size: 1rem;
+            color: var(--tribal-earth);
+            margin-bottom: 1.25rem;
+        }
+
+        .book-detail-author a {
+            color: var(--tribal-terracotta);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .book-detail-author a:hover {
+            text-decoration: underline;
+        }
+
+        .book-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 0;
+            border-top: 2px dashed var(--tribal-sand);
+            border-bottom: 2px dashed var(--tribal-sand);
+        }
+
+        .book-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .book-stat-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--tribal-cream);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tribal-terracotta);
+            font-size: 1rem;
+        }
+
+        .book-stat-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-stat-label {
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .book-stat-value {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+        }
+
+        .book-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .book-description h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .book-description p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .book-subjects {
+            margin-bottom: 1.5rem;
+        }
+
+        .book-subjects h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .subject-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .subject-tag {
+            background: var(--tribal-cream);
+            border: 1px solid var(--tribal-secondary);
+            color: var(--tribal-earth);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .subject-tag:hover {
+            background: var(--tribal-primary);
+            border-color: var(--tribal-primary);
+            color: white;
+        }
+
+        .book-actions-large {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-book-large {
+            padding: 0.85rem 1.75rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-read-large {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-read-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+            color: white;
+        }
+
+        .btn-download-large {
+            background: white;
+            border: 2px solid var(--tribal-primary);
+            color: var(--tribal-primary);
+        }
+
+        .btn-download-large:hover {
+            background: var(--tribal-primary);
+            color: white;
+        }
+
+        .btn-share {
+            background: var(--tribal-accent);
+            border: none;
+            color: var(--tribal-dark);
+        }
+
+        .btn-share:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Download Options */
+        .download-options {
+            background: var(--tribal-cream);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .download-options h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-options h4 i {
+            color: var(--tribal-terracotta);
+        }
+
+        .download-format-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .download-format-item {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: var(--tribal-dark);
+        }
+
+        .download-format-item:hover {
+            border-color: var(--tribal-primary);
+            background: var(--tribal-sand);
+            transform: translateY(-2px);
+            color: var(--tribal-dark);
+        }
+
+        .format-icon {
+            font-size: 1.5rem;
+            color: var(--tribal-terracotta);
+            margin-bottom: 0.35rem;
+        }
+
+        .format-name {
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .format-size {
+            font-size: 0.7rem;
+            color: #888;
+        }
+
+        /* Related Books */
+        .related-section {
+            padding: 2rem 0;
+        }
+
+        .related-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .related-title i {
+            color: var(--tribal-terracotta);
+        }
+
+        /* Book Preview */
+        .book-preview-section {
+            background: var(--tribal-dark);
+            padding: 2rem;
+            margin-top: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .book-preview-title {
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .book-preview-title i {
+            color: var(--tribal-accent);
+        }
+
+        .preview-frame {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .preview-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Loading State */
+        .detail-skeleton {
+            animation: shimmer 1.5s infinite;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            border-radius: 8px;
+        }
+
+        .skeleton-title {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skeleton-author {
+            height: 24px;
+            width: 60%;
+            margin-bottom: 20px;
+        }
+
+        .skeleton-description {
+            height: 100px;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Book Card (for related) */
+        .book-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(139, 69, 19, 0.18);
+        }
+
+        .book-cover {
+            height: 220px;
+            background: linear-gradient(135deg, var(--tribal-sand) 0%, var(--tribal-cream) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-cover-placeholder {
+            font-size: 4rem;
+            color: var(--tribal-secondary);
+            opacity: 0.5;
+        }
+
+        .book-content {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.35rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-author {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .btn-book {
+            flex: 1;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-read {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-read:hover {
+            color: white;
+        }
+
+        @media (max-width: 991px) {
+            .book-cover-container {
+                padding: 1.5rem;
+                min-height: 300px;
+            }
+
+            .book-info-container {
+                padding: 1.5rem;
+            }
+
+            .book-detail-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .book-detail-title {
+                font-size: 1.25rem;
+            }
+
+            .book-stats {
+                gap: 1rem;
+            }
+
+            .book-actions-large {
+                flex-direction: column;
+            }
+
+            .btn-book-large {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .download-format-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-book-fill text-warning"></i>
+                    <span>Free online reading & downloads!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"><i
+                            class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="gondi-title">𑴎𑴽𑴘𑴳𑵀</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-grid me-1"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="books.html">
+                            <i class="bi bi-book me-1"></i> Books
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">
+                            <i class="bi bi-download me-1"></i> Download
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.html">
+                            <i class="bi bi-calendar3 me-1"></i> Calendar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="breadcrumb-link">
+                    <i class="bi bi-house-fill"></i> Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="books.html" class="breadcrumb-link">Books</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current" id="breadcrumbTitle">Loading...</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Book Detail Section -->
+    <section class="book-detail-section">
+        <div class="container">
+            <div class="book-detail-card" id="bookDetailCard">
+                <div class="row g-0">
+                    <div class="col-lg-4">
+                        <div class="book-cover-container" id="coverContainer">
+                            <div class="detail-skeleton" style="width: 200px; height: 280px;"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="book-info-container" id="infoContainer">
+                            <div class="detail-skeleton skeleton-title"></div>
+                            <div class="detail-skeleton skeleton-author"></div>
+                            <div class="detail-skeleton skeleton-description"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Books -->
+            <div class="related-section mt-4" id="relatedSection" style="display: none;">
+                <h3 class="related-title">
+                    <i class="bi bi-book-half"></i> Related Books
+                </h3>
+                <div class="row g-4" id="relatedBooks">
+                    <!-- Related books will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribal Divider -->
+    <div class="tribal-divider">
+        <div class="tribal-divider-icon">
+            <i class="bi bi-diamond-fill"></i>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴘𑴳𑵀</span> Support Gondi Heritage
+                </h2>
+                <p class="cta-subtitle">
+                    Your support helps preserve and promote the ancient Gond tribal language and culture for future
+                    generations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn-tribal animate-pulse">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"
+                        class="btn-tribal-outline">
+                        <i class="bi bi-github"></i> Star on GitHub
+                    </a>
+                    <a href="contact.html" class="btn-tribal-outline">
+                        <i class="bi bi-envelope"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving and promoting Gond tribal heritage through technology. Free and open-source tools
+                            for the Masaram Gondi script.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank" title="Twitter">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@rajesh_kumar_dhuriya" target="_blank" title="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/hinditutorpoint" target="_blank" title="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com" title="Email">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="gondi-translator.html"><i class="bi bi-chevron-right"></i> Transliterator</a></li>
+                        <li><a href="projects.html"><i class="bi bi-chevron-right"></i> Projects</a></li>
+                        <li><a href="books.html"><i class="bi bi-chevron-right"></i> Books</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right"></i> Download</a></li>
+                        <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Calendar</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="books.html"><i class="bi bi-chevron-right"></i> Digital Library</a></li>
+                        <li><a href="index.html#keyboard"><i class="bi bi-chevron-right"></i> Virtual Keyboard</a></li>
+                        <li><a href="https://keyman.com/keyboards/masaram_gondi" target="_blank"><i
+                                    class="bi bi-chevron-right"></i> Keyman</a></li>
+                        <li><a href="https://github.com/hinditutorpoint/gondi-transliterator" target="_blank"><i
+                                    class="bi bi-chevron-right"></i> Source Code</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Back to Collection</h6>
+                    <p class="text-white-50 mb-3">Explore more books from our digital library.</p>
+                    <a href="books.html" class="btn btn-donate mb-3">
+                        <i class="bi bi-arrow-left"></i> All Books
+                    </a>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-heart-fill text-danger"></i> Made with love for the Gond community
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                    All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Toast Container -->
+    <div class="toast-container">
+        <div class="toast toast-tribal" id="toast" role="alert">
+            <div class="toast-body d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i>
+                <span id="toastMessage">Link copied!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            API_BASE: 'https://archive.org'
+        };
+
+        // Get book identifier from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('id');
+
+        // DOM Elements
+        const elements = {
+            coverContainer: document.getElementById('coverContainer'),
+            infoContainer: document.getElementById('infoContainer'),
+            breadcrumbTitle: document.getElementById('breadcrumbTitle'),
+            relatedSection: document.getElementById('relatedSection'),
+            relatedBooks: document.getElementById('relatedBooks'),
+            scrollTop: document.getElementById('scrollTop'),
+            toast: document.getElementById('toast'),
+            toastMessage: document.getElementById('toastMessage')
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            if (bookId) {
+                loadBookDetails(bookId);
+            } else {
+                showError('No book specified');
+            }
+
+            setupScrollTop();
+        });
+
+        // Load Book Details
+        async function loadBookDetails(identifier) {
+            try {
+                const metadataUrl = `${CONFIG.API_BASE}/metadata/${identifier}`;
+                const response = await fetch(metadataUrl);
+                const data = await response.json();
+
+                if (data.metadata) {
+                    renderBookDetails(data);
+                    loadRelatedBooks(data.metadata);
+                } else {
+                    showError('Book not found');
+                }
+            } catch (error) {
+                console.error('Error loading book details:', error);
+                showError('Failed to load book details');
+            }
+        }
+
+        // Render Book Details
+        function renderBookDetails(data) {
+            const metadata = data.metadata;
+            const files = data.files || [];
+
+            // Cover
+            const coverUrl = `${CONFIG.API_BASE}/services/img/${metadata.identifier}`;
+            elements.coverContainer.innerHTML = `
+                <img src="${coverUrl}" alt="${metadata.title}" class="book-cover-large"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="book-cover-placeholder-large" style="display:none;">
+                    <i class="bi bi-book-fill"></i>
+                </div>
+            `;
+
+            // Metadata
+            const title = metadata.title || 'Unknown Title';
+            const creator = metadata.creator || 'Unknown Author';
+            const date = metadata.date || 'Unknown Date';
+            const language = metadata.language || 'Unknown';
+            const description = metadata.description || 'No description available.';
+            const subjects = metadata.subject || [];
+            const downloads = metadata.downloads || 0;
+            const collection = metadata.collection || [];
+
+            // Update breadcrumb
+            elements.breadcrumbTitle.textContent = truncateText(title, 40);
+            document.title = `${title} | 𑴎𑴽𑴘𑴳𑵀 Gondi Darshan`;
+
+            // Get file formats
+            const formats = getAvailableFormats(files);
+
+            elements.infoContainer.innerHTML = `
+                <div class="book-badges">
+                    <span class="book-badge book-badge-primary">
+                        <i class="bi bi-translate"></i> ${getLanguageName(language)}
+                    </span>
+                    ${Array.isArray(collection) ? collection.slice(0, 2).map(c => `
+                        <span class="book-badge">
+                            <i class="bi bi-folder"></i> ${c}
+                        </span>
+                    `).join('') : ''}
+                </div>
+                
+                <h1 class="book-detail-title">${escapeHtml(title)}</h1>
+                
+                <p class="book-detail-author">
+                    <i class="bi bi-person me-2"></i> By 
+                    <a href="books.html?search=${encodeURIComponent(creator)}">${escapeHtml(Array.isArray(creator) ? creator.join(', ') : creator)}</a>
+                </p>
+                
+                <div class="book-stats">
+                    <div class="book-stat">
+                        <div class="book-stat-icon">
+                            <i class="bi bi-calendar3"></i>
+                        </div>
+                        <div class="book-stat-info">
+                            <span class="book-stat-label">Published</span>
+                            <span class="book-stat-value">${formatDate(date)}</span>
+                        </div>
+                    </div>
+                    <div class="book-stat">
+                        <div class="book-stat-icon">
+                            <i class="bi bi-download"></i>
+                        </div>
+                        <div class="book-stat-info">
+                            <span class="book-stat-label">Downloads</span>
+                            <span class="book-stat-value">${formatNumber(downloads)}</span>
+                        </div>
+                    </div>
+                    <div class="book-stat">
+                        <div class="book-stat-icon">
+                            <i class="bi bi-file-earmark"></i>
+                        </div>
+                        <div class="book-stat-info">
+                            <span class="book-stat-label">Formats</span>
+                            <span class="book-stat-value">${formats.length} Available</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-description">
+                    <h4><i class="bi bi-info-circle me-2 text-tribal"></i> Description</h4>
+                    <p>${formatDescription(description)}</p>
+                </div>
+                
+                ${subjects.length > 0 ? `
+                    <div class="book-subjects">
+                        <h4><i class="bi bi-tags me-2 text-tribal"></i> Subjects</h4>
+                        <div class="subject-tags">
+                            ${(Array.isArray(subjects) ? subjects : [subjects]).slice(0, 10).map(subject => `
+                                <a href="books.html?search=${encodeURIComponent(subject)}" class="subject-tag">${escapeHtml(subject)}</a>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                <div class="book-actions-large">
+                    <a href="${CONFIG.API_BASE}/details/${metadata.identifier}" target="_blank" class="btn-book-large btn-read-large">
+                        <i class="bi bi-book-half"></i> Read Online
+                    </a>
+                    <a href="${CONFIG.API_BASE}/download/${metadata.identifier}" target="_blank" class="btn-book-large btn-download-large">
+                        <i class="bi bi-download"></i> Download
+                    </a>
+                    <button class="btn-book-large btn-share" onclick="shareBook()">
+                        <i class="bi bi-share-fill"></i> Share
+                    </button>
+                </div>
+                
+                ${formats.length > 0 ? `
+                    <div class="download-options">
+                        <h4><i class="bi bi-cloud-download"></i> Available Formats</h4>
+                        <div class="download-format-list">
+                            ${formats.map(format => `
+                                <a href="${CONFIG.API_BASE}/download/${metadata.identifier}/${format.name}" 
+                                   target="_blank" class="download-format-item">
+                                    <div class="format-icon">
+                                        <i class="${getFormatIcon(format.format)}"></i>
+                                    </div>
+                                    <div class="format-name">${format.format.toUpperCase()}</div>
+                                    <div class="format-size">${formatFileSize(format.size)}</div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                <div class="book-preview-section">
+                    <h4 class="book-preview-title">
+                        <i class="bi bi-eye-fill"></i> Preview
+                    </h4>
+                    <div class="preview-frame">
+                        <iframe src="${CONFIG.API_BASE}/embed/${metadata.identifier}" allowfullscreen></iframe>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Get Available Formats
+        function getAvailableFormats(files) {
+            const downloadableFormats = ['pdf', 'epub', 'mobi', 'txt', 'djvu'];
+            return files
+                .filter(file => {
+                    const ext = file.name.split('.').pop().toLowerCase();
+                    return downloadableFormats.includes(ext);
+                })
+                .map(file => ({
+                    name: file.name,
+                    format: file.name.split('.').pop().toLowerCase(),
+                    size: file.size
+                }))
+                .slice(0, 6);
+        }
+
+        // Load Related Books
+        async function loadRelatedBooks(metadata) {
+            try {
+                const query = metadata.subject
+                    ? (Array.isArray(metadata.subject) ? metadata.subject[0] : metadata.subject)
+                    : 'gondi';
+
+                const url = `${CONFIG.API_BASE}/advancedsearch.php?q=${encodeURIComponent(query)}&fl[]=identifier&fl[]=title&fl[]=creator&output=json&rows=4`;
+
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.response && data.response.docs.length > 0) {
+                    const relatedBooks = data.response.docs.filter(book => book.identifier !== metadata.identifier);
+
+                    if (relatedBooks.length > 0) {
+                        renderRelatedBooks(relatedBooks);
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading related books:', error);
+            }
+        }
+
+        // Render Related Books
+        function renderRelatedBooks(books) {
+            elements.relatedSection.style.display = 'block';
+
+            elements.relatedBooks.innerHTML = books.slice(0, 4).map(book => {
+                const coverUrl = `${CONFIG.API_BASE}/services/img/${book.identifier}`;
+                const author = book.creator ? (Array.isArray(book.creator) ? book.creator[0] : book.creator) : 'Unknown Author';
+
+                return `
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="book-card" onclick="window.location.href='book-detail.html?id=${book.identifier}'">
+                            <div class="book-cover">
+                                <img src="${coverUrl}" alt="${book.title}"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="book-cover-placeholder" style="display:none;">
+                                    <i class="bi bi-book-fill"></i>
+                                </div>
+                            </div>
+                            <div class="book-content">
+                                <h3 class="book-title">${escapeHtml(book.title)}</h3>
+                                <p class="book-author"><i class="bi bi-person me-1"></i> ${escapeHtml(author)}</p>
+                                <div class="book-actions" onclick="event.stopPropagation();">
+                                    <a href="book-detail.html?id=${book.identifier}" class="btn-book btn-read">
+                                        <i class="bi bi-eye-fill"></i> View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Show Error
+        function showError(message) {
+            elements.infoContainer.innerHTML = `
+                <div class="text-center py-5">
+                    <div style="font-size: 4rem; color: var(--tribal-red); opacity: 0.5; margin-bottom: 1rem;">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                    </div>
+                    <h3>${message}</h3>
+                    <p class="text-muted">The requested book could not be found.</p>
+                    <a href="books.html" class="btn-tribal mt-3">
+                        <i class="bi bi-arrow-left me-2"></i> Back to Books
+                    </a>
+                </div>
+            `;
+
+            elements.coverContainer.innerHTML = `
+                <div class="book-cover-placeholder-large">
+                    <i class="bi bi-book-fill"></i>
+                </div>
+            `;
+        }
+
+        // Share Book
+        function shareBook() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                showToast('Link copied to clipboard!');
+            }
+        }
+
+        // Setup Scroll Top
+        function setupScrollTop() {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    elements.scrollTop.classList.add('visible');
+                } else {
+                    elements.scrollTop.classList.remove('visible');
+                }
+            });
+        }
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show Toast
+        function showToast(message) {
+            elements.toastMessage.textContent = message;
+            const toast = new bootstrap.Toast(elements.toast);
+            toast.show();
+        }
+
+        // Utility Functions
+        function getLanguageName(code) {
+            const languages = {
+                'gon': 'Gondi',
+                'hin': 'Hindi',
+                'eng': 'English',
+                'mar': 'Marathi',
+                'tel': 'Telugu',
+                'san': 'Sanskrit',
+                'ori': 'Odia',
+                'tam': 'Tamil',
+                'Hindi': 'Hindi',
+                'English': 'English',
+                'Gondi': 'Gondi'
+            };
+            return languages[code] || code || 'Unknown';
+        }
+
+        function getFormatIcon(format) {
+            const icons = {
+                'pdf': 'bi bi-file-pdf',
+                'epub': 'bi bi-book',
+                'mobi': 'bi bi-tablet',
+                'txt': 'bi bi-file-text',
+                'djvu': 'bi bi-file-image'
+            };
+            return icons[format] || 'bi bi-file-earmark';
+        }
+
+        function formatNumber(num) {
+            if (!num) return '0';
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num.toString();
+        }
+
+        function formatFileSize(bytes) {
+            if (!bytes) return 'Unknown';
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return Math.round(bytes / Math.pow(1024, i)) + ' ' + sizes[i];
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'Unknown';
+            try {
+                const date = new Date(dateStr);
+                return date.getFullYear();
+            } catch {
+                return dateStr;
+            }
+        }
+
+        function formatDescription(desc) {
+            if (!desc) return 'No description available.';
+            if (Array.isArray(desc)) desc = desc.join(' ');
+            const text = desc.replace(/<[^>]*>/g, '');
+            return text.length > 500 ? text.substring(0, 500) + '...' : text;
+        }
+
+        function truncateText(text, maxLength) {
+            if (!text) return '';
+            return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

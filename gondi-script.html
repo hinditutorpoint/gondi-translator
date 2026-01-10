@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Read about Gond tribal culture, history, and traditions. Explore the Masaram Gondi script and indigenous heritage.">
+    <meta name="keywords" content="Gond tribe, Masaram Gondi, tribal culture, indigenous heritage, Gondwana history">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+
+    <title>Blog Post | Gondi Darshan</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Blog Post specific styles -->
+    <style>
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-header {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-terracotta) 0px,
+                    var(--tribal-terracotta) 12px,
+                    var(--tribal-accent) 12px,
+                    var(--tribal-accent) 24px,
+                    var(--tribal-primary) 24px,
+                    var(--tribal-primary) 36px);
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--tribal-accent);
+            color: var(--tribal-dark);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--tribal-dark);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 2px dashed var(--tribal-secondary);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .meta-item i {
+            color: var(--tribal-primary);
+        }
+
+        .article-featured-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 8rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-featured-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--tribal-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--tribal-accent);
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--tribal-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.75rem;
+        }
+
+        .article-content li {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            background: var(--tribal-cream);
+            border-left: 5px solid var(--tribal-primary);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: var(--tribal-dark);
+        }
+
+        .article-content .highlight-box {
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, var(--tribal-sand) 100%);
+            border: 2px solid var(--tribal-accent);
+            border-radius: 15px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .article-content .gondi-example {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 2rem;
+            color: var(--tribal-primary);
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        /* Author Card */
+        .author-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.08);
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Share Buttons */
+        .share-section {
+            background: white;
+            border-radius: 15px;
+            padding: 1.25rem;
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .share-title {
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .share-btn.facebook {
+            background: #1877f2;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .share-btn.whatsapp {
+            background: #25d366;
+        }
+
+        .share-btn.linkedin {
+            background: #0077b5;
+        }
+
+        .share-btn.copy {
+            background: var(--tribal-primary);
+        }
+
+        /* Related Posts */
+        .related-posts {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.08);
+        }
+
+        .related-post-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .related-post-item:last-child {
+            border-bottom: none;
+        }
+
+        .related-post-item:hover {
+            background: var(--tribal-cream);
+            border-radius: 10px;
+        }
+
+        .related-post-image {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .related-post-content h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--tribal-dark);
+            margin-bottom: 0.35rem;
+            line-height: 1.4;
+        }
+
+        .related-post-meta {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--tribal-cream);
+            border: 2px solid var(--tribal-accent);
+            border-radius: 15px;
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            padding: 0.35rem 0;
+        }
+
+        .toc a {
+            color: var(--tribal-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--tribal-terracotta);
+            padding-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.5rem;
+            }
+
+            .article-featured-image {
+                height: 250px;
+                font-size: 4rem;
+            }
+
+            .article-content {
+                padding: 1.25rem 1rem;
+            }
+
+            .author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-avatar {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone-fill text-warning"></i>
+                    <span>Explore Gond tribal heritage!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"><i
+                            class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="gondi-title">𑴎𑴽𑴘𑴳𑵀</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blogs.html">
+                            <i class="bi bi-journal-text me-1"></i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">
+                            <i class="bi bi-images me-1"></i> Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="literature.html">
+                            <i class="bi bi-book me-1"></i> Literature
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="folklore.html">
+                            <i class="bi bi-stars me-1"></i> Folklore
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" style="color: var(--tribal-primary);">Home</a></li>
+                <li class="breadcrumb-item"><a href="blogs.html" style="color: var(--tribal-primary);">Blog</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Article</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Article Content -->
+    <section class="transliteration-section">
+        <div class="container">
+            <div class="article-container">
+                <!-- Article Header -->
+                <article class="article-header">
+                    <span class="article-category">Language & Script</span>
+                    <h1 class="article-title">The Masaram Gondi Script: A Renaissance of Indigenous Writing</h1>
+                    <div class="article-meta">
+                        <div class="meta-item">
+                            <i class="bi bi-person-circle"></i>
+                            <span>Rajesh Kumar Dhuriya</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-calendar3"></i>
+                            <span>December 15, 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-clock"></i>
+                            <span>8 min read</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-eye"></i>
+                            <span>1,245 views</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Featured Image -->
+                <div class="article-featured-image">
+                    <div class="masaram-text">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀</div>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <h3><i class="bi bi-list-ul"></i> Table of Contents</h3>
+                    <ul>
+                        <li><a href="#introduction">1. Introduction</a></li>
+                        <li><a href="#history">2. Historical Background</a></li>
+                        <li><a href="#creator">3. Munshi Mangal Singh Masaram</a></li>
+                        <li><a href="#features">4. Unique Features of the Script</a></li>
+                        <li><a href="#importance">5. Cultural Significance</a></li>
+                        <li><a href="#challenges">6. Challenges and Revival Efforts</a></li>
+                        <li><a href="#conclusion">7. Conclusion</a></li>
+                    </ul>
+                </div>
+
+                <!-- Main Content -->
+                <div class="article-content">
+                    <h2 id="introduction">Introduction</h2>
+                    <p>
+                        In the heart of Central India, a linguistic revolution quietly unfolds. The Masaram Gondi
+                        script,
+                        a writing system designed specifically for the Gondi language, represents more than just
+                        characters
+                        on paper—it embodies the cultural resilience and identity of over 3 million Gond people spread
+                        across Madhya Pradesh, Chhattisgarh, Maharashtra, Andhra Pradesh, and Telangana.
+                    </p>
+
+                    <p>
+                        For centuries, the Gondi language survived purely through oral tradition, with rich folklore,
+                        songs, and stories passed down from generation to generation. However, the absence of a native
+                        script meant that this ancient Dravidian language was at risk of gradual erosion under the
+                        influence of dominant regional languages.
+                    </p>
+
+                    <div class="gondi-example">
+                        𑴎𑴽𑴟𑵅𑴘𑴲 𑴣𑴱𑴩𑴱 - 𑴬𑴤𑴱𑴦𑴱 𑴫𑴕𑵅𑴫𑴾𑴛𑴲
+                    </div>
+                    <p style="text-align: center; color: #888; font-size: 0.9rem;">
+                        <em>Gondi Bhasha - Hamara Sanskriti (Gondi Language - Our Culture)</em>
+                    </p>
+
+                    <h2 id="history">Historical Background</h2>
+                    <p>
+                        The Gond people, one of India's largest tribal communities, have inhabited the forests and hills
+                        of Central India for millennia. Despite their significant population and rich cultural heritage,
+                        the Gondi language lacked a standardized writing system that could truly capture its phonetic
+                        nuances and cultural expressions.
+                    </p>
+
+                    <p>
+                        Historically, when documentation was needed, various scripts like Devanagari, Telugu, or
+                        regional
+                        variants were used. However, none of these adequately represented the unique sounds and
+                        linguistic
+                        structure of Gondi, leading to inconsistencies and a gradual disconnect between written and
+                        spoken forms.
+                    </p>
+
+                    <blockquote>
+                        "A language without its own script is like a bird without wings—it can survive, but it cannot
+                        soar
+                        to preserve its full cultural heritage across generations."
+                        <br><strong>— Gond Proverb</strong>
+                    </blockquote>
+
+                    <h2 id="creator">Munshi Mangal Singh Masaram: The Visionary</h2>
+                    <p>
+                        In the early 20th century, a remarkable individual emerged who would change the course of Gondi
+                        linguistic history. Munshi Mangal Singh Masaram (1906-1975), a Gond scholar and educationist
+                        from
+                        Mandla district in Madhya Pradesh, dedicated his life to creating a script that would
+                        authentically
+                        represent the Gondi language.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4 style="color: var(--tribal-primary); margin-bottom: 0.75rem;">
+                            <i class="bi bi-star-fill"></i> Key Achievements of Munshi Masaram
+                        </h4>
+                        <ul style="margin-bottom: 0;">
+                            <li>Developed the Masaram Gondi script in 1928</li>
+                            <li>Created a systematic writing system with 50+ characters</li>
+                            <li>Published the first Gondi dictionary using this script</li>
+                            <li>Established schools to teach Gondi literacy</li>
+                            <li>Preserved countless folk songs and stories in written form</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Masaram's script was revolutionary because it was designed from the ground up to match Gondi
+                        phonology. He meticulously studied the language's sounds, tones, and structures, ensuring that
+                        every character served a specific phonetic purpose.
+                    </p>
+
+                    <h2 id="features">Unique Features of the Script</h2>
+                    <p>
+                        The Masaram Gondi script is an abugida (alphasyllabary) writing system, similar in structure to
+                        Devanagari but with distinct characteristics tailored for Gondi:
+                    </p>
+
+                    <h3>1. Phonetic Precision</h3>
+                    <p>
+                        Each character represents a specific consonant-vowel combination, allowing for accurate
+                        representation of Gondi's unique sounds that don't exist in Indo-Aryan languages.
+                    </p>
+
+                    <div class="gondi-example">
+                        𑴀 𑴁 𑴂 𑴃 𑴄 𑴅 𑴆 𑴈 𑴉 𑴋
+                    </div>
+                    <p style="text-align: center; color: #888; font-size: 0.9rem;">
+                        <em>Independent vowels: a, aa, i, ii, u, uu, e, ai, o, au</em>
+                    </p>
+
+                    <h3>2. Consonant Structure</h3>
+                    <p>
+                        The script includes characters for all consonants found in Gondi, organized systematically by
+                        place of articulation:
+                    </p>
+
+                    <div class="gondi-example">
+                        𑴌 𑴍 𑴎 𑴏 𑴐 - 𑴑 𑴒 𑴓 𑴔 𑴕
+                    </div>
+                    <p style="text-align: center; color: #888; font-size: 0.9rem;">
+                        <em>Velar (k-series) and Palatal (ch-series) consonants</em>
+                    </p>
+
+                    <h3>3. Diacritical Marks</h3>
+                    <p>
+                        Like other Indic scripts, Masaram Gondi uses vowel signs (matras) to modify consonants:
+                    </p>
+
+                    <div class="gondi-example">
+                        𑴌 𑴌𑴱 𑴌𑴲 𑴌𑴳 𑴌𑴴 𑴌𑴵
+                    </div>
+                    <p style="text-align: center; color: #888; font-size: 0.9rem;">
+                        <em>ka, kaa, ki, kii, ku, kuu</em>
+                    </p>
+
+                    <h2 id="importance">Cultural Significance</h2>
+                    <p>
+                        The Masaram Gondi script is far more than a tool for communication—it is a symbol of cultural
+                        pride and identity. Its importance can be understood through several dimensions:
+                    </p>
+
+                    <h3>Preservation of Oral Tradition</h3>
+                    <p>
+                        For the first time in history, the vast corpus of Gond oral literature—folk songs (geet),
+                        creation myths, historical narratives, and wisdom sayings—could be accurately documented in
+                        their original language, preserving nuances that would be lost in translation.
+                    </p>
+
+                    <h3>Educational Empowerment</h3>
+                    <p>
+                        The script enabled the development of educational materials in Gondi, allowing children to learn
+                        in their mother tongue. Research consistently shows that mother tongue-based education
+                        significantly improves learning outcomes and cognitive development.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4 style="color: var(--tribal-primary); margin-bottom: 0.75rem;">
+                            <i class="bi bi-book-fill"></i> Impact on Education
+                        </h4>
+                        <p style="margin-bottom: 0;">
+                            Studies in Gond-majority areas show that children who first learn to read in Gondi using the
+                            Masaram script demonstrate better literacy rates and higher retention in schools compared to
+                            those who begin directly with regional languages.
+                        </p>
+                    </div>
+
+                    <h3>Digital Age Recognition</h3>
+                    <p>
+                        In 2014, the Masaram Gondi script was encoded in Unicode (Unicode block U+11D00–U+11D5F),
+                        marking
+                        a historic milestone. This recognition enabled:
+                    </p>
+
+                    <ul>
+                        <li>Digital preservation of Gondi texts</li>
+                        <li>Creation of Gondi keyboards and fonts</li>
+                        <li>Online transliteration tools (like this website!)</li>
+                        <li>Social media communication in Gondi</li>
+                        <li>Mobile apps for learning the script</li>
+                    </ul>
+
+                    <h2 id="challenges">Challenges and Revival Efforts</h2>
+                    <p>
+                        Despite its significance, the Masaram Gondi script faces several challenges in the 21st century:
+                    </p>
+
+                    <h3>Current Challenges</h3>
+                    <ol>
+                        <li><strong>Limited Literacy:</strong> Only a small percentage of Gond people can read and write
+                            in their native script</li>
+                        <li><strong>Lack of Standardization:</strong> Regional variations in Gondi sometimes complicate
+                            script usage</li>
+                        <li><strong>Educational Neglect:</strong> Few schools teach Gondi, focusing instead on state
+                            languages</li>
+                        <li><strong>Digital Divide:</strong> Limited digital resources and tools compared to major
+                            languages</li>
+                        <li><strong>Generational Gap:</strong> Younger generations increasingly adopt dominant languages
+                        </li>
+                    </ol>
+
+                    <h3>Revival and Promotion Efforts</h3>
+                    <p>
+                        However, there is growing momentum to preserve and promote the script:
+                    </p>
+
+                    <ul>
+                        <li><strong>Government Recognition:</strong> Several states have recognized Gondi as a scheduled
+                            language</li>
+                        <li><strong>Academic Interest:</strong> Universities offer courses in Gondi language and
+                            literature</li>
+                        <li><strong>Digital Tools:</strong> Websites like Gondi Darshan provide free transliteration and
+                            learning resources</li>
+                        <li><strong>Community Initiatives:</strong> Tribal organizations run literacy campaigns</li>
+                        <li><strong>Publishing:</strong> Increasing number of books, newspapers, and magazines in Gondi
+                        </li>
+                    </ul>
+
+                    <blockquote>
+                        "Every time an elder who knows Gondi passes away without teaching it to the next generation,
+                        we lose a library of knowledge. The Masaram script is our key to preserving that library
+                        forever."
+                        <br><strong>— Dr. Motiravan Kangali, Gondi Language Activist</strong>
+                    </blockquote>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>
+                        The Masaram Gondi script represents a triumph of indigenous knowledge and cultural preservation.
+                        In an era where linguistic diversity is rapidly declining—UNESCO estimates that one language
+                        dies
+                        every two weeks—the Gondi script offers a beacon of hope.
+                    </p>
+
+                    <p>
+                        It reminds us that language is not merely a tool for communication but a repository of
+                        worldview,
+                        philosophy, and ancestral wisdom. When we preserve a script, we preserve an entire way of seeing
+                        and understanding the world.
+                    </p>
+
+                    <p>
+                        As digital tools make the script more accessible than ever before, there is renewed optimism.
+                        The younger generation can now learn Gondi through mobile apps, participate in online
+                        communities,
+                        and even create digital content in their ancestral language.
+                    </p>
+
+                    <div class="gondi-example">
+                        𑴎𑴽𑴟𑵅𑴘𑴲 𑴣𑴱𑴩𑴱 𑴫𑴝𑴱 𑴦𑴬𑴺𑴎𑴳
+                    </div>
+                    <p style="text-align: center; color: #888; font-size: 0.9rem;">
+                        <em>Gondi Bhasha Sada Rahegi (The Gondi Language Will Always Remain)</em>
+                    </p>
+
+                    <p>
+                        The story of the Masaram Gondi script is ultimately a story of resilience, pride, and hope.
+                        It shows that even in the face of overwhelming cultural pressure, a community determined to
+                        preserve its heritage can find innovative solutions to ensure their language—and with it,
+                        their identity—survives and thrives for generations to come.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4 style="color: var(--tribal-primary); margin-bottom: 0.75rem;">
+                            <i class="bi bi-heart-fill"></i> How You Can Help
+                        </h4>
+                        <ul style="margin-bottom: 0;">
+                            <li>Learn basic Gondi phrases using our <a href="index.html#transliterator">transliterator
+                                    tool</a></li>
+                            <li>Share Gondi content on social media</li>
+                            <li>Support organizations working on tribal language preservation</li>
+                            <li>If you're Gond, teach your children the script</li>
+                            <li>Contribute to digital resources and documentation efforts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Author Card -->
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>Rajesh Kumar Dhuriya</h4>
+                        <p>
+                            Rajesh is a passionate advocate for tribal language preservation and the creator of Gondi
+                            Darshan.
+                            With a background in linguistics and software development, he combines technology with
+                            cultural
+                            preservation to create tools that keep indigenous languages alive in the digital age.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 class="share-title"><i class="bi bi-share"></i> Share This Article</h3>
+                    <div class="share-buttons">
+                        <button class="share-btn facebook" onclick="shareOnFacebook()">
+                            <i class="bi bi-facebook"></i>
+                        </button>
+                        <button class="share-btn twitter" onclick="shareOnTwitter()">
+                            <i class="bi bi-twitter-x"></i>
+                        </button>
+                        <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">
+                            <i class="bi bi-whatsapp"></i>
+                        </button>
+                        <button class="share-btn linkedin" onclick="shareOnLinkedIn()">
+                            <i class="bi bi-linkedin"></i>
+                        </button>
+                        <button class="share-btn copy" onclick="copyLink()">
+                            <i class="bi bi-link-45deg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--tribal-dark); margin-bottom: 1rem;">
+                        <i class="bi bi-book-half"></i> Related Articles
+                    </h3>
+
+                    <a href="blog.html?id=2" style="text-decoration: none; color: inherit;">
+                        <div class="related-post-item">
+                            <div class="related-post-image">
+                                <span class="masaram-text">𑴑𑴲𑴛𑵅𑴦</span>
+                            </div>
+                            <div class="related-post-content">
+                                <h5>Gond Art: The Sacred Geometry of Nature</h5>
+                                <div class="related-post-meta">
+                                    <i class="bi bi-calendar"></i> Dec 12, 2024 • 6 min read
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="blog.html?id=7" style="text-decoration: none; color: inherit;">
+                        <div class="related-post-item">
+                            <div class="related-post-image">
+                                <span class="masaram-text">𑴣𑴱𑴩𑴱</span>
+                            </div>
+                            <div class="related-post-content">
+                                <h5>Learning Gondi: A Beginner's Guide to the Tribal Language</h5>
+                                <div class="related-post-meta">
+                                    <i class="bi bi-calendar"></i> Dec 1, 2024 • 10 min read
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="blog.html?id=3" style="text-decoration: none; color: inherit;">
+                        <div class="related-post-item">
+                            <div class="related-post-image">
+                                <span class="masaram-text">𑴂𑴛𑴲𑴬𑴱𑴫</span>
+                            </div>
+                            <div class="related-post-content">
+                                <h5>Gondwana Kingdom: The Forgotten Empire of Central India</h5>
+                                <div class="related-post-meta">
+                                    <i class="bi bi-calendar"></i> Dec 10, 2024 • 12 min read
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Learn Gondi Today
+                </h2>
+                <p class="cta-subtitle">
+                    Start your journey into the Masaram Gondi script with our free online tools and resources.
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#transliterator" class="btn-tribal animate-pulse">
+                        <i class="bi bi-keyboard"></i> Try Transliterator
+                    </a>
+                    <a href="download.html" class="btn-tribal-outline">
+                        <i class="bi bi-download"></i> Download App
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving and promoting Gond tribal heritage through technology.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://youtube.com/@rajesh_kumar_dhuriya" target="_blank">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Content</h6>
+                    <ul class="footer-links">
+                        <li><a href="blogs.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                        <li><a href="literature.html"><i class="bi bi-chevron-right"></i> Literature</a></li>
+                        <li><a href="folklore.html"><i class="bi bi-chevron-right"></i> Folklore</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Tools</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#transliterator"><i class="bi bi-chevron-right"></i> Transliterator</a>
+                        </li>
+                        <li><a href="gondi-translator.html"><i class="bi bi-chevron-right"></i> Translator</a></li>
+                        <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Calendar</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right"></i> Download</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Support</h6>
+                    <p class="text-white-50 mb-3">Help preserve tribal languages.</p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate mb-3">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-heart-fill text-danger"></i> Made with love for the Gond community
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Share functions
+        function shareOnFacebook() {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const title = document.querySelector('.article-title').textContent;
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(title)}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const title = document.querySelector('.article-title').textContent;
+            window.open(`https://wa.me/?text=${encodeURIComponent(title + ' ' + window.location.href)}`, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+
+        // Scroll to top
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

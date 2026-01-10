@@ -21,6 +21,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gondidarshan.org/download.html">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <title>Download Gondi Apps | APK, Windows & Source Code | Gondi Darshan</title>
 
     <!-- Bootstrap 5 CSS -->
@@ -34,175 +40,38 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Download Page Specific Styles -->
     <style>
-        :root {
-            --tribal-earth: #8B4513;
-            --tribal-clay: #CD853F;
-            --tribal-ochre: #CC7722;
-            --tribal-terracotta: #E2725B;
-            --tribal-forest: #228B22;
-            --tribal-bark: #3E2723;
-            --tribal-sand: #F4A460;
-            --tribal-cream: #FFF8DC;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--tribal-cream) 0%, #FFF5E6 100%);
-            min-height: 100vh;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139, 69, 19, 0.02) 35px, rgba(139, 69, 19, 0.02) 70px),
-                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(205, 133, 63, 0.02) 35px, rgba(205, 133, 63, 0.02) 70px);
-            z-index: -1;
-        }
-
-        .gondi-text {
-            font-family: 'Noto Sans Masaram Gondi', sans-serif;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: linear-gradient(135deg, var(--tribal-bark) 0%, var(--tribal-earth) 100%);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 3px solid var(--tribal-ochre);
-        }
-
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.5rem;
+        /* Alert Banner */
+        .alert-banner {
+            background: linear-gradient(135deg, var(--tribal-forest) 0%, #3CB371 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
+            box-shadow: 0 5px 20px rgba(34, 139, 34, 0.3);
         }
 
-        .brand-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--tribal-ochre);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Noto Sans Masaram Gondi', sans-serif;
-            font-size: 1.5rem;
-            color: white;
-            border: 2px solid var(--tribal-sand);
+        .alert-banner i {
+            font-size: 2rem;
         }
 
-        .navbar-brand .gondi-title {
-            font-family: 'Noto Sans Masaram Gondi', sans-serif;
-            font-size: 1.4rem;
-            color: var(--tribal-sand);
-        }
-
-        .nav-link {
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--tribal-sand);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after {
-            width: 80%;
-        }
-
-        .nav-link:hover {
-            color: var(--tribal-sand) !important;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 50%, var(--tribal-terracotta) 100%);
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 3rem;
-        }
-
-        .hero-section::before {
-            content: '📱💻📦';
-            position: absolute;
-            font-size: 15rem;
-            opacity: 0.08;
-            right: -5%;
-            top: -20%;
-            transform: rotate(-15deg);
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            margin-top: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-        }
-
-        /* Download Card */
-        .download-card {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .download-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 70px rgba(139, 69, 19, 0.25);
-            border-color: var(--tribal-ochre);
-        }
-
-        .download-header {
-            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
+        /* Enhanced Download Cards */
+        .download-card .download-header {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
             padding: 2.5rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .download-header::before {
+        .download-card .download-header::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -212,7 +81,7 @@
             background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
         }
 
-        .platform-icon {
+        .download-card .platform-icon {
             width: 100px;
             height: 100px;
             background: rgba(255, 255, 255, 0.2);
@@ -227,7 +96,7 @@
             z-index: 1;
         }
 
-        .platform-name {
+        .download-card .platform-name {
             font-size: 1.8rem;
             font-weight: 800;
             color: white;
@@ -236,7 +105,7 @@
             z-index: 1;
         }
 
-        .version-badge {
+        .download-card .version-badge {
             display: inline-block;
             background: rgba(255, 255, 255, 0.3);
             padding: 0.4rem 1rem;
@@ -248,7 +117,7 @@
             z-index: 1;
         }
 
-        .download-body {
+        .download-card .download-body {
             padding: 2rem;
             flex-grow: 1;
             display: flex;
@@ -277,7 +146,7 @@
         }
 
         .feature-list li i {
-            color: var(--tribal-ochre);
+            color: var(--tribal-terracotta);
             font-size: 1.2rem;
         }
 
@@ -288,23 +157,23 @@
             flex-wrap: wrap;
         }
 
-        .stat-item {
+        .download-stats .stat-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 0.95rem;
         }
 
-        .stat-item i {
-            color: var(--tribal-ochre);
+        .download-stats .stat-item i {
+            color: var(--tribal-terracotta);
         }
 
-        .stat-item strong {
-            color: var(--tribal-bark);
+        .download-stats .stat-item strong {
+            color: var(--tribal-dark);
         }
 
         .btn-download {
-            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
             border: none;
             color: white;
             padding: 1rem 2rem;
@@ -344,14 +213,10 @@
             color: white;
         }
 
-        .btn-download i {
-            margin-right: 0.5rem;
-        }
-
         .btn-secondary {
             background: transparent;
-            border: 2px solid var(--tribal-earth);
-            color: var(--tribal-earth);
+            border: 2px solid var(--tribal-primary);
+            color: var(--tribal-primary);
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
@@ -363,22 +228,83 @@
         }
 
         .btn-secondary:hover {
-            background: var(--tribal-earth);
+            background: var(--tribal-primary);
             color: white;
         }
 
-        /* System Requirements */
+        /* Installation Steps */
+        .installation-steps {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.08);
+            border: 3px solid var(--tribal-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .installation-steps h3 {
+            color: var(--tribal-dark);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--tribal-terracotta);
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--tribal-sand);
+            border-radius: 15px;
+            border: 2px solid var(--tribal-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(10px);
+            border-color: var(--tribal-terracotta);
+            background: var(--tribal-cream);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h5 {
+            color: var(--tribal-primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Requirements Card */
         .requirements-card {
             background: linear-gradient(135deg, #fff 0%, var(--tribal-cream) 100%);
             border-radius: 20px;
             padding: 2rem;
-            border-left: 5px solid var(--tribal-ochre);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
+            border-left: 5px solid var(--tribal-terracotta);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.08);
+            margin-top: 1.5rem;
         }
 
         .requirements-card h4 {
-            color: var(--tribal-earth);
+            color: var(--tribal-primary);
             font-weight: 700;
             margin-bottom: 1rem;
         }
@@ -397,67 +323,7 @@
         }
 
         .requirements-card ul li i {
-            color: var(--tribal-ochre);
-        }
-
-        /* Installation Steps */
-        .installation-steps {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 3px solid var(--tribal-clay);
-            margin-bottom: 2rem;
-        }
-
-        .installation-steps h3 {
-            color: var(--tribal-bark);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 3px solid var(--tribal-ochre);
-        }
-
-        .step {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: var(--tribal-cream);
-            border-radius: 15px;
-            border: 2px solid var(--tribal-clay);
-            transition: all 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateX(10px);
-            border-color: var(--tribal-ochre);
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-        }
-
-        .step-content h5 {
-            color: var(--tribal-earth);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-content p {
-            color: #666;
-            margin: 0;
-            line-height: 1.6;
+            color: var(--tribal-terracotta);
         }
 
         /* Changelog */
@@ -465,26 +331,26 @@
             background: white;
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 3px solid var(--tribal-clay);
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.08);
+            border: 3px solid var(--tribal-secondary);
         }
 
         .changelog h3 {
-            color: var(--tribal-bark);
+            color: var(--tribal-dark);
             font-weight: 800;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 3px solid var(--tribal-ochre);
+            border-bottom: 3px solid var(--tribal-terracotta);
         }
 
         .version-entry {
             margin-bottom: 2rem;
             padding-left: 2rem;
-            border-left: 3px solid var(--tribal-ochre);
+            border-left: 3px solid var(--tribal-terracotta);
         }
 
         .version-entry h4 {
-            color: var(--tribal-earth);
+            color: var(--tribal-primary);
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
@@ -507,28 +373,25 @@
 
         .version-entry ul li::before {
             content: '• ';
-            color: var(--tribal-ochre);
+            color: var(--tribal-terracotta);
             font-weight: bold;
             margin-right: 0.5rem;
         }
 
         /* Screenshots */
-        .screenshots-section {
-            margin: 3rem 0;
-        }
-
         .screenshot-card {
             background: white;
             border-radius: 15px;
             padding: 1rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.1);
             transition: all 0.3s ease;
-            border: 2px solid var(--tribal-clay);
+            border: 2px solid var(--tribal-secondary);
         }
 
         .screenshot-card:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+            border-color: var(--tribal-accent);
         }
 
         .screenshot-card img {
@@ -544,173 +407,66 @@
             font-weight: 600;
         }
 
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, var(--tribal-bark) 0%, #2C1810 100%);
-            color: white;
-            padding: 3rem 0 1.5rem;
-            margin-top: 4rem;
-            border-top: 4px solid var(--tribal-ochre);
+        /* Coming Soon Badge */
+        .badge-coming-soon {
+            background: rgba(255, 193, 7, 0.3);
         }
 
-        .footer-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--tribal-sand);
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--tribal-sand);
-            padding-left: 5px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .footer-social a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--tribal-ochre);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            text-align: center;
-            opacity: 0.8;
-        }
-
-        /* Scroll to Top */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            border: 3px solid var(--tribal-sand);
-            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.4);
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Alert Banner */
-        .alert-banner {
-            background: linear-gradient(135deg, var(--tribal-forest) 0%, #3CB371 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: 0 5px 20px rgba(34, 139, 34, 0.3);
-        }
-
-        .alert-banner i {
-            font-size: 2rem;
+        .badge-planned {
+            background: rgba(108, 117, 125, 0.3);
         }
     </style>
 </head>
 
 <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone-fill text-warning"></i>
+                    <span>Help preserve Gond tribal heritage!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"><i
+                            class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <div class="brand-icon">𑴎</div>
-                <span class="gondi-title d-none d-md-inline">𑴎𑴽𑴟𑵅𑴘𑴲</span>
-                <span class="d-none d-sm-inline">Gondi Darshan</span>
+                <span class="gondi-title">𑴎𑴽𑴘𑴳𑵀</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
-                            <i class="bi bi-house-fill me-1"></i> Home
+                            <i class="bi bi-house me-1"></i> Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#transliterator">
-                            <i class="bi bi-keyboard me-1"></i> Transliterator
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-grid me-1"></i> Projects
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="download.html">
                             <i class="bi bi-download me-1"></i> Download
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">
-                            <i class="bi bi-grid-3x3-gap me-1"></i> Projects
                         </a>
                     </li>
                     <li class="nav-item">
@@ -723,27 +479,86 @@
                             <i class="bi bi-envelope me-1"></i> Contact
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/yourusername/gondi-transliterator" target="_blank">
-                            <i class="bi bi-github me-1"></i> GitHub
-                        </a>
-                    </li>
                 </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container text-center">
-            <h1 class="hero-title">
-                <i class="bi bi-download me-3"></i>
-                Download Gondi Apps
-            </h1>
-            <p class="hero-subtitle">
-                Free Apps for Android, Windows & Source Code<br>
-                <strong>मुफ्त डाउनलोड | Free & Open Source</strong>
-            </p>
+    <section class="hero-section tribal-border">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-badge">
+                        <i class="bi bi-download"></i>
+                        <span>Free Downloads Available</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Download Gondi Apps
+                        <span class="gondi-highlight">𑴘𑴱𑴤𑵂𑵃𑴧𑴽𑴘𑵂</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Free Apps for Android, Windows & Source Code<br>
+                        <strong>मुफ्त डाउनलोड | Free & Open Source</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-download"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>100K+</h3>
+                            <p>Total Downloads</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>4.8/5</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>100% Safe</h3>
+                            <p>Malware Free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-cash-coin"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Free</h3>
+                            <p>No Ads or Tracking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -759,274 +574,303 @@
     </section>
 
     <!-- Download Cards -->
-    <section class="container mb-5">
-        <div class="row g-4">
-            <!-- Android APK -->
-            <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.1s;">
-                <div class="download-card" id="android">
-                    <div class="download-header">
-                        <div class="platform-icon">
-                            <i class="bi bi-android2"></i>
+    <section class="transliteration-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="bi bi-cloud-download"></i> Choose Your Platform
+                </div>
+                <h2 class="section-title">Available Downloads</h2>
+                <p class="section-subtitle">
+                    Select the version that works best for you
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Android APK -->
+                <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="download-card" id="android">
+                        <div class="download-header">
+                            <div class="platform-icon">
+                                <i class="bi bi-android2"></i>
+                            </div>
+                            <h3 class="platform-name">Android APK</h3>
+                            <span class="version-badge">
+                                <i class="bi bi-tag-fill me-1"></i> Version 2.0.5
+                            </span>
                         </div>
-                        <h3 class="platform-name">Android APK</h3>
-                        <span class="version-badge">
-                            <i class="bi bi-tag-fill me-1"></i> Version 2.0.5
-                        </span>
-                    </div>
-                    <div class="download-body">
-                        <p class="download-description">
-                            Native Android app with offline support, virtual keyboard, and auto-save functionality.
-                            Works on Android 5.0+
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-check-circle-fill"></i> Offline typing support</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Virtual Gondi keyboard</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Copy/Share functionality</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Auto-save drafts</li>
-                            <li><i class="bi bi-check-circle-fill"></i> No ads or tracking</li>
-                        </ul>
-                        <div class="download-stats">
-                            <div class="stat-item">
+                        <div class="download-body">
+                            <p class="download-description">
+                                Native Android app with offline support, virtual keyboard, and auto-save functionality.
+                                Works on Android 5.0+
+                            </p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Offline typing support</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Virtual Gondi keyboard</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Copy/Share functionality</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Auto-save drafts</li>
+                                <li><i class="bi bi-check-circle-fill"></i> No ads or tracking</li>
+                            </ul>
+                            <div class="download-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-download"></i>
+                                    <strong>50K+</strong> Downloads
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-file-earmark"></i>
+                                    <strong>8.5 MB</strong> Size
+                                </div>
+                            </div>
+                            <a href="#" class="btn-download" onclick="downloadFile('android'); return false;">
                                 <i class="bi bi-download"></i>
-                                <strong>50K+</strong> Downloads
-                            </div>
-                            <div class="stat-item">
-                                <i class="bi bi-file-earmark"></i>
-                                <strong>8.5 MB</strong> Size
-                            </div>
+                                Download APK
+                            </a>
+                            <a href="#install-android" class="btn-secondary d-block">
+                                <i class="bi bi-info-circle me-1"></i>
+                                Installation Guide
+                            </a>
                         </div>
-                        <a href="#" class="btn-download" onclick="downloadFile('android'); return false;">
-                            <i class="bi bi-download"></i>
-                            Download APK
-                        </a>
-                        <a href="#install-android" class="btn-secondary d-block">
-                            <i class="bi bi-info-circle me-1"></i>
-                            Installation Guide
-                        </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Windows -->
-            <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.2s;">
-                <div class="download-card" id="windows">
-                    <div class="download-header">
-                        <div class="platform-icon">
-                            <i class="bi bi-windows"></i>
+                <!-- Windows -->
+                <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="download-card" id="windows">
+                        <div class="download-header">
+                            <div class="platform-icon">
+                                <i class="bi bi-windows"></i>
+                            </div>
+                            <h3 class="platform-name">Windows App</h3>
+                            <span class="version-badge">
+                                <i class="bi bi-tag-fill me-1"></i> Version 2.0.3
+                            </span>
                         </div>
-                        <h3 class="platform-name">Windows App</h3>
-                        <span class="version-badge">
-                            <i class="bi bi-tag-fill me-1"></i> Version 2.0.3
-                        </span>
-                    </div>
-                    <div class="download-body">
-                        <p class="download-description">
-                            Desktop application for Windows with advanced features like batch conversion, custom fonts,
-                            and printing support.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-check-circle-fill"></i> Batch file conversion</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Custom font selection</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Print support</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Export to PDF/DOCX</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Keyboard shortcuts</li>
-                        </ul>
-                        <div class="download-stats">
-                            <div class="stat-item">
+                        <div class="download-body">
+                            <p class="download-description">
+                                Desktop application for Windows with advanced features like batch conversion, custom
+                                fonts, and printing support.
+                            </p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Batch file conversion</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Custom font selection</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Print support</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Export to PDF/DOCX</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Keyboard shortcuts</li>
+                            </ul>
+                            <div class="download-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-download"></i>
+                                    <strong>25K+</strong> Downloads
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-file-earmark"></i>
+                                    <strong>45 MB</strong> Size
+                                </div>
+                            </div>
+                            <a href="#" class="btn-download" onclick="downloadFile('windows'); return false;">
                                 <i class="bi bi-download"></i>
-                                <strong>25K+</strong> Downloads
-                            </div>
-                            <div class="stat-item">
-                                <i class="bi bi-file-earmark"></i>
-                                <strong>45 MB</strong> Size
-                            </div>
+                                Download Installer
+                            </a>
+                            <a href="#install-windows" class="btn-secondary d-block">
+                                <i class="bi bi-info-circle me-1"></i>
+                                Installation Guide
+                            </a>
                         </div>
-                        <a href="#" class="btn-download" onclick="downloadFile('windows'); return false;">
-                            <i class="bi bi-download"></i>
-                            Download Installer
-                        </a>
-                        <a href="#install-windows" class="btn-secondary d-block">
-                            <i class="bi bi-info-circle me-1"></i>
-                            Installation Guide
-                        </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Web Version -->
-            <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.3s;">
-                <div class="download-card">
-                    <div class="download-header">
-                        <div class="platform-icon">
-                            <i class="bi bi-globe"></i>
-                        </div>
-                        <h3 class="platform-name">Web Version</h3>
-                        <span class="version-badge">
-                            <i class="bi bi-cloud-check-fill me-1"></i> Always Updated
-                        </span>
-                    </div>
-                    <div class="download-body">
-                        <p class="download-description">
-                            No installation required! Use directly in your browser on any device. Works on desktop,
-                            tablet, and mobile.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-check-circle-fill"></i> No installation needed</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Cross-platform support</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Auto-updates</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Cloud sync (coming soon)</li>
-                            <li><i class="bi bi-check-circle-fill"></i> PWA installable</li>
-                        </ul>
-                        <div class="download-stats">
-                            <div class="stat-item">
-                                <i class="bi bi-people-fill"></i>
-                                <strong>100K+</strong> Monthly Users
+                <!-- Web Version -->
+                <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.3s;">
+                    <div class="download-card">
+                        <div class="download-header">
+                            <div class="platform-icon">
+                                <i class="bi bi-globe"></i>
                             </div>
-                            <div class="stat-item">
-                                <i class="bi bi-speedometer2"></i>
-                                <strong>Fast</strong> & Responsive
-                            </div>
+                            <h3 class="platform-name">Web Version</h3>
+                            <span class="version-badge">
+                                <i class="bi bi-cloud-check-fill me-1"></i> Always Updated
+                            </span>
                         </div>
-                        <a href="index.html" class="btn-download">
-                            <i class="bi bi-box-arrow-up-right"></i>
-                            Launch Web App
-                        </a>
-                        <a href="#" class="btn-secondary d-block" onclick="installPWA(); return false;">
-                            <i class="bi bi-plus-circle me-1"></i>
-                            Install as App
-                        </a>
+                        <div class="download-body">
+                            <p class="download-description">
+                                No installation required! Use directly in your browser on any device. Works on desktop,
+                                tablet, and mobile.
+                            </p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> No installation needed</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Cross-platform support</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Auto-updates</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Cloud sync (coming soon)</li>
+                                <li><i class="bi bi-check-circle-fill"></i> PWA installable</li>
+                            </ul>
+                            <div class="download-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-people-fill"></i>
+                                    <strong>100K+</strong> Monthly Users
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-speedometer2"></i>
+                                    <strong>Fast</strong> & Responsive
+                                </div>
+                            </div>
+                            <a href="index.html" class="btn-download">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                                Launch Web App
+                            </a>
+                            <a href="#" class="btn-secondary d-block" onclick="installPWA(); return false;">
+                                <i class="bi bi-plus-circle me-1"></i>
+                                Install as App
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- GitHub Source -->
-            <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.4s;">
-                <div class="download-card">
-                    <div class="download-header">
-                        <div class="platform-icon">
-                            <i class="bi bi-github"></i>
-                        </div>
-                        <h3 class="platform-name">Source Code</h3>
-                        <span class="version-badge">
-                            <i class="bi bi-code-slash"></i> Open Source
-                        </span>
-                    </div>
-                    <div class="download-body">
-                        <p class="download-description">
-                            Get the complete source code on GitHub. Contribute, fork, or build your own version.
-                            Licensed under MIT.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-check-circle-fill"></i> Full source code access</li>
-                            <li><i class="bi bi-check-circle-fill"></i> MIT Licensed</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Community contributions</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Issue tracking</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Documentation included</li>
-                        </ul>
-                        <div class="download-stats">
-                            <div class="stat-item">
-                                <i class="bi bi-star-fill"></i>
-                                <strong>500+</strong> Stars
+                <!-- GitHub Source -->
+                <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="download-card">
+                        <div class="download-header">
+                            <div class="platform-icon">
+                                <i class="bi bi-github"></i>
                             </div>
-                            <div class="stat-item">
-                                <i class="bi bi-git"></i>
-                                <strong>50+</strong> Forks
-                            </div>
+                            <h3 class="platform-name">Source Code</h3>
+                            <span class="version-badge">
+                                <i class="bi bi-code-slash"></i> Open Source
+                            </span>
                         </div>
-                        <a href="https://github.com/yourusername/gondi-transliterator" target="_blank"
-                            class="btn-download">
-                            <i class="bi bi-github"></i>
-                            View on GitHub
-                        </a>
-                        <a href="https://github.com/yourusername/gondi-transliterator/archive/refs/heads/main.zip"
-                            class="btn-secondary d-block">
-                            <i class="bi bi-file-zip me-1"></i>
-                            Download ZIP
-                        </a>
+                        <div class="download-body">
+                            <p class="download-description">
+                                Get the complete source code on GitHub. Contribute, fork, or build your own version.
+                                Licensed under MIT.
+                            </p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Full source code access</li>
+                                <li><i class="bi bi-check-circle-fill"></i> MIT Licensed</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Community contributions</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Issue tracking</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Documentation included</li>
+                            </ul>
+                            <div class="download-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-star-fill"></i>
+                                    <strong>500+</strong> Stars
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-git"></i>
+                                    <strong>50+</strong> Forks
+                                </div>
+                            </div>
+                            <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"
+                                class="btn-download">
+                                <i class="bi bi-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="https://github.com/hinditutorpoint/gondi-translator/archive/refs/heads/main.zip"
+                                class="btn-secondary d-block">
+                                <i class="bi bi-file-zip me-1"></i>
+                                Download ZIP
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Linux (Coming Soon) -->
-            <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.5s;">
-                <div class="download-card">
-                    <div class="download-header">
-                        <div class="platform-icon">
-                            <i class="bi bi-ubuntu"></i>
-                        </div>
-                        <h3 class="platform-name">Linux</h3>
-                        <span class="version-badge" style="background: rgba(255,193,7,0.3);">
-                            <i class="bi bi-hourglass-split"></i> Coming Soon
-                        </span>
-                    </div>
-                    <div class="download-body">
-                        <p class="download-description">
-                            Native Linux package (AppImage/Snap) is under development. Sign up to get notified when it's
-                            ready.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-clock"></i> AppImage format</li>
-                            <li><i class="bi bi-clock"></i> Snap package</li>
-                            <li><i class="bi bi-clock"></i> .deb for Ubuntu/Debian</li>
-                            <li><i class="bi bi-clock"></i> .rpm for Fedora/RHEL</li>
-                            <li><i class="bi bi-clock"></i> Flatpak support</li>
-                        </ul>
-                        <div class="download-stats">
-                            <div class="stat-item">
-                                <i class="bi bi-calendar-event"></i>
-                                <strong>Q3 2024</strong> Expected
+                <!-- Linux (Coming Soon) -->
+                <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.5s;">
+                    <div class="download-card">
+                        <div class="download-header">
+                            <div class="platform-icon">
+                                <i class="bi bi-ubuntu"></i>
                             </div>
+                            <h3 class="platform-name">Linux</h3>
+                            <span class="version-badge badge-coming-soon">
+                                <i class="bi bi-hourglass-split"></i> Coming Soon
+                            </span>
                         </div>
-                        <a href="contact.html" class="btn-download" style="opacity: 0.7; cursor: not-allowed;">
-                            <i class="bi bi-bell"></i>
-                            Notify Me
-                        </a>
+                        <div class="download-body">
+                            <p class="download-description">
+                                Native Linux package (AppImage/Snap) is under development. Sign up to get notified when
+                                it's ready.
+                            </p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-clock"></i> AppImage format</li>
+                                <li><i class="bi bi-clock"></i> Snap package</li>
+                                <li><i class="bi bi-clock"></i> .deb for Ubuntu/Debian</li>
+                                <li><i class="bi bi-clock"></i> .rpm for Fedora/RHEL</li>
+                                <li><i class="bi bi-clock"></i> Flatpak support</li>
+                            </ul>
+                            <div class="download-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-calendar-event"></i>
+                                    <strong>Q3 2025</strong> Expected
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn-download" style="opacity: 0.7;">
+                                <i class="bi bi-bell"></i>
+                                Notify Me
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- iOS (Planned) -->
-            <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.6s;">
-                <div class="download-card">
-                    <div class="download-header">
-                        <div class="platform-icon">
-                            <i class="bi bi-apple"></i>
-                        </div>
-                        <h3 class="platform-name">iOS</h3>
-                        <span class="version-badge" style="background: rgba(108,117,125,0.3);">
-                            <i class="bi bi-info-circle"></i> Planned
-                        </span>
-                    </div>
-                    <div class="download-body">
-                        <p class="download-description">
-                            iOS version is in planning stage. Use the web version on Safari for now. It works great on
-                            iPhone and iPad!
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-clock"></i> Native iOS app</li>
-                            <li><i class="bi bi-clock"></i> App Store listing</li>
-                            <li><i class="bi bi-clock"></i> iCloud sync</li>
-                            <li><i class="bi bi-clock"></i> iPad optimization</li>
-                            <li><i class="bi bi-clock"></i> Widget support</li>
-                        </ul>
-                        <div class="download-stats">
-                            <div class="stat-item">
-                                <i class="bi bi-calendar-event"></i>
-                                <strong>2025</strong> Tentative
+                <!-- iOS (Planned) -->
+                <div class="col-lg-4 col-md-6 animate-fadeInUp" style="animation-delay: 0.6s;">
+                    <div class="download-card">
+                        <div class="download-header">
+                            <div class="platform-icon">
+                                <i class="bi bi-apple"></i>
                             </div>
+                            <h3 class="platform-name">iOS</h3>
+                            <span class="version-badge badge-planned">
+                                <i class="bi bi-info-circle"></i> Planned
+                            </span>
                         </div>
-                        <a href="index.html" class="btn-download">
-                            <i class="bi bi-globe"></i>
-                            Use Web Version
-                        </a>
+                        <div class="download-body">
+                            <p class="download-description">
+                                iOS version is in planning stage. Use the web version on Safari for now. It works great
+                                on iPhone and iPad!
+                            </p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-clock"></i> Native iOS app</li>
+                                <li><i class="bi bi-clock"></i> App Store listing</li>
+                                <li><i class="bi bi-clock"></i> iCloud sync</li>
+                                <li><i class="bi bi-clock"></i> iPad optimization</li>
+                                <li><i class="bi bi-clock"></i> Widget support</li>
+                            </ul>
+                            <div class="download-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-calendar-event"></i>
+                                    <strong>2025+</strong> Tentative
+                                </div>
+                            </div>
+                            <a href="index.html" class="btn-download">
+                                <i class="bi bi-globe"></i>
+                                Use Web Version
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Tribal Divider -->
+    <div class="tribal-divider">
+        <div class="tribal-divider-icon">
+            <i class="bi bi-diamond-fill"></i>
+        </div>
+    </div>
+
     <!-- Installation Instructions -->
     <section class="container mb-5">
+        <div class="section-header">
+            <div class="section-badge">
+                <i class="bi bi-book"></i> Installation Guides
+            </div>
+            <h2 class="section-title">How to Install</h2>
+            <p class="section-subtitle">
+                Step-by-step installation instructions for each platform
+            </p>
+        </div>
+
         <div class="row">
             <!-- Android Installation -->
             <div class="col-lg-6 mb-4">
@@ -1068,7 +912,7 @@
                         </div>
                     </div>
 
-                    <div class="requirements-card mt-3">
+                    <div class="requirements-card">
                         <h4>System Requirements</h4>
                         <ul>
                             <li><i class="bi bi-check-circle"></i> Android 5.0 (Lollipop) or higher</li>
@@ -1120,7 +964,7 @@
                         </div>
                     </div>
 
-                    <div class="requirements-card mt-3">
+                    <div class="requirements-card">
                         <h4>System Requirements</h4>
                         <ul>
                             <li><i class="bi bi-check-circle"></i> Windows 7/8/10/11 (64-bit)</li>
@@ -1193,10 +1037,16 @@
     </section>
 
     <!-- Screenshots -->
-    <section class="container screenshots-section">
-        <h2 class="text-center mb-4" style="color: var(--tribal-bark); font-weight: 800; font-size: 2.5rem;">
-            App Screenshots
-        </h2>
+    <section class="container mb-5">
+        <div class="section-header">
+            <div class="section-badge">
+                <i class="bi bi-images"></i> Preview
+            </div>
+            <h2 class="section-title">App Screenshots</h2>
+            <p class="section-subtitle">
+                See what the apps look like
+            </p>
+        </div>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="screenshot-card">
@@ -1222,60 +1072,100 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Love Our Work?
+                </h2>
+                <p class="cta-subtitle">
+                    Support us to keep building free tools for tribal language preservation.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn-tribal animate-pulse">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"
+                        class="btn-tribal-outline">
+                        <i class="bi bi-github"></i> Star on GitHub
+                    </a>
+                    <a href="contact.html" class="btn-tribal-outline">
+                        <i class="bi bi-people"></i> Join Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4">
-                    <h5 class="footer-title">
-                        <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Gondi Darshan
-                    </h5>
-                    <p class="opacity-75 mb-3">
-                        Preserving and promoting tribal languages through modern technology. Free, open-source, and
-                        dedicated to indigenous heritage.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://github.com/hinditutorpoint" target="_blank" title="GitHub">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="https://twitter.com/hinditutorpoint" target="_blank" title="Twitter">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                        <a href="https://facebook.com/hinditutorpoint" target="_blank" title="Facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="mailto:hinditutorpoint@gmail.com" title="Email">
-                            <i class="bi bi-envelope-fill"></i>
-                        </a>
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving and promoting Gond tribal heritage through technology. Free and open-source tools
+                            for the Masaram Gondi script.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank" title="Twitter">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@rajesh_kumar_dhuriya" target="_blank" title="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/hinditutorpoint" target="_blank" title="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com" title="Email">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="footer-title">Quick Links</h5>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Quick Links</h6>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
-                        <li><a href="index.html#transliterator"><i class="bi bi-chevron-right me-1"></i>
-                                Transliterator</a></li>
-                        <li><a href="download.html"><i class="bi bi-chevron-right me-1"></i> Download Apps</a></li>
-                        <li><a href="projects.html"><i class="bi bi-chevron-right me-1"></i> Other Projects</a></li>
-                        <li><a href="calendar.html"><i class="bi bi-chevron-right me-1"></i> Gondi Calendar</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Contact Us</a></li>
+                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#transliterator"><i class="bi bi-chevron-right"></i> Transliterator</a>
+                        </li>
+                        <li><a href="projects.html"><i class="bi bi-chevron-right"></i> Projects</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right"></i> Download</a></li>
+                        <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Calendar</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="footer-title">Support Us</h5>
-                    <p class="opacity-75 mb-3">
-                        Help us preserve tribal languages for future generations.
-                    </p>
-                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank"
-                        style="background: linear-gradient(135deg, var(--tribal-earth) 0%, var(--tribal-ochre) 100%); border: none; color: white; padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">
-                        <i class="bi bi-cup-hot-fill me-1"></i> Donate
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Downloads</h6>
+                    <ul class="footer-links">
+                        <li><a href="#android"><i class="bi bi-chevron-right"></i> Android APK</a></li>
+                        <li><a href="#windows"><i class="bi bi-chevron-right"></i> Windows App</a></li>
+                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Web Version</a></li>
+                        <li><a href="https://github.com/hinditutorpoint" target="_blank"><i
+                                    class="bi bi-chevron-right"></i> Source Code</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Support the Project</h6>
+                    <p class="text-white-50 mb-3">Your donation helps keep this project alive and growing.</p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate mb-3">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
                     </a>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-heart-fill text-danger"></i> Made with love for the Gond community
+                    </p>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p class="mb-0">
-                    © 2024 <strong>Rajesh Kumar Dhuriya</strong>. All rights reserved. Made with <i
-                        class="bi bi-heart-fill text-danger"></i> for tribal communities.
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                    All rights reserved.
                 </p>
             </div>
         </div>
@@ -1306,7 +1196,6 @@
 
         // Download tracking
         function downloadFile(platform) {
-            // Show confirmation
             const confirmDownload = confirm(
                 `You are about to download the ${platform} version.\n\n` +
                 `File will be saved to your downloads folder.\n` +
@@ -1315,19 +1204,14 @@
             );
 
             if (confirmDownload) {
-                // Track download (you can integrate analytics here)
                 console.log(`Download initiated: ${platform}`);
-
-                // Simulate download
                 alert(
                     `Download will start shortly!\n\n` +
                     `Note: This is a demo. In production, actual files will be downloaded from:\n` +
                     `- Android: https://gondidarshan.org/downloads/gondi-app.apk\n` +
                     `- Windows: https://gondidarshan.org/downloads/gondi-setup.exe`
                 );
-
-                // In production, redirect to actual download URL:
-                // window.location.href = `https://gondidarshan.org/downloads/gondi-${platform}.file`;
+                // In production: window.location.href = `https://gondidarshan.org/downloads/gondi-${platform}.file`;
             }
         }
 

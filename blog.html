@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The Gond tribe, India's largest tribal community with over 14 million members, has preserved their unique culture, art, and traditions for centuries.">
+    <meta name="keywords"
+        content="Gond tribe, tribal India, Gond culture, indigenous people, Central India tribes, Gond history">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+
+    <title>The Gond Tribe: Guardians of Central India's Forest Heritage | Gondi Darshan</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Blog Post Styles */
+        .blog-post-header {
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 50%, var(--tribal-terracotta) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-post-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='%23FFD700' fill-opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        .blog-breadcrumb {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-breadcrumb a {
+            color: var(--tribal-accent);
+            text-decoration: none;
+        }
+
+        .blog-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .blog-post-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .blog-post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Article Content */
+        .article-container {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-featured-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 5rem;
+        }
+
+        .article-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .article-content h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin: 1.5rem 0 0.75rem;
+            padding-left: 0.75rem;
+            border-left: 4px solid var(--tribal-terracotta);
+        }
+
+        .article-content h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--tribal-primary);
+            margin: 1.25rem 0 0.5rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1rem;
+        }
+
+        .article-content blockquote {
+            background: var(--tribal-cream);
+            border-left: 4px solid var(--tribal-accent);
+            padding: 1rem 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: var(--tribal-dark);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content .gondi-text {
+            font-size: 1.5rem;
+            color: var(--tribal-primary);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, var(--tribal-sand) 100%);
+            border-radius: 15px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border: 2px solid var(--tribal-secondary);
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box-title i {
+            color: var(--tribal-terracotta);
+        }
+
+        /* Tags */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px dashed var(--tribal-secondary);
+        }
+
+        .article-tag {
+            background: var(--tribal-cream);
+            color: var(--tribal-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border: 1px solid var(--tribal-secondary);
+            transition: all 0.2s;
+        }
+
+        .article-tag:hover {
+            background: var(--tribal-primary);
+            color: white;
+            border-color: var(--tribal-primary);
+        }
+
+        /* Share Buttons */
+        .share-section {
+            background: var(--tribal-cream);
+            border-radius: 15px;
+            padding: 1rem 1.25rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .share-section span {
+            font-weight: 600;
+            color: var(--tribal-dark);
+            font-size: 0.9rem;
+        }
+
+        .share-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .share-btn.facebook {
+            background: #1877f2;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .share-btn.whatsapp {
+            background: #25d366;
+        }
+
+        .share-btn.linkedin {
+            background: #0077b5;
+        }
+
+        .share-btn.copy {
+            background: var(--tribal-primary);
+        }
+
+        /* Author Box */
+        .author-box {
+            background: white;
+            border-radius: 15px;
+            padding: 1.25rem;
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.08);
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--tribal-dark);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-bio {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 2rem;
+        }
+
+        .related-post-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.08);
+            transition: all 0.2s;
+        }
+
+        .related-post-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.12);
+        }
+
+        .related-post-image {
+            height: 120px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 2.5rem;
+        }
+
+        .related-post-body {
+            padding: 1rem;
+        }
+
+        .related-post-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--tribal-dark);
+            line-height: 1.4;
+            margin-bottom: 0.35rem;
+        }
+
+        .related-post-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .related-post-title a:hover {
+            color: var(--tribal-primary);
+        }
+
+        .related-post-date {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 3px solid var(--tribal-cream);
+        }
+
+        .comments-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comment-form textarea {
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1rem;
+            width: 100%;
+            resize: vertical;
+            min-height: 100px;
+            font-size: 0.9rem;
+        }
+
+        .comment-form textarea:focus {
+            border-color: var(--tribal-primary);
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+            outline: none;
+        }
+
+        /* Table of Contents */
+        .toc-widget {
+            background: var(--tribal-cream);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .toc-title {
+            font-weight: 700;
+            color: var(--tribal-dark);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 0.35rem 0;
+            border-bottom: 1px dashed var(--tribal-secondary);
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: var(--tribal-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: var(--tribal-terracotta);
+            padding-left: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .blog-post-title {
+                font-size: 2rem;
+            }
+
+            .article-container {
+                padding: 2rem;
+            }
+
+            .article-featured-image {
+                height: 350px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .blog-post-header {
+                padding: 3rem 0;
+            }
+
+            .blog-post-title {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone-fill text-warning"></i>
+                    <span>Help preserve Gond tribal heritage!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"><i
+                            class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="gondi-title">𑴎𑴽𑴘𑴳𑵀</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-house me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blogs.html"><i class="bi bi-journal-text me-1"></i> Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html"><i class="bi bi-images me-1"></i> Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="literature.html"><i class="bi bi-book me-1"></i> Literature</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="folklore.html"><i class="bi bi-chat-quote me-1"></i> Folklore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-1"></i> Contact</a>
+                    </li>
+                </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Header -->
+    <section class="blog-post-header tribal-border">
+        <div class="container">
+            <nav class="blog-breadcrumb">
+                <a href="index.html">Home</a> /
+                <a href="blogs.html">Blog</a> /
+                <span>The Gond Tribe</span>
+            </nav>
+            <h1 class="blog-post-title">
+                The Gond Tribe: Guardians of Central India's Forest Heritage
+            </h1>
+            <div class="blog-post-meta">
+                <span><i class="bi bi-calendar3"></i> December 15, 2024</span>
+                <span><i class="bi bi-person"></i> Rajesh Kumar Dhuriya</span>
+                <span><i class="bi bi-clock"></i> 12 min read</span>
+                <span><i class="bi bi-eye"></i> 2,543 views</span>
+                <span><i class="bi bi-folder"></i> History & Culture</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="transliteration-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Article -->
+                <div class="col-lg-8">
+                    <article class="article-container">
+                        <!-- Featured Image -->
+                        <div class="article-featured-image">
+                            <i class="bi bi-people"></i>
+                        </div>
+
+                        <!-- Article Content -->
+                        <div class="article-content">
+                            <p class="lead" style="font-size: 1.1rem; color: var(--tribal-dark); font-weight: 500;">
+                                The Gond tribe, one of the largest tribal communities in India with over <strong>14
+                                    million members</strong>,
+                                has been the guardian of Central India's forests for centuries. Their deep connection
+                                with nature,
+                                unique cultural practices, and the ancient Masaram Gondi script make them a fascinating
+                                subject
+                                of study and preservation.
+                            </p>
+
+                            <h2 id="who-are-gonds">Who Are the Gonds?</h2>
+                            <p>
+                                The word "Gond" is derived from "Kond," meaning "green mountains" in the Dravidian
+                                language family.
+                                The Gonds refer to themselves as <span class="gondi-text">𑴌𑴽𑴥𑴛𑵅𑴛𑵅 -
+                                    Koyitor</span>,
+                                meaning "hill people" or "people of the mountain." They are one of the largest Adivasi
+                                (indigenous)
+                                communities in India, primarily inhabiting the forested regions of:
+                            </p>
+                            <ul>
+                                <li><strong>Madhya Pradesh</strong> - The heartland of Gond territory</li>
+                                <li><strong>Chhattisgarh</strong> - Dense forests of Bastar region</li>
+                                <li><strong>Maharashtra</strong> - Vidarbha and eastern regions</li>
+                                <li><strong>Telangana & Andhra Pradesh</strong> - Adilabad and surrounding areas</li>
+                                <li><strong>Odisha</strong> - Western and southern districts</li>
+                                <li><strong>Jharkhand</strong> - Scattered communities</li>
+                            </ul>
+
+                            <div class="info-box">
+                                <div class="info-box-title">
+                                    <i class="bi bi-info-circle-fill"></i> Did You Know?
+                                </div>
+                                <p style="margin: 0; font-size: 0.9rem;">
+                                    The region once ruled by Gond kingdoms is called "Gondwana" (गोंडवाना), meaning
+                                    "land of the Gonds." This term was later adopted by geologists to name the
+                                    ancient supercontinent "Gondwanaland" because fossils from the region helped
+                                    prove the continental drift theory!
+                                </p>
+                            </div>
+
+                            <h2 id="history">A Glorious History</h2>
+                            <p>
+                                The Gonds have a rich political history that dates back to the 14th century. They
+                                established
+                                several powerful kingdoms that ruled over vast territories of Central India:
+                            </p>
+
+                            <h3>The Four Great Gond Kingdoms</h3>
+                            <ol>
+                                <li>
+                                    <strong>Garha-Mandla Kingdom</strong> (1480-1789) - The most famous Gond kingdom,
+                                    ruled by 52 forts. The legendary <strong>Rani Durgavati</strong> (1524-1564)
+                                    ruled this kingdom and died fighting against Mughal forces of Akbar.
+                                </li>
+                                <li>
+                                    <strong>Deogarh Kingdom</strong> - Covered parts of present-day Chhindwara and Seoni
+                                    districts.
+                                </li>
+                                <li>
+                                    <strong>Chanda Kingdom</strong> - Ruled over the Chandrapur region in Maharashtra.
+                                </li>
+                                <li>
+                                    <strong>Kherla Kingdom</strong> - Located in the Betul-Chhindwara region.
+                                </li>
+                            </ol>
+
+                            <blockquote>
+                                "Rani Durgavati chose to stab herself with her own dagger rather than surrender
+                                to the Mughal army. Her bravery and sacrifice are celebrated to this day, and
+                                the University of Jabalpur is named in her honor."
+                            </blockquote>
+
+                            <h2 id="language">The Gondi Language & Script</h2>
+                            <p>
+                                Gondi is a Dravidian language spoken by over <strong>3 million people</strong>. While
+                                the
+                                language has several dialects, the Masaram Gondi script stands as a unique achievement
+                                in indigenous writing systems.
+                            </p>
+                            <p>
+                                The <strong>Masaram Gondi script</strong> was created by <strong>Munshi Mangal Singh
+                                    Masaram</strong>
+                                in the 1920s. Unlike borrowed scripts, this is an original creation specifically
+                                designed
+                                for the Gondi language. The script was officially added to Unicode in 2018 (Unicode
+                                11.0),
+                                making digital preservation and use possible.
+                            </p>
+
+                            <div class="info-box">
+                                <div class="info-box-title">
+                                    <i class="bi bi-translate"></i> See Gondi Script in Action
+                                </div>
+                                <p style="font-size: 2rem; text-align: center; margin: 0.5rem 0;" class="gondi-text">
+                                    𑴎𑴽𑴟𑵅𑴘𑴲 𑴣𑴱𑴩𑴱
+                                </p>
+                                <p style="text-align: center; font-size: 0.85rem; margin: 0;">
+                                    "Gondi Bhasha" - The Gondi Language
+                                </p>
+                            </div>
+
+                            <h2 id="culture">Cultural Practices</h2>
+
+                            <h3>Religion and Spirituality</h3>
+                            <p>
+                                The Gonds practice an animistic religion centered around nature worship. Their supreme
+                                deity
+                                is <strong>Bada Dev</strong> (बड़ा देव / 𑴢𑴘𑴱 𑴝𑴺𑴨), also known as "Bara Pen," who
+                                resides
+                                in the sacred Saja trees. Other important aspects include:
+                            </p>
+                            <ul>
+                                <li><strong>Clan Deities (Persa Pen)</strong> - Each Gond clan has its own deity</li>
+                                <li><strong>Village Gods (Thakur Dev)</strong> - Protectors of individual villages</li>
+                                <li><strong>Ancestor Worship</strong> - Deep reverence for departed souls</li>
+                                <li><strong>Sacred Groves</strong> - Forests protected for religious purposes</li>
+                            </ul>
+
+                            <h3>Art and Music</h3>
+                            <p>
+                                <strong>Gond Art</strong> (also known as Pardhan Gond painting) has gained international
+                                recognition for its intricate patterns and vibrant colors. The art form depicts nature,
+                                mythology, and daily life using distinctive dots and lines. <strong>Jangarh Singh
+                                    Shyam</strong>
+                                (1962-2001) is credited with bringing Gond art to the global stage.
+                            </p>
+                            <p>
+                                Traditional dances like <strong>Karma</strong>, <strong>Saila</strong>, and
+                                <strong>Sua</strong>
+                                are performed during festivals and celebrations, accompanied by instruments like the
+                                <em>mandar</em> (drum), <em>bansuri</em> (flute), and <em>timdri</em>.
+                            </p>
+
+                            <h2 id="festivals">Major Festivals</h2>
+                            <p>
+                                The Gond calendar is marked by numerous festivals that celebrate nature, harvests,
+                                and community bonds:
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Keslapur Jatara</strong> - Asia's largest tribal festival, held in
+                                    Telangana.
+                                    Over 10 million devotees gather to honor Sammakka and Saralamma.
+                                </li>
+                                <li><strong>Madai Festival</strong> - Village fairs celebrating local deities</li>
+                                <li><strong>Hareli</strong> - Festival marking the start of the agricultural season</li>
+                                <li><strong>Pola</strong> - Celebration honoring cattle and bulls</li>
+                                <li><strong>Diwali (Diyari)</strong> - Celebrated with unique Gond traditions</li>
+                            </ul>
+
+                            <h2 id="challenges">Challenges and Preservation</h2>
+                            <p>
+                                Despite their rich heritage, the Gond community faces several challenges:
+                            </p>
+                            <ul>
+                                <li>Loss of forest lands and displacement due to development projects</li>
+                                <li>Declining use of Gondi language among younger generations</li>
+                                <li>Erosion of traditional knowledge and customs</li>
+                                <li>Limited access to education and healthcare</li>
+                                <li>Economic marginalization</li>
+                            </ul>
+                            <p>
+                                However, efforts are underway to preserve and promote Gond culture. Digital tools like
+                                the <a href="index.html" style="color: var(--tribal-primary); font-weight: 600;">Gondi
+                                    Transliterator</a>
+                                are helping keep the script alive, while artists and cultural organizations work
+                                tirelessly to document traditions.
+                            </p>
+
+                            <h2 id="conclusion">Conclusion</h2>
+                            <p>
+                                The Gond tribe represents an invaluable part of India's cultural mosaic. Their history
+                                of powerful kingdoms, unique script, vibrant art, and deep spiritual connection with
+                                nature offer lessons for all of humanity. As we move forward, it's crucial that we
+                                support efforts to preserve this rich heritage for future generations.
+                            </p>
+                            <p>
+                                <strong>How you can help:</strong> Learn about Gond culture, support Gond artists,
+                                use tools that preserve the Gondi language, and spread awareness about tribal rights.
+                            </p>
+
+                            <blockquote>
+                                <span class="gondi-text" style="font-size: 1.75rem;">𑴓𑴼 𑴎𑴽𑴟𑵅𑴘 | 𑴓𑴼
+                                    𑴎𑴽𑴟𑵅𑴘𑴨𑴱𑴚𑴱</span><br>
+                                "Jai Gond! Jai Gondwana!"
+                            </blockquote>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="article-tags">
+                            <span style="font-weight: 600; font-size: 0.85rem; margin-right: 0.5rem;">Tags:</span>
+                            <a href="#" class="article-tag">Gond Tribe</a>
+                            <a href="#" class="article-tag">Tribal Culture</a>
+                            <a href="#" class="article-tag">Gondwana</a>
+                            <a href="#" class="article-tag">Rani Durgavati</a>
+                            <a href="#" class="article-tag">Masaram Gondi</a>
+                            <a href="#" class="article-tag">Bada Dev</a>
+                            <a href="#" class="article-tag">Gond Art</a>
+                        </div>
+
+                        <!-- Share -->
+                        <div class="share-section">
+                            <span><i class="bi bi-share me-1"></i> Share:</span>
+                            <a href="#" class="share-btn facebook" title="Share on Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="share-btn twitter" title="Share on Twitter">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="share-btn whatsapp" title="Share on WhatsApp">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                            <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="share-btn copy" title="Copy Link" onclick="copyLink(); return false;">
+                                <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+
+                        <!-- Author Box -->
+                        <div class="author-box">
+                            <div class="author-avatar">RD</div>
+                            <div>
+                                <h5 class="author-name">Rajesh Kumar Dhuriya</h5>
+                                <p class="author-bio">
+                                    Developer and tribal language preservation enthusiast. Creator of Gondi Darshan
+                                    and various tools for documenting indigenous languages.
+                                    <a href="contact.html" style="color: var(--tribal-primary);">Connect →</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Related Posts -->
+                        <div class="related-posts">
+                            <h4 style="font-weight: 700; color: var(--tribal-dark); margin-bottom: 1rem;">
+                                <i class="bi bi-collection me-2" style="color: var(--tribal-terracotta);"></i>
+                                Related Articles
+                            </h4>
+                            <div class="row g-3">
+                                <div class="col-6 col-md-4">
+                                    <div class="related-post-card">
+                                        <div class="related-post-image">
+                                            <i class="bi bi-brush"></i>
+                                        </div>
+                                        <div class="related-post-body">
+                                            <h5 class="related-post-title">
+                                                <a href="blog.html">Gond Art: The Pardhan Tradition</a>
+                                            </h5>
+                                            <span class="related-post-date">Dec 10, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="related-post-card">
+                                        <div class="related-post-image">
+                                            <i class="bi bi-translate"></i>
+                                        </div>
+                                        <div class="related-post-body">
+                                            <h5 class="related-post-title">
+                                                <a href="blog.html">Masaram Gondi Script Guide</a>
+                                            </h5>
+                                            <span class="related-post-date">Dec 1, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="related-post-card">
+                                        <div class="related-post-image">
+                                            <i class="bi bi-balloon-heart"></i>
+                                        </div>
+                                        <div class="related-post-body">
+                                            <h5 class="related-post-title">
+                                                <a href="blog.html">Keslapur Jatara Festival</a>
+                                            </h5>
+                                            <span class="related-post-date">Dec 5, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comments -->
+                        <div class="comments-section">
+                            <h4 class="comments-title">
+                                <i class="bi bi-chat-dots"></i> Comments (12)
+                            </h4>
+                            <form class="comment-form">
+                                <textarea placeholder="Share your thoughts on this article..."></textarea>
+                                <button type="submit" class="btn-action btn-action-primary mt-2">
+                                    <i class="bi bi-send me-1"></i> Post Comment
+                                </button>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Table of Contents -->
+                    <div class="toc-widget">
+                        <h5 class="toc-title">
+                            <i class="bi bi-list-nested"></i> In This Article
+                        </h5>
+                        <ul class="toc-list">
+                            <li><a href="#who-are-gonds">Who Are the Gonds?</a></li>
+                            <li><a href="#history">A Glorious History</a></li>
+                            <li><a href="#language">Language & Script</a></li>
+                            <li><a href="#culture">Cultural Practices</a></li>
+                            <li><a href="#festivals">Major Festivals</a></li>
+                            <li><a href="#challenges">Challenges & Preservation</a></li>
+                            <li><a href="#conclusion">Conclusion</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="sidebar-widget"
+                        style="background: white; border-radius: 15px; padding: 1.25rem; box-shadow: 0 5px 20px rgba(139, 69, 19, 0.08);">
+                        <h4
+                            style="font-size: 1rem; font-weight: 700; color: var(--tribal-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;">
+                            <i class="bi bi-bar-chart" style="color: var(--tribal-terracotta);"></i> Gond Facts
+                        </h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div
+                                style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px dashed #eee;">
+                                <span style="font-size: 0.85rem; color: #666;">Population</span>
+                                <strong style="color: var(--tribal-dark);">14+ Million</strong>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px dashed #eee;">
+                                <span style="font-size: 0.85rem; color: #666;">States</span>
+                                <strong style="color: var(--tribal-dark);">6 States</strong>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px dashed #eee;">
+                                <span style="font-size: 0.85rem; color: #666;">Language Speakers</span>
+                                <strong style="color: var(--tribal-dark);">3+ Million</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 0.85rem; color: #666;">Script</span>
+                                <strong style="color: var(--tribal-dark);">Masaram Gondi</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Try Transliterator -->
+                    <div class="sidebar-widget"
+                        style="background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%); color: white; border-radius: 15px; padding: 1.25rem;">
+                        <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;">
+                            <i class="bi bi-keyboard me-1"></i> Try Gondi Script
+                        </h4>
+                        <p style="font-size: 0.85rem; opacity: 0.9; margin-bottom: 1rem;">
+                            Type in Roman and see it in Masaram Gondi script instantly!
+                        </p>
+                        <a href="index.html#transliterator" class="btn-tribal"
+                            style="width: 100%; justify-content: center;">
+                            <i class="bi bi-arrow-right-circle"></i> Open Transliterator
+                        </a>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget"
+                        style="background: white; border-radius: 15px; padding: 1.25rem; box-shadow: 0 5px 20px rgba(139, 69, 19, 0.08);">
+                        <h4
+                            style="font-size: 1rem; font-weight: 700; color: var(--tribal-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;">
+                            <i class="bi bi-fire" style="color: var(--tribal-terracotta);"></i> Popular
+                        </h4>
+                        <div class="popular-post">
+                            <div class="popular-post-image">
+                                <i class="bi bi-palette"></i>
+                            </div>
+                            <div>
+                                <h5 class="popular-post-title">
+                                    <a href="blog.html">Jangarh Singh Shyam: Pioneer of Gond Art</a>
+                                </h5>
+                                <span class="popular-post-date"><i class="bi bi-eye"></i> 5.2K</span>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="popular-post-image">
+                                <i class="bi bi-bank"></i>
+                            </div>
+                            <div>
+                                <h5 class="popular-post-title">
+                                    <a href="blog.html">Rani Durgavati: The Warrior Queen</a>
+                                </h5>
+                                <span class="popular-post-date"><i class="bi bi-eye"></i> 4.1K</span>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="popular-post-image">
+                                <i class="bi bi-translate"></i>
+                            </div>
+                            <div>
+                                <h5 class="popular-post-title">
+                                    <a href="blog.html">Learn Gondi Script in 10 Minutes</a>
+                                </h5>
+                                <span class="popular-post-date"><i class="bi bi-eye"></i> 3.5K</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="sidebar-widget"
+                        style="background: white; border-radius: 15px; padding: 1.25rem; box-shadow: 0 5px 20px rgba(139, 69, 19, 0.08);">
+                        <h4
+                            style="font-size: 1rem; font-weight: 700; color: var(--tribal-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;">
+                            <i class="bi bi-tags" style="color: var(--tribal-terracotta);"></i> Tags
+                        </h4>
+                        <div class="tag-cloud" style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                            <a href="#" class="tag">Gond Tribe</a>
+                            <a href="#" class="tag">Culture</a>
+                            <a href="#" class="tag">History</a>
+                            <a href="#" class="tag">Masaram Gondi</a>
+                            <a href="#" class="tag">Art</a>
+                            <a href="#" class="tag">Festivals</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Support Gondi Heritage
+                </h2>
+                <p class="cta-subtitle">
+                    Your support helps preserve the ancient Gond tribal language and culture.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn-tribal animate-pulse">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <a href="blogs.html" class="btn-tribal-outline">
+                        <i class="bi bi-arrow-left"></i> Back to Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving Gond tribal heritage through technology and content.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank"><i
+                                    class="bi bi-github"></i></a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank"><i
+                                    class="bi bi-twitter-x"></i></a>
+                            <a href="https://youtube.com/@rajesh_kumar_dhuriya" target="_blank"><i
+                                    class="bi bi-youtube"></i></a>
+                            <a href="mailto:hinditutorpoint@gmail.com"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="blogs.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                        <li><a href="literature.html"><i class="bi bi-chevron-right"></i> Literature</a></li>
+                        <li><a href="folklore.html"><i class="bi bi-chevron-right"></i> Folklore</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Tools</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#transliterator"><i class="bi bi-chevron-right"></i> Transliterator</a>
+                        </li>
+                        <li><a href="gondi-translator.html"><i class="bi bi-chevron-right"></i> Translator</a></li>
+                        <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Calendar</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right"></i> Download</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Support the Project</h6>
+                    <p class="text-white-50 mb-3">Help preserve tribal heritage.</p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate mb-3">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Share functions
+        function shareOnFacebook() {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const title = document.querySelector('.article-title').textContent;
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(title)}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const title = document.querySelector('.article-title').textContent;
+            window.open(`https://wa.me/?text=${encodeURIComponent(title + ' ' + window.location.href)}`, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+
+        // Scroll to top
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

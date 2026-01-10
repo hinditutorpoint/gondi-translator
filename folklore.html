@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Discover Gond tribal folklore - ancient myths, legends, and sacred stories passed through generations. Explore the spiritual heritage of Gondwana.">
+    <meta name="keywords"
+        content="Gond folklore, tribal myths, Gondwana legends, Bada Deo, tribal stories, indigenous mythology, Gond gods">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+
+    <title>Gond Folklore & Mythology | Sacred Stories | Gondi Darshan</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Folklore-specific styles -->
+    <style>
+        /* Folklore Story Card */
+        .folklore-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .folklore-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(139, 69, 19, 0.15);
+        }
+
+        .folklore-header {
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 100%);
+            color: white;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .folklore-header::before {
+            content: '⭐';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.1;
+            right: -20px;
+            top: -30px;
+            transform: rotate(-15deg);
+        }
+
+        .folklore-type {
+            display: inline-block;
+            background: var(--tribal-accent);
+            color: var(--tribal-dark);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .folklore-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .folklore-title-gondi {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 2rem;
+            opacity: 0.9;
+        }
+
+        .folklore-content {
+            padding: 2rem 1.5rem;
+        }
+
+        .folklore-intro {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--tribal-primary);
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--tribal-cream);
+            border-left: 4px solid var(--tribal-accent);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .folklore-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 1.25rem;
+        }
+
+        .folklore-quote {
+            background: linear-gradient(135deg, var(--tribal-cream) 0%, var(--tribal-sand) 100%);
+            border-left: 5px solid var(--tribal-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 15px 15px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .folklore-quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            left: 15px;
+            top: -10px;
+            color: var(--tribal-accent);
+            opacity: 0.5;
+        }
+
+        .folklore-quote-text {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.5rem;
+            color: var(--tribal-dark);
+            margin-bottom: 0.75rem;
+            line-height: 2;
+        }
+
+        .folklore-quote-translation {
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .folklore-moral {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+            padding: 1.25rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .folklore-moral h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .folklore-moral p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* Character Cards */
+        .character-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(139, 69, 19, 0.15);
+        }
+
+        .character-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .character-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .character-name-gondi {
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            font-size: 1.3rem;
+            color: var(--tribal-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .character-role {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Category Pills */
+        .category-pills {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .category-pill {
+            background: white;
+            border: 2px solid var(--tribal-secondary);
+            color: var(--tribal-dark);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .category-pill:hover {
+            background: var(--tribal-cream);
+            border-color: var(--tribal-primary);
+        }
+
+        .category-pill.active {
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            color: white;
+            border-color: var(--tribal-primary);
+        }
+
+        /* Timeline */
+        .folklore-timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid var(--tribal-accent);
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--tribal-accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--tribal-accent);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--tribal-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone-fill text-warning"></i>
+                    <span>Discover ancient Gond myths and legends!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"><i
+                            class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="gondi-title">𑴎𑴽𑴘𑴳𑵀</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.html">
+                            <i class="bi bi-journal-text me-1"></i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">
+                            <i class="bi bi-images me-1"></i> Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="literature.html">
+                            <i class="bi bi-book me-1"></i> Literature
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="folklore.html">
+                            <i class="bi bi-stars me-1"></i> Folklore
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section tribal-border">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-badge">
+                        <i class="bi bi-stars"></i>
+                        <span>Ancient Wisdom & Stories</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Gond
+                        <span class="gondi-highlight">𑴧𑴽𑴌 𑴌𑴜𑴱</span>
+                        Folklore
+                    </h1>
+                    <p class="hero-subtitle">
+                        Journey through sacred myths, creation stories, and timeless legends that have shaped
+                        Gond spiritual beliefs for thousands of years. Discover the gods, heroes, and wisdom
+                        of tribal mythology.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#stories" class="btn-tribal">
+                            <i class="bi bi-book-half"></i> Read Stories
+                        </a>
+                        <a href="literature.html" class="btn-tribal-outline">
+                            <i class="bi bi-book"></i> Literature
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <div class="gondi-text" style="font-size: 5rem; opacity: 0.9; line-height: 1.4;">
+                        ⭐<br>
+                        𑴢𑴘𑴱 𑴝𑴺𑴨<br>
+                        𑴌𑴜𑴱
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Ancient Myths</h3>
+                            <p>Creation & origin stories</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-person-hearts"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Deities & Heroes</h3>
+                            <p>Gods and legendary figures</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Nature Tales</h3>
+                            <p>Forest & animal stories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mythological Characters -->
+    <section class="transliteration-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="bi bi-person-circle"></i> Sacred Beings
+                </div>
+                <h2 class="section-title">Gods & Deities of Gond Mythology</h2>
+                <p class="section-subtitle">
+                    Meet the divine beings that inhabit the Gond spiritual universe
+                </p>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="character-card">
+                        <div class="character-icon">🌟</div>
+                        <h4 class="character-name">Bada Deo</h4>
+                        <div class="character-name-gondi">𑴢𑴘𑴱 𑴝𑴺𑴨</div>
+                        <p class="character-role">The Great God - Supreme Creator</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="character-card">
+                        <div class="character-icon">🌍</div>
+                        <h4 class="character-name">Dharti Mata</h4>
+                        <div class="character-name-gondi">𑴝𑴦𑴛𑴳 𑴤𑴱𑴛𑴱</div>
+                        <p class="character-role">Mother Earth - Life Giver</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="character-card">
+                        <div class="character-icon">🌲</div>
+                        <h4 class="character-name">Dulha Deo</h4>
+                        <div class="character-name-gondi">𑴝𑴽𑴧𑴬𑴱 𑴝𑴺𑴨</div>
+                        <p class="character-role">Bridegroom God - Forest Deity</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="character-card">
+                        <div class="character-icon">🌾</div>
+                        <h4 class="character-name">Thakur Deo</h4>
+                        <div class="character-name-gondi">𑴜𑴱𑴌𑴽𑴦 𑴝𑴺𑴨</div>
+                        <p class="character-role">Village Protector</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Folklore Stories -->
+    <section id="stories" class="container">
+        <div class="section-header">
+            <div class="section-badge">
+                <i class="bi bi-book-half"></i> Sacred Stories
+            </div>
+            <h2 class="section-title">Myths & Legends</h2>
+            <p class="section-subtitle">
+                Ancient tales that explain the origins of the world and guide moral life
+            </p>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="category-pills">
+            <button class="category-pill active" data-category="all">All Stories</button>
+            <button class="category-pill" data-category="creation">Creation Myths</button>
+            <button class="category-pill" data-category="gods">Gods & Deities</button>
+            <button class="category-pill" data-category="nature">Nature Tales</button>
+            <button class="category-pill" data-category="wisdom">Wisdom Stories</button>
+        </div>
+
+        <!-- Story 1: Creation Myth -->
+        <article class="folklore-card" data-category="creation">
+            <div class="folklore-header">
+                <span class="folklore-type">Creation Myth</span>
+                <h2 class="folklore-title">The Birth of the Earth</h2>
+                <div class="folklore-title-gondi">𑴝𑴦𑴛𑴳 𑴌𑴱 𑴓𑴟𑵅𑴤</div>
+            </div>
+            <div class="folklore-content">
+                <p class="folklore-intro">
+                    In the beginning, there was only darkness and endless water. Bada Deo, the Great God,
+                    floated alone in this vast emptiness, contemplating creation.
+                </p>
+
+                <p class="folklore-text">
+                    One day, Bada Deo decided to create the world. He called upon a turtle from the depths
+                    of the cosmic ocean. "Dive deep," commanded Bada Deo, "and bring me mud from the bottom
+                    of this endless sea."
+                </p>
+
+                <p class="folklore-text">
+                    The turtle dove deeper than any creature had gone before. After many days, it returned
+                    with a small lump of mud clasped in its mouth. Bada Deo took this mud and began to shape it,
+                    molding it with his divine hands.
+                </p>
+
+                <div class="folklore-quote">
+                    <div class="folklore-quote-text">
+                        "𑴝𑴦𑴛𑴳 𑴬𑴤𑴱𑴦𑴳 𑴎𑴱𑴨 𑴬𑴼, 𑴫𑴢 𑴓𑴳𑴨𑴽 𑴌𑴱 𑴫𑴢 𑴌𑴺 𑴤𑴱𑴵�"
+                    </div>
+                    <div class="folklore-quote-translation">
+                        "The Earth is our village home, all life is our family"
+                        <br>— Ancient Gond Wisdom
+                    </div>
+                </div>
+
+                <p class="folklore-text">
+                    As he worked, the mud grew larger and larger, spreading across the water until it became
+                    the solid earth we know today. Bada Deo then planted seeds, and from them grew the first
+                    trees and plants. He called forth animals from the earth and birds from the sky.
+                </p>
+
+                <p class="folklore-text">
+                    Finally, Bada Deo created the first humans—the Gond people. He gave them the forests to
+                    live in, taught them to respect all living beings, and entrusted them with the sacred duty
+                    of protecting the earth.
+                </p>
+
+                <div class="folklore-moral">
+                    <h4><i class="bi bi-lightbulb"></i> Wisdom Teaching</h4>
+                    <p>
+                        This myth teaches that all of creation is interconnected. The earth was made through
+                        cooperation (turtle helping Bada Deo), and humans have a sacred responsibility to
+                        protect and preserve nature, not exploit it.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Story 2: Bada Deo and the Seven Brothers -->
+        <article class="folklore-card" data-category="gods">
+            <div class="folklore-header">
+                <span class="folklore-type">Divine Legend</span>
+                <h2 class="folklore-title">Bada Deo and the Seven Brothers</h2>
+                <div class="folklore-title-gondi">𑴢𑴘𑴱 𑴝𑴺𑴨 𑴀𑴽𑴦 𑴫𑴱𑴛 𑴣𑴱𑴂</div>
+            </div>
+            <div class="folklore-content">
+                <p class="folklore-intro">
+                    The story of how Bada Deo established the sacred order of the world through his seven
+                    divine assistants, each governing a different aspect of life.
+                </p>
+
+                <p class="folklore-text">
+                    After creating the world, Bada Deo realized that managing all aspects of creation was too
+                    vast a task for one deity. So he called forth seven brothers from the cosmic energy that
+                    surrounded him.
+                </p>
+
+                <div class="folklore-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>The First Brother - Lord of the Sun</h4>
+                            <p>Given the task of bringing light and warmth to the world, marking the passage of time.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>The Second Brother - Lord of Rain</h4>
+                            <p>Entrusted with the clouds and storms, bringing life-giving water to the earth.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>The Third Brother - Lord of the Forest</h4>
+                            <p>Became the guardian of all trees, plants, and forest creatures.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>The Fourth Brother - Lord of Rivers</h4>
+                            <p>Given dominion over all flowing waters, streams, and springs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="folklore-text">
+                    Each brother took his responsibilities seriously, working in harmony to maintain the balance
+                    of nature. The Gond people learned from this that cooperation and respect for different domains
+                    are essential for harmony.
+                </p>
+
+                <div class="folklore-moral">
+                    <h4><i class="bi bi-lightbulb"></i> Wisdom Teaching</h4>
+                    <p>
+                        This legend teaches the importance of division of labor and specialization. Just as
+                        Bada Deo's seven brothers each had their domain, every person in society has unique
+                        gifts and responsibilities that contribute to the greater good.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Story 3: The Clever Jackal -->
+        <article class="folklore-card" data-category="wisdom">
+            <div class="folklore-header">
+                <span class="folklore-type">Wisdom Tale</span>
+                <h2 class="folklore-title">The Clever Jackal and the Greedy Tiger</h2>
+                <div class="folklore-title-gondi">𑴑𑴛𑴽𑴦 𑴫𑴲𑴥𑴱𑴧 𑴀𑴽𑴦 𑴧𑴽𑴣𑴳 𑴢𑴱𑴎𑴬</div>
+            </div>
+            <div class="folklore-content">
+                <p class="folklore-intro">
+                    A popular moral tale that teaches the value of intelligence over brute strength, and warns
+                    against the dangers of greed.
+                </p>
+
+                <p class="folklore-text">
+                    Once upon a time, in the deep forests of Gondwana, there lived a powerful tiger who ruled
+                    with fear. He would hunt more than he could eat, leaving carcasses to rot while other animals
+                    went hungry.
+                </p>
+
+                <p class="folklore-text">
+                    One day, a clever jackal approached the tiger. "Oh mighty lord," said the jackal, "I have
+                    discovered a cave filled with the most delicious prey you've ever tasted. But the entrance
+                    is narrow, and only you are strong enough to squeeze through."
+                </p>
+
+                <div class="folklore-quote">
+                    <div class="folklore-quote-text">
+                        "𑴢𑴧 𑴌𑴺 𑴓𑴎𑴬 𑴢𑴽𑴝𑵅𑴝𑴬𑴲 𑴫𑴺, 𑴧𑴽𑴣 𑴌𑴱 𑴀𑵀𑴛 𑴟𑴬𑴲𑵀"
+                    </div>
+                    <div class="folklore-quote-translation">
+                        "With strength comes responsibility, with greed comes downfall"
+                        <br>— Gond Proverb
+                    </div>
+                </div>
+
+                <p class="folklore-text">
+                    The greedy tiger, always wanting more, followed the jackal to a deep well. Looking down,
+                    the tiger saw his own reflection in the water but thought it was another tiger guarding treasure.
+                </p>
+
+                <p class="folklore-text">
+                    In his greed and fury, the tiger jumped into the well to fight his "rival," only to drown.
+                    The clever jackal had freed the forest from the tyrant's rule, and from that day forward,
+                    the animals lived in balance, taking only what they needed.
+                </p>
+
+                <div class="folklore-moral">
+                    <h4><i class="bi bi-lightbulb"></i> Wisdom Teaching</h4>
+                    <p>
+                        This story teaches that intelligence and wisdom are more powerful than brute force.
+                        It also warns against greed and selfishness, showing that those who take more than
+                        their share ultimately destroy themselves. The forest thrives when all creatures
+                        live in balance.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Story 4: Nature Tale -->
+        <article class="folklore-card" data-category="nature">
+            <div class="folklore-header">
+                <span class="folklore-type">Nature Tale</span>
+                <h2 class="folklore-title">Why the Peacock Dances in the Rain</h2>
+                <div class="folklore-title-gondi">𑴤𑴽𑴦 𑴢𑴦𑴫𑴱𑴛 𑴤𑴼 𑴌𑵅𑴥𑴽𑵀 𑴟𑴱𑴑𑴛𑴱 𑴬𑴼</div>
+            </div>
+            <div class="folklore-content">
+                <p class="folklore-intro">
+                    An enchanting origin story explaining one of nature's most beautiful sights—the peacock's
+                    rain dance.
+                </p>
+
+                <p class="folklore-text">
+                    Long ago, when the world was young, the peacock was an ordinary brown bird with no special
+                    beauty. During a terrible drought, all the animals suffered. The earth cracked, rivers dried
+                    up, and plants withered.
+                </p>
+
+                <p class="folklore-text">
+                    The peacock, seeing the suffering, decided to fly to the heavens to plead with the Rain God.
+                    Day and night it flew, higher and higher, until it reached the celestial palace where the
+                    Rain God resided.
+                </p>
+
+                <p class="folklore-text">
+                    "Please, Lord of Rain," begged the peacock, "the earth is dying. Send your blessed waters
+                    to save all living beings." The Rain God was moved by the peacock's selfless plea and said,
+                    "I will send rain, and as a reward for your compassion, I will give you a gift."
+                </p>
+
+                <p class="folklore-text">
+                    The Rain God touched the peacock with his staff, and immediately its feathers burst into a
+                    magnificent display of colors—blues like the sky, greens like new leaves, and eyes of gold
+                    like the sun breaking through clouds.
+                </p>
+
+                <p class="folklore-text">
+                    "From this day forward," declared the Rain God, "whenever rain clouds gather, you will feel
+                    joy in your heart and dance to celebrate the gift of water. And all who see you will remember
+                    the importance of compassion and the beauty of rain."
+                </p>
+
+                <div class="folklore-moral">
+                    <h4><i class="bi bi-lightbulb"></i> Wisdom Teaching</h4>
+                    <p>
+                        This beautiful tale teaches that selfless service and compassion for others bring their
+                        own rewards. The peacock's transformation represents how helping others can transform us,
+                        making us more beautiful in spirit. It also reminds us to celebrate nature's gifts,
+                        especially the life-giving rain.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Tribal Divider -->
+    <div class="tribal-divider">
+        <div class="tribal-divider-icon">
+            <i class="bi bi-stars"></i>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Share Your Stories
+                </h2>
+                <p class="cta-subtitle">
+                    Do you know traditional Gond folktales passed down in your family? Help us preserve
+                    these precious stories for future generations by sharing them with our community.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-tribal animate-pulse">
+                        <i class="bi bi-book-half"></i> Submit a Story
+                    </a>
+                    <a href="blogs.html" class="btn-tribal-outline">
+                        <i class="bi bi-journal-text"></i> Read Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving and promoting Gond tribal heritage through technology.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://youtube.com/@rajesh_kumar_dhuriya" target="_blank">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Content</h6>
+                    <ul class="footer-links">
+                        <li><a href="blogs.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                        <li><a href="literature.html"><i class="bi bi-chevron-right"></i> Literature</a></li>
+                        <li><a href="folklore.html"><i class="bi bi-chevron-right"></i> Folklore</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Tools</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#transliterator"><i class="bi bi-chevron-right"></i> Transliterator</a>
+                        </li>
+                        <li><a href="gondi-translator.html"><i class="bi bi-chevron-right"></i> Translator</a></li>
+                        <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Calendar</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right"></i> Download</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Support</h6>
+                    <p class="text-white-50 mb-3">Help preserve tribal heritage.</p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate mb-3">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-heart-fill text-danger"></i> Made with love for the Gond community
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Category filter
+        document.querySelectorAll('.category-pill').forEach(pill => {
+            pill.addEventListener('click', function () {
+                // Update active state
+                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filter stories
+                const category = this.getAttribute('data-category');
+                const stories = document.querySelectorAll('.folklore-card');
+
+                stories.forEach(story => {
+                    if (category === 'all' || story.getAttribute('data-category') === category) {
+                        story.style.display = 'block';
+                    } else {
+                        story.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Scroll to top
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

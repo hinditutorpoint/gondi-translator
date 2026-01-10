@@ -1,0 +1,3 @@
+
+  import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
+  precacheAndRoute([{"revision":"ddbc776837a29b7b3d7d8b3ca5b7df8c","url":"calendar.html"},{"revision":"b098ad04b64e8df012737f4f3d34d0d5","url":"contact.html"},{"revision":"b10c9cdbbf6d91ed07eed75caf06771e","url":"download.html"},{"revision":"953a3d5f4408c97d1350243199be068c","url":"gondi-translator.html"},{"revision":"cb3fc9c672c5d0592ca5d75cb180784f","url":"index.html"},{"revision":"b818909b6fc538f45a3ca0d7ebca56bf","url":"projects.html"},{"revision":"a1e68fa803a78070433858a41b914df1","url":"style.css"},{"revision":"b5623a9cb4b8d434b26d81e13ae26a96","url":"transliterator.js"}]);

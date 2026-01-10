@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Meet the team member - contributor to Gondi Darshan tribal heritage preservation project.">
+    <meta name="keywords" content="Gondi Darshan team member, tribal language preservation, Gond heritage">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+
+    <title>Team Member Profile | Gondi Darshan</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Team Detail-specific styles -->
+    <style>
+        /* Profile Header */
+        .profile-header {
+            background: linear-gradient(135deg, var(--tribal-dark) 0%, var(--tribal-primary) 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: '𑴀𑴁𑴂𑴃𑴄𑴅';
+            font-family: 'Noto Sans Masaram Gondi', sans-serif;
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            right: -5%;
+            top: -20%;
+            transform: rotate(-15deg);
+        }
+
+        .profile-avatar-large {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--tribal-terracotta) 0%, var(--tribal-accent) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            border: 5px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .profile-social-large {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .profile-social-large a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .profile-social-large a:hover {
+            background: var(--tribal-accent);
+            color: var(--tribal-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-accent) 100%);
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h3 i {
+            color: var(--tribal-primary);
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: var(--tribal-cream);
+            border: 2px solid var(--tribal-secondary);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            border-color: var(--tribal-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.15);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            color: var(--tribal-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--tribal-dark);
+            margin: 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+            border-left: 3px solid var(--tribal-accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.8rem;
+            top: 5px;
+            width: 22px;
+            height: 22px;
+            background: var(--tribal-accent);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--tribal-accent);
+        }
+
+        .timeline-content {
+            background: var(--tribal-cream);
+            padding: 1.25rem;
+            border-radius: 12px;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--tribal-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h5 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Contributions */
+        .contribution-card {
+            background: white;
+            border: 2px solid var(--tribal-secondary);
+            border-radius: 15px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .contribution-card:hover {
+            border-color: var(--tribal-primary);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+        }
+
+        .contribution-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contribution-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .contribution-info h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--tribal-dark);
+            margin-bottom: 0.15rem;
+        }
+
+        .contribution-info small {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .contribution-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Contact Info */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--tribal-cream);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--tribal-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone-fill text-warning"></i>
+                    <span>Join our mission to preserve Gond heritage!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"><i
+                            class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="gondi-title">𑴎𑴽𑴘𑴳𑵀</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.html">
+                            <i class="bi bi-journal-text me-1"></i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-grid me-1"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="teams.html">
+                            <i class="bi bi-people me-1"></i> Team
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" style="color: var(--tribal-primary);">Home</a></li>
+                <li class="breadcrumb-item"><a href="teams.html" style="color: var(--tribal-primary);">Team</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div class="container text-center">
+            <div class="profile-avatar-large masaram-text">𑴦𑴱𑴓𑴺𑴫</div>
+            <h1 class="profile-name">Rajesh Kumar Dhuriya</h1>
+            <p class="profile-role">Founder & Lead Developer</p>
+            <div class="profile-social-large">
+                <a href="https://github.com/hinditutorpoint" target="_blank" title="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://twitter.com/hinditutorpoint" target="_blank" title="Twitter">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="https://linkedin.com/in/rajeshdhuriya" target="_blank" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://youtube.com/@rajesh_kumar_dhuriya" target="_blank" title="YouTube">
+                    <i class="bi bi-youtube"></i>
+                </a>
+                <a href="mailto:hinditutorpoint@gmail.com" title="Email">
+                    <i class="bi bi-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="transliteration-section">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-lg-8">
+                    <!-- About -->
+                    <div class="info-card">
+                        <h3><i class="bi bi-person-circle"></i> About</h3>
+                        <p>
+                            Rajesh Kumar Dhuriya is a passionate software developer and cultural activist dedicated to
+                            preserving indigenous languages through technology. As the founder of Gondi Darshan, he has
+                            been instrumental in creating digital tools that make the Masaram Gondi script accessible to
+                            millions.
+                        </p>
+                        <p>
+                            Born in Siddharth Nagar, Uttar Pradesh, Rajesh grew up witnessing the gradual erosion of
+                            tribal languages in his community. This inspired him to combine his technical expertise with
+                            his passion for linguistic preservation, leading to the creation of the Gondi Darshan
+                            platform.
+                        </p>
+                        <p>
+                            With over 5 years of experience in full-stack development and a deep understanding of
+                            computational linguistics, Rajesh has successfully built transliteration engines, mobile
+                            applications, and educational resources that serve the Gond tribal community worldwide.
+                        </p>
+                    </div>
+
+                    <!-- Experience Timeline -->
+                    <div class="info-card">
+                        <h3><i class="bi bi-briefcase"></i> Journey & Contributions</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2024 - Present</div>
+                                    <h5>Founder - Gondi Darshan</h5>
+                                    <p>
+                                        Leading the development of comprehensive Gondi language preservation platform
+                                        with transliteration tools, educational resources, and mobile applications.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2023</div>
+                                    <h5>Masaram Gondi Script Unicode Implementation</h5>
+                                    <p>
+                                        Developed the first web-based transliteration engine supporting the complete
+                                        Masaram Gondi Unicode block (U+11D00–U+11D5F).
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2022</div>
+                                    <h5>Community Outreach Initiative</h5>
+                                    <p>
+                                        Conducted workshops in tribal areas teaching digital literacy and Gondi script
+                                        typing.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2021</div>
+                                    <h5>Open Source Contributor</h5>
+                                    <p>
+                                        Started contributing to linguistic preservation projects and tribal language
+                                        documentation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Major Contributions -->
+                    <div class="info-card">
+                        <h3><i class="bi bi-star-fill"></i> Major Contributions</h3>
+
+                        <div class="contribution-card">
+                            <div class="contribution-header">
+                                <div class="contribution-icon">
+                                    <i class="bi bi-code-slash"></i>
+                                </div>
+                                <div class="contribution-info">
+                                    <h5>ITRANS to Gondi Transliteration Engine</h5>
+                                    <small>Open Source • JavaScript</small>
+                                </div>
+                            </div>
+                            <p>
+                                Developed a comprehensive transliteration library that accurately converts ITRANS
+                                romanization to Masaram Gondi script, supporting all characters, conjuncts, and
+                                diacritics.
+                            </p>
+                        </div>
+
+                        <div class="contribution-card">
+                            <div class="contribution-header">
+                                <div class="contribution-icon">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <div class="contribution-info">
+                                    <h5>Gondi Keyboard Mobile App</h5>
+                                    <small>Android • 10,000+ Downloads</small>
+                                </div>
+                            </div>
+                            <p>
+                                Created and published Android keyboard application enabling users to type in Gondi
+                                script on their mobile devices with smart predictions and auto-correct.
+                            </p>
+                        </div>
+
+                        <div class="contribution-card">
+                            <div class="contribution-header">
+                                <div class="contribution-icon">
+                                    <i class="bi bi-book"></i>
+                                </div>
+                                <div class="contribution-info">
+                                    <h5>Gondi Language Documentation</h5>
+                                    <small>Research • Educational</small>
+                                </div>
+                            </div>
+                            <p>
+                                Compiled comprehensive documentation of Gondi grammar, phonology, and writing systems,
+                                making it accessible to learners worldwide through digital platforms.
+                            </p>
+                        </div>
+
+                        <div class="contribution-card">
+                            <div class="contribution-header">
+                                <div class="contribution-icon">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+                                <div class="contribution-info">
+                                    <h5>Community Building</h5>
+                                    <small>Advocacy • Outreach</small>
+                                </div>
+                            </div>
+                            <p>
+                                Built an online community of Gondi language enthusiasts, connecting native speakers,
+                                linguists, and developers working on tribal language preservation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-lg-4">
+                    <!-- Skills -->
+                    <div class="info-card">
+                        <h3><i class="bi bi-tools"></i> Skills & Expertise</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="bi bi-code-slash"></i>
+                                <h5>Full Stack Development</h5>
+                            </div>
+                            <div class="skill-item">
+                                <i class="bi bi-phone"></i>
+                                <h5>Mobile Apps</h5>
+                            </div>
+                            <div class="skill-item">
+                                <i class="bi bi-translate"></i>
+                                <h5>Computational Linguistics</h5>
+                            </div>
+                            <div class="skill-item">
+                                <i class="bi bi-palette"></i>
+                                <h5>UI/UX Design</h5>
+                            </div>
+                            <div class="skill-item">
+                                <i class="bi bi-book"></i>
+                                <h5>Technical Writing</h5>
+                            </div>
+                            <div class="skill-item">
+                                <i class="bi bi-people"></i>
+                                <h5>Community Management</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="info-card">
+                        <h3><i class="bi bi-gear"></i> Technologies</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">JavaScript</span>
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">HTML/CSS</span>
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">Bootstrap</span>
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">Node.js</span>
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">React</span>
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">Android</span>
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">Git/GitHub</span>
+                            <span class="badge"
+                                style="background: var(--tribal-primary); font-size: 0.85rem; padding: 0.5rem 0.85rem;">Unicode</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="info-card">
+                        <h3><i class="bi bi-envelope"></i> Get in Touch</h3>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <a href="mailto:hinditutorpoint@gmail.com">hinditutorpoint@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-github"></i>
+                            <a href="https://github.com/hinditutorpoint" target="_blank">@hinditutorpoint</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Siddharth Nagar, UP, India</span>
+                        </div>
+                    </div>
+
+                    <!-- Fun Facts -->
+                    <div class="info-card">
+                        <h3><i class="bi bi-lightbulb"></i> Quick Facts</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px dashed #ddd;">
+                                <i class="bi bi-check-circle-fill" style="color: var(--tribal-forest);"></i>
+                                <strong style="margin-left: 0.5rem;">10K+</strong> Active Users
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px dashed #ddd;">
+                                <i class="bi bi-check-circle-fill" style="color: var(--tribal-forest);"></i>
+                                <strong style="margin-left: 0.5rem;">5+</strong> Open Source Projects
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px dashed #ddd;">
+                                <i class="bi bi-check-circle-fill" style="color: var(--tribal-forest);"></i>
+                                <strong style="margin-left: 0.5rem;">50+</strong> Community Workshops
+                            </li>
+                            <li style="padding: 0.5rem 0;">
+                                <i class="bi bi-check-circle-fill" style="color: var(--tribal-forest);"></i>
+                                <strong style="margin-left: 0.5rem;">100%</strong> Volunteer Work
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴟𑵅𑴘𑴲</span> Collaborate With Us
+                </h2>
+                <p class="cta-subtitle">
+                    Interested in tribal language preservation? Let's work together to create impactful
+                    solutions for indigenous communities.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-tribal animate-pulse">
+                        <i class="bi bi-envelope"></i> Get in Touch
+                    </a>
+                    <a href="teams.html" class="btn-tribal-outline">
+                        <i class="bi bi-people"></i> View All Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving and promoting Gond tribal heritage through technology.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://youtube.com/@rajesh_kumar_dhuriya" target="_blank">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/hinditutorpoint" target="_blank">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Content</h6>
+                    <ul class="footer-links">
+                        <li><a href="blogs.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                        <li><a href="literature.html"><i class="bi bi-chevron-right"></i> Literature</a></li>
+                        <li><a href="folklore.html"><i class="bi bi-chevron-right"></i> Folklore</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">About</h6>
+                    <ul class="footer-links">
+                        <li><a href="teams.html"><i class="bi bi-chevron-right"></i> Our Team</a></li>
+                        <li><a href="projects.html"><i class="bi bi-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Support</h6>
+                    <p class="text-white-50 mb-3">Help preserve tribal heritage.</p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate mb-3">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-heart-fill text-danger"></i> Made with love for the Gond community
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Scroll to top
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

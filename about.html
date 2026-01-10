@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="About Us | Gondi Darshan - Preserving Tribal Heritage">
+    <meta name="description"
+        content="Learn about Gondi Darshan's mission to preserve and promote Gond tribal language, culture, and heritage through innovative technology and education.">
+    <meta name="keywords"
+        content="Gondi Darshan, Gond tribe, tribal heritage, indigenous culture, language preservation, Masaram Gondi, about us">
+    <meta name="author" content="Rajesh Kumar Dhuriya">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gondidarshan.org/about.html">
+    <meta property="og:title" content="About Gondi Darshan - Preserving Tribal Heritage">
+    <meta property="og:description"
+        content="Discover our mission to preserve Gond tribal language and culture through technology.">
+    <meta property="og:image" content="https://gondidarshan.org/images/about-og.jpg">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gondidarshan.org/about.html">
+    <meta property="twitter:title" content="About Gondi Darshan">
+    <meta property="twitter:description" content="Preserving Gond tribal heritage through innovative technology.">
+    <meta property="twitter:image" content="https://gondidarshan.org/images/about-twitter.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gondidarshan.org/about.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <title>About Us | 𑴎𑴽𑴘𑴳𑵀 Gondi Darshan</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Masaram+Gondi&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gondi Darshan",
+        "description": "Preserving and promoting Gond tribal heritage through technology",
+        "url": "https://gondidarshan.org",
+        "founder": {
+            "@type": "Person",
+            "name": "Rajesh Kumar Dhuriya"
+        }
+    }
+    </script>
+
+    <script>navigator.serviceWorker.register("pwabuilder-adv-sw.js")</script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* About Page Specific Styles */
+        .about-content-section {
+            padding: 2.5rem 0;
+            background: var(--tribal-cream);
+            background-image: var(--tribal-pattern);
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tribal-terracotta) 0px,
+                    var(--tribal-terracotta) 12px,
+                    var(--tribal-accent) 12px,
+                    var(--tribal-accent) 24px,
+                    var(--tribal-primary) 24px,
+                    var(--tribal-primary) 36px);
+        }
+
+        .content-card h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--tribal-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-card h2 i {
+            color: var(--tribal-terracotta);
+            font-size: 1.5rem;
+        }
+
+        .content-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--tribal-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .content-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-card ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .content-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mission-card {
+            background: var(--tribal-cream);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--tribal-primary);
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+        }
+
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .mission-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--tribal-primary) 0%, var(--tribal-terracotta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.2);
+        }
+
+        .team-member h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            font-size: 0.85rem;
+            color: var(--tribal-terracotta);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-bio {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            background: var(--tribal-cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tribal-dark);
+            transition: all 0.2s ease;
+        }
+
+        .team-social a:hover {
+            background: var(--tribal-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--tribal-sand);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 18px;
+            width: 28px;
+            height: 28px;
+            background: var(--tribal-accent);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--tribal-sand);
+        }
+
+        .timeline-year {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--tribal-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--tribal-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--tribal-sand) 0%, var(--tribal-cream) 100%);
+            border-left: 4px solid var(--tribal-terracotta);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--tribal-dark);
+        }
+
+        @media (max-width: 767px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+
+            .content-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-marker {
+                left: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone-fill text-warning"></i>
+                    <span>Help preserve Gond tribal heritage!</span>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="ms-2">
+                        <i class="bi bi-cup-hot-fill"></i> Support Us
+                    </a>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3">
+                    <a href="download.html"><i class="bi bi-download"></i> Download App</a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"><i
+                            class="bi bi-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="gondi-title">𑴎𑴽𑴘𑴳𑵀</span>
+                <div class="brand-text">
+                    <span>Gondi Darshan</span>
+                    <small class="masaram-text fs-5">𑴤𑴫𑴦𑴱𑴤 𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-grid me-1"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">
+                            <i class="bi bi-download me-1"></i> Download
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.html">
+                            <i class="bi bi-calendar3 me-1"></i> Calendar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <span class="d-none d-lg-inline">Buy Me Coffee</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section tribal-border">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-badge">
+                        <i class="bi bi-heart-fill"></i>
+                        <span>Our Story & Mission</span>
+                    </div>
+                    <h1 class="hero-title">
+                        About
+                        <span class="gondi-highlight">𑴎𑴽𑴘𑴳𑵀 𑴧𑴼𑴌𑴲𑴟𑴱</span>
+                        Gondi Darshan
+                    </h1>
+                    <p class="hero-subtitle">
+                        Preserving and promoting Gond tribal heritage through innovative technology,
+                        education, and community engagement. Join us in our mission to keep ancient
+                        traditions alive for future generations.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#mission" class="btn-tribal">
+                            <i class="bi bi-compass"></i> Our Mission
+                        </a>
+                        <a href="contact.html" class="btn-tribal-outline">
+                            <i class="bi bi-envelope"></i> Get in Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <div class="gondi-text" style="font-size: 6rem; opacity: 0.9; line-height: 1.3;">
+                        𑴀𑴁𑴂<br>
+                        𑴎𑴽𑴘𑴳𑵀<br>
+                        𑴧𑴼𑴌𑴲𑴟𑴱
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>3M+ Speakers</h3>
+                            <p>Gond community worldwide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-download"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>10K+ Downloads</h3>
+                            <p>Across all platforms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>15+ States</h3>
+                            <p>Pan-India reach</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>100% Free</h3>
+                            <p>Open source tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content-section">
+        <div class="container">
+            <!-- Who We Are -->
+            <div class="content-card" id="mission">
+                <h2><i class="bi bi-compass"></i> Our Mission & Vision</h2>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Mission:</strong> To preserve, promote, and digitalize the Gond tribal language,
+                        culture, and heritage through innovative technology and community-driven initiatives.
+                    </p>
+                </div>
+
+                <p>
+                    Gondi Darshan is a grassroots initiative dedicated to preserving the rich linguistic and
+                    cultural heritage of the Gond tribe, one of India's largest indigenous communities. With over
+                    3 million speakers across central India, the Gondi language represents centuries of wisdom,
+                    tradition, and unique worldviews.
+                </p>
+
+                <p>
+                    Our platform provides free, accessible tools for typing, transliterating, and learning the
+                    Masaram Gondi script, ensuring that this ancient writing system thrives in the digital age.
+                    We believe technology can be a powerful force for cultural preservation and community empowerment.
+                </p>
+
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="bi bi-translate"></i>
+                        </div>
+                        <h4>Language Preservation</h4>
+                        <p>Developing digital tools to keep the Gondi language alive and accessible to new generations.
+                        </p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h4>Education & Resources</h4>
+                        <p>Creating learning materials, dictionaries, and educational content for Gondi learners.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h4>Cultural Heritage</h4>
+                        <p>Documenting and showcasing Gond art, folklore, music, and traditional practices.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4>Community Building</h4>
+                        <p>Connecting Gond communities worldwide and fostering pride in tribal identity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What We Do -->
+            <div class="content-card">
+                <h2><i class="bi bi-gear"></i> What We Do</h2>
+
+                <h3>Digital Tools & Technology</h3>
+                <ul>
+                    <li><strong>Masaram Gondi Transliterator:</strong> Free online tool for typing in Gondi script</li>
+                    <li><strong>Mobile Keyboards:</strong> Android and iOS keyboards for seamless Gondi typing</li>
+                    <li><strong>Windows Application:</strong> Desktop software for Gondi language support</li>
+                    <li><strong>Web-based Translator:</strong> Translate between Gondi, Hindi, and English</li>
+                </ul>
+
+                <h3>Educational Resources</h3>
+                <ul>
+                    <li><strong>Digital Library:</strong> Collection of Gondi literature, books, and manuscripts</li>
+                    <li><strong>Learning Platform:</strong> Interactive lessons for learning Masaram Gondi script</li>
+                    <li><strong>Character Reference:</strong> Comprehensive guides and documentation</li>
+                    <li><strong>Cultural Archive:</strong> Photos, videos, and recordings of Gond traditions</li>
+                </ul>
+
+                <h3>Community Initiatives</h3>
+                <ul>
+                    <li><strong>Art Gallery:</strong> Showcasing traditional Gond paintings and artwork</li>
+                    <li><strong>Folklore Collection:</strong> Preserving oral traditions, myths, and stories</li>
+                    <li><strong>Blog & Articles:</strong> Sharing knowledge about Gond culture and language</li>
+                    <li><strong>Support Programs:</strong> Direct support to Gond artists and content creators</li>
+                </ul>
+            </div>
+
+            <!-- Our Journey -->
+            <div class="content-card">
+                <h2><i class="bi bi-clock-history"></i> Our Journey</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h5>Project Inception</h5>
+                            <p>Gondi Darshan started as a passion project to create digital tools for the Gondi
+                                language.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h5>First Transliterator Launch</h5>
+                            <p>Released the first web-based Masaram Gondi transliterator with ITRANS support.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h5>Mobile App Development</h5>
+                            <p>Launched Android keyboard and mobile applications for wider accessibility.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h5>Community Growth</h5>
+                            <p>Reached 10,000+ downloads and built a vibrant community of Gondi language enthusiasts.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h5>Comprehensive Platform</h5>
+                            <p>Expanded to include gallery, library, folklore, and educational resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team -->
+            <div class="content-card">
+                <h2><i class="bi bi-people"></i> Meet Our Team</h2>
+
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-avatar">R</div>
+                        <h4>Rajesh Kumar Dhuriya</h4>
+                        <div class="team-role">Founder & Lead Developer</div>
+                        <p class="team-bio">
+                            Passionate about preserving indigenous languages through technology.
+                            Computer science background with deep roots in tribal culture.
+                        </p>
+                        <div class="team-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank" title="Twitter">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@rajesh_kumar_dhuriya" target="_blank" title="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com" title="Email">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-avatar">G</div>
+                        <h4>Community Contributors</h4>
+                        <div class="team-role">Volunteers & Supporters</div>
+                        <p class="team-bio">
+                            Dedicated volunteers from the Gond community who contribute content,
+                            translations, artwork, and invaluable cultural knowledge.
+                        </p>
+                        <div class="team-social">
+                            <a href="contact.html" title="Join Us">
+                                <i class="bi bi-person-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-avatar">A</div>
+                        <h4>Gond Artists</h4>
+                        <div class="team-role">Cultural Ambassadors</div>
+                        <p class="team-bio">
+                            Traditional Gond artists who share their work and help preserve
+                            indigenous art forms through our platform.
+                        </p>
+                        <div class="team-social">
+                            <a href="gallery.html" title="View Gallery">
+                                <i class="bi bi-palette"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="content-card">
+                <h2><i class="bi bi-heart"></i> Our Values</h2>
+
+                <div class="row g-4 mt-2">
+                    <div class="col-md-6">
+                        <h3>🌍 Cultural Respect</h3>
+                        <p>We honor and respect Gond traditions, working closely with community members to ensure
+                            authenticity.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>🆓 Free & Open</h3>
+                        <p>All our tools and resources are free and open-source, accessible to everyone.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>🤝 Community-Driven</h3>
+                        <p>We build with and for the Gond community, prioritizing their needs and feedback.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>💡 Innovation</h3>
+                        <p>We leverage modern technology to preserve ancient traditions for the digital age.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>📚 Education</h3>
+                        <p>We believe in empowering through knowledge and making learning accessible to all.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>🌱 Sustainability</h3>
+                        <p>We're committed to long-term preservation efforts and sustainable cultural practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribal Divider -->
+    <div class="tribal-divider">
+        <div class="tribal-divider-icon">
+            <i class="bi bi-diamond-fill"></i>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section tribal-border">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="gondi-text">𑴎𑴽𑴘𑴳𑵀</span> Join Our Mission
+                </h2>
+                <p class="cta-subtitle">
+                    Help us preserve Gond tribal heritage. Whether through contributions, volunteering,
+                    or simply spreading the word, every action makes a difference.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn-tribal animate-pulse">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <a href="https://github.com/hinditutorpoint/gondi-translator" target="_blank"
+                        class="btn-tribal-outline">
+                        <i class="bi bi-github"></i> Star on GitHub
+                    </a>
+                    <a href="contact.html" class="btn-tribal-outline">
+                        <i class="bi bi-envelope"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="gondi-title">𑴎𑴽𑴟𑵅𑴘𑴲</span>
+                        <h5>Gondi Darshan</h5>
+                        <p>Preserving and promoting Gond tribal heritage through technology. Free and open-source tools
+                            for the Masaram Gondi script.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/hinditutorpoint" target="_blank" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://twitter.com/hinditutorpoint" target="_blank" title="Twitter">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@rajesh_kumar_dhuriya" target="_blank" title="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://facebook.com/hinditutorpoint" target="_blank" title="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="mailto:hinditutorpoint@gmail.com" title="Email">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-chevron-right"></i> About</a></li>
+                        <li><a href="gondi-translator.html"><i class="bi bi-chevron-right"></i> Transliterator</a></li>
+                        <li><a href="projects.html"><i class="bi bi-chevron-right"></i> Projects</a></li>
+                        <li><a href="download.html"><i class="bi bi-chevron-right"></i> Download</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Legal</h6>
+                    <ul class="footer-links">
+                        <li><a href="terms.html"><i class="bi bi-chevron-right"></i> Terms of Service</a></li>
+                        <li><a href="privacy-policy.html"><i class="bi bi-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="about.html#mission"><i class="bi bi-chevron-right"></i> Our Mission</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="footer-title">Support the Project</h6>
+                    <p class="text-white-50 mb-3">Your donation helps keep this project alive and growing.</p>
+                    <a href="https://buymeacoffee.com/hinditutorpoint" target="_blank" class="btn btn-donate mb-3">
+                        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+                    </a>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-heart-fill text-danger"></i> Made with love for the Gond community
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2024 <a href="https://gondidarshan.org">Gondi Darshan</a>.
+                    Created by <a href="https://github.com/hinditutorpoint">Rajesh Kumar Dhuriya</a>.
+                    All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Scroll to top functionality
+        window.addEventListener('scroll', function () {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
